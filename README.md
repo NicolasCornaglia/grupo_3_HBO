@@ -17,5 +17,6 @@ Colores:
  Main: #F5F5F5
 Tipografia: helvetica
 
+Trello: https://trello.com/b/k6wRChcZ/03hbo
 
 
