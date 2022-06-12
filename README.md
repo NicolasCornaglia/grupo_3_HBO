@@ -11,3 +11,11 @@ ar.blackanddecker.global
 easy.com
 ikea.com
 
+Logo: En carpeta imagenes
+Colores:
+ Header y Footer: #be8f8f
+ Main: #F5F5F5
+Tipografia: helvetica
+
+
+
