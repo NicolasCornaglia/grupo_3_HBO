@@ -50,16 +50,24 @@
  .top-right-navbar,
  .main-navbar {
     display: none;
- 
  }
  
  .main-header-top-bar {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;  
  }
  
+ .main-navbar li a{
+    color: black;
+    text-decoration: none;
+ }
+
+ .main-navbar {
+    margin: 1% 2% 1% 2%;
+ }
+
+
  .hamburger-button {
     background-color: white;
     border-radius: 5px;
@@ -84,6 +92,9 @@
     display: none;
  }
  
+
+
+
  /* Fin del header */
 
     main{
@@ -108,13 +119,12 @@
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        width: 90vw;
-        box-sizing: border-box;
-        
-        
+        width: 95vw; 
+        box-sizing: border-box; 
     }
+
     .contenedor2 #presentacion{
-    width: 90vw;
+    width: 95vw;
     box-shadow: 0px 0px 9px rgb(100, 100, 100); 
     cursor: pointer;
    
@@ -130,6 +140,7 @@
         box-shadow: 0px 0px 9px rgb(100, 100, 100);
         margin: 0px 3px 0px 3px;
         background-color: white;
+        width: 41vw;
     }
 
     #presentacion{
@@ -165,7 +176,7 @@
     }
     #carrusel {
         float:left;
-        width:90vw;
+        width:95vw;
         overflow:hidden;
         height:203px;
         position:relative;
@@ -175,6 +186,7 @@
         box-sizing: border-box;
         box-shadow: 0px 0px 9px rgb(100, 100, 100);
         border-radius: 5px;
+        max-width: 1000px;
     }
     
     #carrusel .left-arrow {
@@ -219,7 +231,6 @@
     .carrusel img {
         cursor:pointer;
         width: 100%;
-        
         box-sizing: border-box;
     }
     
@@ -311,6 +322,18 @@ footer {
     .main-web {
         display: none;
     }
+     /* Fin del header */
+
+    /* Inicio el main */
+
+    .contenedor3 .product {
+        width: 140px;
+    }
+
+
+
+    /* Fin del main */
+
  }
 
  @media (min-width: 768px) {
@@ -336,6 +359,20 @@ footer {
     
     
     /* Inicio del main */
+    
+    .contenedor2 .caja #presentacion{
+        width: 80vw;
+        max-width: 1000px;
+        height: 340px;
+    }
+
+    
+    .contenedor3 {
+        width: 80vw; 
+    }
+
+
+
     
     /* Fin del main */
     

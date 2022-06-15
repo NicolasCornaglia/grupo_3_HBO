@@ -83,8 +83,14 @@ a .logo {
     display: none;
 }
 
+.main-navbar li a{
+    color: black;
+    text-decoration: none;
+ }
 
-
+ .main-navbar {
+    margin: 1% 2% 1% 2%;
+ }
 
 /* Fin del header */
 
