@@ -266,7 +266,7 @@ footer h3 {
 
 /* Inicio del header */
 
-a .logo {
+.logo {
     width: 180px;
 }
 
@@ -295,16 +295,17 @@ a .logo {
     flex-direction: column;
     gap: 15px;
     align-items: space-between;
-    
 }
+
+
 
 .flexbox-producto {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
     gap: 3%;
-    max-width: 100%;
-    align-self: space-between;
+    max-width: 1100px;
+    align-self: center;
 }
 
 
@@ -319,8 +320,8 @@ a .logo {
     padding-bottom: 15px;
 } 
 
-.left-miniaturas h3 {
-    padding: 15px;
+.left-miniaturas h4 {
+    padding-top: 10px;
 }
 
 .left-miniaturas .min-img {
@@ -328,7 +329,7 @@ a .logo {
 }
 
 .left-miniaturas .min-img:hover {
-    width: 100%;
+    width: 150px;
     transition: all 0.8s;
 }
 
@@ -382,6 +383,7 @@ a .logo {
         gap: 5px;
         padding: 10px;
         width: 50%;
+        max-width: 535px;
     }
     /* Bottom content end */
 
