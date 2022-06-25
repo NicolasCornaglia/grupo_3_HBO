@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="\css\styles-home.css">    
+</head>
+<body>
+    <header class="main-header">
+        <%- include('./partials/header') %>
+    </header>
+  
+    <main class="contenedor1">
+            
+            <article class="contenedor3">
+
+                <div id="carrusel">
+                    <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
+                    <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
+                    <div class="carrusel">
+                        <div class="product" id="product_0">
+                            <img src="images\silla-carrusel.jpg" width="195" height="100" />
+                            <h5>Silla Eames Blanca</h5>
+                            <p>$6000</p>
+                        </div>
+                        <div class="product" id="product_1">
+                            <img src="images\mesa-ratona.jpg" width="195" height="100" />
+                            <h5>Mesa ratona de Madera</h5>
+                            <p>$20000</p>
+                        </div>
+                        <div class="product" id="product_2">
+                            <img src="images\sillon-carrusel.jpg" width="195" height="100" />
+                            <h5>Sillon gris- 2 plazas</h5>
+                            <p>$40000</p>
+                        </div>
+                        <div class="product" id="product_3">
+                            <img src="images\mesa-comedor.jpg" width="195" height="100" />
+                            <h5>Mesa Comedor de Madera</h5>
+                            <p>$28000</p>
+                        </div>
+                        <div class="product" id="product_4">
+                            <img src="images\escritorio-platinum.jpg" width="195" height="100" />
+                            <h5>Escritorio Platinum</h5>
+                            <p>$19000</p>
+                        </div>
+                        <div class="product" id="product_5">
+                            <img src="images\cama-2-plazas.jpeg" width="195" height="100" />
+                            <h5>Cama Dulces Sueños- 2 plazas </h5>
+                            <p>$70000</p>
+                        </div>
+                    </div>             
+                </div> 
+
+            </article>
+        
+            <article class="contenedor2">
+
+                <div class="caja">
+                    <div class="texto">Productos Destacados</div>
+                    <div><a href="views/productos-destacados.html"><img id="presentacion" src="images\productos-destacados.jpeg"  alt="Productos Destacados" ></a></div>
+                </div>
+
+
+                <div class="caja">
+                    <div class="texto">OFERTAS</div>
+                    <div><a href="views/ofertas.html"><img id="presentacion"  src="images\ofertas.jpg" alt="OFERTAS" ></a></div>
+                </div>
+
+                    
+                <div class="caja">
+                    <div class="texto">Nuevos Ingresos</div>
+                    <div><a href="views/nuevos-ingresos.html"><img id="presentacion" src="images\nuevos-ingresos.jpg" alt="Nuevos Ingresos" ></a></div>
+                </div>
+
+            </article>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+
+</body>
+</html>

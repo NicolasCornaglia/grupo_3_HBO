@@ -1,0 +1,405 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica;
+
+}
+
+body {
+    background-color:#F5F5F5;
+}
+
+p {
+    font-size: 14px;
+}
+
+header {
+    background-color: #be8f8f;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid;
+
+}
+
+a .logo {
+    width: 100px;
+}
+
+.searcher {
+    width: 80%;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.form .submit {
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+
+}
+
+.top-right-navbar,
+.main-navbar {
+    display: none;
+
+}
+
+.main-header-top-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.hamburger-button {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    height: 40px;
+    margin: 10px 0px 10px 0px ;
+    padding: 10px;
+    width: 40px;
+
+}
+
+.shop-cart {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    width: 40px;
+    display: none;
+}
+
+.main-navbar li a{
+    color: black;
+    text-decoration: none;
+ }
+
+ .main-navbar {
+    margin: 1% 2% 1% 2%;
+ }
+
+/* Fin del header */
+
+
+
+/* Inicio del main */
+
+.main-web {
+    display: none;
+}
+
+
+main {
+    margin: auto;
+    width: 90vw;
+    box-sizing: border-box;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.product {
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.product-name {
+    padding: 5px;
+}
+
+.top-img {
+    text-align: center;
+    padding: 15px;
+}
+
+main div img {
+    width: 90%;
+    border-radius: 5px;
+
+}
+
+.bottom-img {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 20px;
+    border-top: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    width: 80%;
+    margin: auto;
+    gap: 10px ;
+    
+}
+
+.cuantity,
+.buy-now,
+.add-to-cart {
+    padding: 10px 0px;
+    font-size: 15px;
+}
+
+
+.cuantity {
+    width: 70%;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+/* Fin del main */
+
+
+
+/* inicio del footer */
+
+footer {
+    border-top: 1px solid;
+    background-color: #be8f8f;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ 
+footer ifoot {
+    color:#F5F5F5;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+ 
+.copy {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    padding: 5px;
+}
+ 
+footer h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ 
+.footer-element {
+    padding: 2%
+}
+
+.footer-element:hover ifoot {
+    color: green
+}
+
+/* fin del footer */ 
+
+
+@media (min-width: 360px) {
+    .hamburger-button {
+        display: none;
+    }
+
+    .shop-cart {
+        display: inline-block;
+        align-self: center;
+    }
+
+    .main-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        color: black
+    }
+
+    .left-navbar,
+    .right-navbar {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+
+    .main-navbar li {
+        margin: 0 5px;
+        font-style: normal;
+    }
+
+    .main-web {
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+
+/* Inicio del header */
+
+.logo {
+    width: 180px;
+}
+
+.searcher {
+    width: 80%;
+    border-radius: 4px;
+    font-size: 19px;
+}
+
+.form .submit {
+    border-radius: 4px;
+    font-size: 19px;
+}
+
+/* Fin del header */
+
+
+/* Inicio del main */
+
+.main-mobile {
+    display: none;
+}
+
+.main-web {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: space-between;
+}
+
+
+
+.flexbox-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 3%;
+    max-width: 1100px;
+    align-self: center;
+}
+
+
+    /* Left content start */
+.left-miniaturas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    padding-bottom: 15px;
+} 
+
+.left-miniaturas h4 {
+    padding-top: 10px;
+}
+
+.left-miniaturas .min-img {
+    width: 100%;
+}
+
+.left-miniaturas .min-img:hover {
+    width: 150px;
+    transition: all 0.8s;
+}
+
+.main-web .left-miniaturas img {
+    width: 50%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin: 5px 0px 5px 0px;
+}
+    /* Left content end */
+
+    /* Center content start */
+.center-img img {
+    width: 500px;
+
+}
+
+.center-img {
+    display: flex;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    justify-content: center;
+    background-color: white;
+    }
+    /* Center content end */
+
+
+    /* Right content start */
+.rigth-info {
+    display: flex;
+    flex-direction: column;
+    align-self: space-evenly;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    justify-content: space-around;
+}
+
+.rigth-info .seguro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    /* Right content end */
+
+    /* Bottom content start */
+    .flexbox-descripcion-producto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        align-self: center;
+        gap: 5px;
+        padding: 10px;
+        width: 50%;
+        max-width: 535px;
+    }
+    /* Bottom content end */
+
+/* Fin del main */
+
+
+/* Inicio del footer */
+
+    .flex-footer {
+        display: flex;
+        align-items: center; 
+        justify-content: space-around;
+        gap: 2%;
+        padding: 10px;
+    }
+
+/* Fin del footer */
+
+}

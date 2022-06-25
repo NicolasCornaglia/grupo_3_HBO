@@ -1,0 +1,392 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica;
+ 
+ }
+ 
+ body {
+    background-color:#F5F5F5;
+ }
+ 
+ p {
+    font-size: 14px;
+ }
+ 
+ header {
+    background-color: #be8f8f;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid;
+ 
+ }
+ 
+ a .logo {
+    width: 100px;
+ }
+ 
+ 
+ .searcher {
+    width: 80%;
+    border-radius: 4px;
+    font-size: 15px;
+ }
+ 
+ .form .submit {
+    border-radius: 4px;
+    font-size: 15px;
+ }
+ 
+ 
+ .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+ 
+ }
+ 
+ .top-right-navbar,
+ .main-navbar {
+    display: none;
+ }
+ 
+ .main-header-top-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+ }
+ 
+ .main-navbar li a{
+    color: black;
+    text-decoration: none;
+ }
+
+ .main-navbar {
+    margin: 1% 2% 1% 2%;
+ }
+
+
+ .hamburger-button {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    height: 40px;
+    margin: 10px 0px 10px 0px ;
+    padding: 10px;
+    width: 40px;
+ 
+ }
+ 
+ .shop-cart {
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    width: 40px;
+    display: none;
+ }
+ 
+
+
+
+ /* Fin del header */
+
+    main{
+    text-align: center;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 1em;
+    
+    }
+
+    .contenedor1{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .contenedor2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 95vw; 
+        box-sizing: border-box; 
+    }
+
+    .contenedor2 #presentacion{
+    width: 95vw;
+    box-shadow: 0px 0px 9px rgb(100, 100, 100); 
+    cursor: pointer;
+   
+    }
+    
+    .contenedor3{
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .contenedor3 .product {
+        box-shadow: 0px 0px 9px rgb(100, 100, 100);
+        margin: 0px 3px 0px 3px;
+        background-color: white;
+        width: 41vw;
+    }
+
+    #presentacion{
+        text-align: center;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: #f5f5f5;
+    }
+
+    .caja{
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .texto{
+        font-family: 'Helvetica';
+        text-decoration: dashed, underline;
+        position: absolute; 
+        -webkit-text-stroke: 4% black;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        font-weight: bold;
+        color:black;
+        text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        box-sizing: border-box;
+        cursor: pointer;
+
+    }
+    #carrusel {
+        float:left;
+        width:95vw;
+        overflow:hidden;
+        height:203px;
+        position:relative;
+        margin-top:20px;
+        margin-bottom:20px;
+        border: solid 5px #f5f5f5;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 9px rgb(100, 100, 100);
+        border-radius: 5px;
+        max-width: 1000px;
+    }
+    
+    #carrusel .left-arrow {
+        position:absolute;
+        left:10px;
+        z-index:1;
+        top:50%;
+        margin-top:-9px;
+        box-sizing: border-box;
+    }
+    
+    #carrusel .right-arrow {
+        position:absolute;
+        right:10px;
+        z-index:1;
+        top:50%;
+        margin-top:-9px;
+        box-sizing: border-box;
+    }
+    
+    .carrusel {
+        width: 4000px; 
+        left:4px; 
+        right:4px;
+        position: absolute; 
+        top:4px;
+        z-index:0;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+    }
+    
+    .carrusel>div {
+        float: left;
+        font-family: Helvetica;
+        height: 185px;
+        width: 170px;
+        text-align:center;  
+        box-sizing: border-box;
+        /* border: solid 2px #f5f5f5; */
+    }
+    
+    .carrusel img {
+        cursor:pointer;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .product {
+        border:#cccccc79 1px solid; 
+        box-sizing: border-box;
+    }
+
+
+/* Fin del main */
+
+
+
+/* inicio del footer */
+
+footer {
+    border-top: 1px solid;
+    background-color: #be8f8f;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+ }
+ 
+ footer ifoot {
+    color:#F5F5F5;
+    font-size: 2em;
+    margin-bottom: 10px;
+    margin-top: 40px;
+ }
+ 
+ .copy {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    padding: 5px;
+ }
+ 
+ footer h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+ }
+ 
+ .footer-element {
+    padding: 2%
+ }
+ 
+ .footer-element:hover ifoot {
+    color: green
+ }
+ 
+ /* fin del footer */ 
+
+ @media (min-width: 360px) {
+    .hamburger-button {
+        display: none;
+    }
+ 
+    .shop-cart {
+        display: inline-block;
+        align-self: center;
+    }
+ 
+    .main-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        color: black
+    }
+ 
+    .left-navbar,
+    .right-navbar {
+        display: flex;
+        justify-content: space-between;
+ 
+    }
+ 
+    ul {
+        list-style-type: none;
+    }
+ 
+ 
+    .main-navbar li {
+        margin: 0 5px;
+        font-style: normal;
+    }
+ 
+    .main-web {
+        display: none;
+    }
+     /* Fin del header */
+
+    /* Inicio el main */
+
+    .contenedor3 .product {
+        width: 140px;
+    }
+
+
+
+    /* Fin del main */
+
+ }
+
+ @media (min-width: 768px) {
+
+    /* Inicio del header */
+    
+    .logo {
+       width: 180px;
+    }
+    
+    .searcher {
+       width: 80%;
+       border-radius: 4px;
+       font-size: 19px;
+    }
+    
+    .form .submit {
+       border-radius: 4px;
+       font-size: 19px;
+    }
+    
+    /* Fin del header */
+    
+    
+    /* Inicio del main */
+    
+    .contenedor2 .caja #presentacion{
+        width: 80vw;
+        max-width: 1000px;
+        height: 340px;
+    }
+
+    
+    .contenedor3 {
+        width: 80vw; 
+    }
+
+
+
+    
+    /* Fin del main */
+    
+    
+    /* Inicio del footer */
+    
+       .flex-footer {
+           display: flex;
+           align-items: center; 
+           justify-content: space-around;
+           gap: 2%;
+           padding: 10px;
+       }
+    
+    /* Fin del footer */
+    }
+    

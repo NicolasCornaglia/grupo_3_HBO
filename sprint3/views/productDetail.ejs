@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="css/stylesProductDetail.css">
+</head>
+<body>
+    <header class="main-header">
+        <%- include('./partials/header') %>
+    </header>
+    
+    <main>
+        <div class="main-mobile"> 
+            <div class="product">
+
+                <div class="top-img"> 
+                    <h2 class="product-name">Nombre</h2>
+                    <p class="product-description"> Alto Ancho Profundidad Color</p>
+                </div>
+
+                <img src="images/sillaSprint2.jpg" alt="producto a mostrar">
+
+                <div class="bottom-img">
+                    <h3 class="product-price">Precio total</h3>
+                    <h4 class="product-cuotas">Precio en X cuotas</h4>
+                    <p class="product-payment-options">Ver medios de pago</p>
+                </div>
+
+            </div>
+
+            <div class="bottom-buttons">
+                <div class="cantidad" action="#" method="GET">
+                    <input class="cuantity" placeholder=" Cantidad"/>
+                    <button type="submit">Aplicar </button> 
+                    <button type="reset">Cancelar </button>
+                </div>
+
+                <button type="submit" class="buy-now">Comprar ahora</button>
+
+                <button type="idk" class="add-to-cart">Añadir al carrito</button>
+            
+            </div>
+        </div>   
+
+        <div class="main-web">
+            <div class="flexbox-producto">
+                <div class="left-miniaturas">
+                    <h4> Fotos del producto </h4>
+                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                </div>
+
+                <div class="center-img">
+                    <img src="images/sillaSprint2.jpg" alt="producto a mostrar">
+                </div>
+
+                <div class="rigth-info">
+                    <h5> Nombre del producto </h5>
+                    <h6> Precio total </h6>
+                    <a href="#"> Ver medios de pago </a>
+                    <div class="seguro">
+                        <label>Seleccione tipo de seguro:</label>
+                        <select name="seguro">
+                            <option value="none">Ninguno</option>
+                            <option value="accident">Seguro por accidente</option>
+                            <option value="steal">Seguro por accidente y/o robo</option>
+                        </select>
+                    </div>      
+                    <div class="rigth-buttons">
+                        <button>Comprar ahora</button>
+                        <button>Añadir al carrito</button>
+                    </div>     
+                </div>
+            </div>
+
+            <div class="flexbox-descripcion-producto">
+                <h3>Nombre del producto</h3>
+                <h4>Color:</h4>
+                <h4>Altura:</h4>
+                <h4>Ancho:</h4>
+                <h4>Profundidad:</h4>
+                <h4>Material:</h4>
+                <h4>Garantía:</h4>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+</body>
+</html>
