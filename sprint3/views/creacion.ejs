@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/stylesLogin.css">
+</head>
+<body>
+    <header class="main-header">
+        <%- include('./partials/header') %>
+     </header>
+
+    <main>
+
+        <form class="login" action="/creacion" method="GET">
+            <h2>Nombre del Producto</h2>
+            <input class="borde" type="text" name="nombre" placeholder="Nombre del Producto" required >
+            <h2>Descripción</h2>
+            <input class="borde" type="text" name="descripción" placeholder="Descripción" required >
+            <h2>Imagen</h2>
+            <input class="borde" type="file" name="imagen" placeholder="Imagen" required >
+            <h2>Categoría</h2>
+            <input class="borde" type="text" name="categoría" placeholder="Categoría" required >
+            <h2>Colores</h2>
+            <input class="borde" type="text" name="colores" placeholder="Colores" required >
+            <h2>Precio</h2>
+            <input class="borde" type="text" name="precio" placeholder="Precio" required >
+            <button class="boton-entrar"  type="sumit">Buscar</button>
+        </form>
+    </main> 
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+</html>
