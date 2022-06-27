@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "name": "grupo_3_hbo",
+  "description": "Tematica del sitio: Venta de muebles(sillas, mesas, escritorios, bibliotecas, estantes, sillones, placares, camas)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasCornaglia/grupo_3_HBO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicolasCornaglia/grupo_3_HBO/issues"
+  },
+  "homepage": "https://github.com/NicolasCornaglia/grupo_3_HBO#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
