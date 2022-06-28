@@ -238,6 +238,42 @@
         border:#cccccc79 1px solid; 
         box-sizing: border-box;
     }
+    /* comienzo del editar */
+
+    /* .mainEditar{
+        text-align: center;
+
+    }
+
+    .login{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: auto;
+        padding: 20px;
+        width: 70%;
+    }
+    .borde{
+        padding:3px 10px;
+        border:1px solid black;
+        border-radius:3px;
+        background-color: white;
+        margin:8px 0;
+    }
+    .boton-entrar{
+        font-weight: bold;
+        background-color: #1259c3;
+        color: white;
+        border-radius:3px;
+        border:1px solid #1259c3;
+        padding:3px 10px;
+    }
+    .boton-entrar:hover{
+        background-color: #0022AA;
+        cursor: pointer
+    } */
+    
+    /* fin del editar */
 
 
 /* Fin del main */
