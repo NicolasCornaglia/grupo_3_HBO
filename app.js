@@ -12,6 +12,22 @@ const creacionRoutes = require("./routes/creacion");
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
+// LiveReload
+if (process.argv[2] !== 'prod') {
+   const livereload = require("livereload");
+   const connectLiveReload = require("connect-livereload");
+
+   const liveReloadServer = livereload.createServer();
+   liveReloadServer.server.once("connection", () => {
+       setTimeout(() => {
+           liveReloadServer.refresh("/");
+       }, 50);
+   });
+
+   // LiveReload middleware
+   app.use(connectLiveReload());
+}
+
 app.set('view engine', 'ejs');
 app.set("views", path.resolve(__dirname, "./views"));
 
