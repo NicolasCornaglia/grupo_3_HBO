@@ -132,6 +132,12 @@ a .logo {
     cursor: pointer
 }
 
+#editar{
+   font-size: 23px;
+   font-style: normal;
+   text-decoration: underline;
+}
+
 main form a{
     color: black;
   

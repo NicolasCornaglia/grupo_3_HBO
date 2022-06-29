@@ -8,6 +8,7 @@ const loginRoutes = require("./routes/login");
 const registerFormRoutes = require("./routes/registerForm");
 const productCartRoutes = require("./routes/productCart");
 const creacionRoutes = require("./routes/creacion");
+const editarRoutes = require("./routes/editar")
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
@@ -38,6 +39,7 @@ app.use('/login', loginRoutes);
 app.use('/register', registerFormRoutes);
 app.use('/productCart', productCartRoutes);
 app.use('/creacion', creacionRoutes);
+app.use('/editar', editarRoutes);
 
 
 app.listen(PORT, ()=>{
