@@ -1,8 +1,6 @@
-const items = require('../../views');
-
 const controller = {
    display: (req,res) => {
-      return res.render('productDetail.ejs', {items: items})
+      return res.render('productDetail.ejs')
    },
    obtenerPorId: (req,res) => {
       const itemId = parseInt(req.params.id, 10);

@@ -1,5 +1,3 @@
-const items = require('../../views');
-
 const controller = {
     display: (req,res) => {
        res.render('creacion.ejs')

@@ -1,16 +1,14 @@
 let productsData = require('../../DB/products.json');
 
-
-module.exports = {
-     createProducto : (req, res) => {
+const controller = {
+    crearProducto: (req, res) => {
         productsData.push(req.body);
         res.status(201).json(productsData);
         res.send('Producto creado');
     }
 }
 
-
-
+module.exports = controller;
 
 
 // function crearProducto(producto){
@@ -24,11 +22,3 @@ module.exports = {
 // function getProductoById(id){
 //     return productsData.find(producto => producto.id == id);
 // }
-
-
-
-module.exports = {
-    crearProducto,
-    getProductos,
-    getProductoById
-}
