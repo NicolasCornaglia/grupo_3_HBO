@@ -1,4 +1,4 @@
-const items = require('../data/items');
+const items = require('../../views');
 
 
 const controller = {

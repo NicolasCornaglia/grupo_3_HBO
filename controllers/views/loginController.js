@@ -1,4 +1,4 @@
-
+const items = require('../../views');
 
 const controller = {
    display: (req,res) => {

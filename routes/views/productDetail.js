@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {display} = require('../controllers/creacionController');
+const {display} = require('../../controllers/productDetailController.js');
 
 router.get('/', display);
 

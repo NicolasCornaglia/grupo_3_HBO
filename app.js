@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 const PORT = 3000;
 const path = require('path');
-const homeRoutes = require("./routes/home");
+const routes = require("./routes/_routes");
 const productDetailRoutes = require("./routes/productDetail");
 const loginRoutes = require("./routes/login");
 const registerFormRoutes = require("./routes/registerForm");
@@ -32,13 +32,14 @@ app.set('view engine', 'ejs');
 app.set("views", path.resolve(__dirname, "./views"));
 
 
-app.use('/', homeRoutes);
-app.use('/productDetail', productDetailRoutes);
-app.use('/login', loginRoutes);
-app.use('/register', registerFormRoutes);
-app.use('/productCart', productCartRoutes);
-app.use('/creacion', creacionRoutes);
+// app.use('/', homeRoutes);
+// app.use('/productDetail', productDetailRoutes);
+// app.use('/login', loginRoutes);
+// app.use('/register', registerFormRoutes);
+// app.use('/productCart', productCartRoutes);
+// app.use('/creacion', creacionRoutes);
 
+app.use('/', routes);
 
 app.listen(PORT, ()=>{
    console.log(`Servidor funcionando en el puerto ${PORT}`);

@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Afeitadora Gillete",
+        "precio": "$1.000",
+        "descripcion": "Afeitadora Gillete Max 3 Turbo",
+        "color": "Rojo"
+    },
+    {
+        "id": 2,
+        "nombre": "Coca Cola",
+        "precio": "$5",
+        "descripcion": "Coca cola 1.5L",
+        "color": "Rojo"
+    }
+]

@@ -1,4 +1,4 @@
-const items = require('../data/items');
+const items = require('../../views/home.ejs');
 
 const controller = {
    display: (req,res) => {
