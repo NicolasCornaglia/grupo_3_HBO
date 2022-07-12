@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "color_name": "Vinyl"
+    },
+    {
+        "id": 2,
+        "color_name": "Stone"
+    },
+    {
+        "id": 3,
+        "color_name": "Glass"
+    },
+    {
+        "id": 4,
+        "color_name": "Wood"
+    },
+    {
+        "id": 5,
+        "color_name": "Plastic"
+    },
+    {
+        "id": 6,
+        "color_name": "Metal"
+    },
+    {
+        "id": 7,
+        "color_name": "A"
+    },
+    {
+        "id": 8,
+        "color_name": "B"
+    },
+    {
+        "id": 9,
+        "color_name": "C"
+    },
+    {
+        "id": 10,
+        "color_name": "D"
+    }
+
+]

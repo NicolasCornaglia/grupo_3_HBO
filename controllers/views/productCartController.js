@@ -1,7 +1,6 @@
-
 const controller = {
    display: (req,res) => {
-      return res.render('register-form.ejs')
+      return res.render('productCart.ejs')
    }
 }
 
