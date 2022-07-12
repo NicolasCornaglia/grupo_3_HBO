@@ -10,23 +10,26 @@ app.use(express.static(publicPath));
 
 // LiveReload
 if (process.argv[2] !== 'prod') {
-   const livereload = require("livereload");
-   const connectLiveReload = require("connect-livereload");
+    const livereload = require("livereload");
+    const connectLiveReload = require("connect-livereload");
 
-   const liveReloadServer = livereload.createServer();
-   liveReloadServer.server.once("connection", () => {
-       setTimeout(() => {
-           liveReloadServer.refresh("/");
-       }, 50);
-   });
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.server.once("connection", () => {
+        setTimeout(() => {
+            liveReloadServer.refresh("/");
+        }, 50);
+    });
 
-   // LiveReload middleware
-   app.use(connectLiveReload());
+    // LiveReload middleware
+    app.use(connectLiveReload());
 }
 
 app.set('view engine', 'ejs');
 app.set("views", path.resolve(__dirname, "./views"));
 
+// middleware
+app.use(express.json());
+app.use(express.urlencoded());
 
 // app.use('/', homeRoutes);
 // app.use('/productDetail', productDetailRoutes);
@@ -37,8 +40,17 @@ app.set("views", path.resolve(__dirname, "./views"));
 
 app.use('', routes);
 
-app.listen(PORT, ()=>{
-   console.log(`Servidor funcionando en el puerto ${PORT}`);
+app.listen(PORT, () => {
+    console.log(`Servidor funcionando en el puerto ${PORT}`);
 });
 
 
+// const fs = require('fs');
+// const products = JSON.parse(fs.readFileSync(path.join(__dirname, '/DB/products.json'), 'utf-8'));
+
+// console.log('Productos antes de actualizar', products);
+// products.forEach(product => {
+//     product.category_id = Math.floor(Math.random() * 3)+1;;
+// })
+// console.log('Productos actualizados', products);
+// fs.writeFileSync(path.join(__dirname, '/DB/products.json'), JSON.stringify(products));
