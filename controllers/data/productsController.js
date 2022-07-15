@@ -31,7 +31,52 @@ const controller = {
 
         res.status(200).json(productsData);
         res.send('Productos obtenidos');
+    },
+
+    editProducts: (req, res) => {
+        let productToEditId = req.params.id;
+        let body = req.body;
+        console.log(body);
+        console.log(productToEditId, 'Id del producto');
+        // aca pediriamos el producto segun algun boton que diga editar producto en la pag
+        // y tambien trayendonos lo que tenga el html con req.body + el id a la hora de seleeccional el prod a editar
+
+        // Para el producto que queremos editar, modificamos los atributos del mismo en la BD.
+        let productToEdit = {
+            name: body.name,
+            description: body.description,
+            price: body.price,
+            category_id: body.category,
+            image: body.image,
+            dimensions: body.dimensions,
+            color_id: body.colors,
+            material_id: body.materials,
+            updated_at: new Date()
+        }
+
+        for (let product of productsData) {
+            if (product.id == productToEditId) {
+                product.name = productToEdit.name;
+                product.description = productToEdit.description;
+                product.price = productToEdit.price;
+                product.category_id = productToEdit.category_id;
+                product.image = productToEdit.image;
+                product.dimensions = productToEdit.dimensions;
+                product.color_id = productToEdit.color_id;
+                product.material_id = productToEdit.material_id;
+                product.updated_at = new Date();
+            }
+        }
+
+        // Guardamos en la BD los productos, incluido el editado
+        fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData));
+
+        res.status(201).json(productsData);
+        res.send();
     }
+
+
+
 }
 
 // {

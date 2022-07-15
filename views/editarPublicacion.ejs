@@ -5,6 +5,11 @@
     <link rel="stylesheet" href="\css\stylesLogin.css">  
 </head>
 
+<script>
+
+</script>
+
+
 <body>
 
     <header class="main-header">
@@ -12,21 +17,25 @@
     </header>
 
     <main class="mainEditar">
-        <form class="login" action="/creacion" method="GET">
-            <h1 id="editar">Editar</h1>
-            <h2>Nombre del Producto</h2>
-            <input class="borde" type="text" name="nombre" placeholder="Nombre del Producto" required >
+        <form id="form" class="login" action="/api/products/<%- productToEditId %>?_method=PUT" method="POST">
+            <h1 id="editar">Editar producto <%= productToEditId %> </h1>
+            <h2>Nombre del Producto:</h2>
+            <input class="borde" type="text" name="name" placeholder="Nombre del Producto" required>
             <h2>Descripción</h2>
-            <input class="borde" type="text" name="descripción" placeholder="Descripción" required >
+            <input class="borde" type="text" name="description" placeholder="Descripción" required>
             <h2>Imagen</h2>
-            <input class="borde" type="file" name="imagen" placeholder="Imagen" required >
+            <input id="imagen" class="borde" type="file" name="image" placeholder="Imagen" required>
             <h2>Categoría</h2>
-            <input class="borde" type="text" name="categoría" placeholder="Categoría" required >
+            <input class="borde" type="text" name="category" placeholder="Categoría" required>
             <h2>Colores</h2>
-            <input class="borde" type="text" name="colores" placeholder="Colores" required >
+            <input class="borde" type="text" name="colors" placeholder="Colores" required>
             <h2>Precio</h2>
-            <input class="borde" type="text" name="precio" placeholder="Precio" required >
-            <button class="boton-entrar"  type="sumit">Buscar</button>
+            <input class="borde" type="text" name="price" placeholder="Precio"  required>
+            <h2>Dimensiones</h2>
+            <input class="borde" type="text" name="dimensions" placeholder="Precio" required>
+            <h2>Materiales</h2>
+            <input class="borde" type="text" name="materials" placeholder="Materiales" required>
+            <button class="boton-entrar"  type="submit">Finalizar Edición</button>
         </form>
     </main>
 
