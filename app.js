@@ -2,11 +2,13 @@ let express = require('express');
 let app = express();
 const PORT = 3000;
 const path = require('path');
+const methodOverride = require('method-override');
 const routes = require("./routes/_routes");
 
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
+app.use(methodOverride('_method'));
 
 // LiveReload
 if (process.argv[2] !== 'prod') {
