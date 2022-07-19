@@ -14,25 +14,37 @@
     <main>
 
         <form id="form" class="login" action="/api/products" method="POST">
-            <h2>Nombre del Producto</h2>
-            <input class="borde" type="text" name="name" placeholder="Nombre del Producto" required>
-            <h2>Descripción</h2>
-            <input class="borde" type="text" name="description" placeholder="Descripción" required>
-            <h2>Imagen</h2>
-            <input id="imagen" class="borde" type="file" name="image" placeholder="Imagen" required>
-            <h2>Categoría</h2>
-            <input class="borde" type="text" name="category" placeholder="Categoría" required>
-            <h2>Colores</h2>
-            <input class="borde" type="text" name="colors" placeholder="Colores" required>
-            <h2>Precio</h2>
-            <input class="borde" type="text" name="price" placeholder="Precio" required>
-            <h2>Dimensiones</h2>
-            <input class="borde" type="text" name="dimensions" placeholder="Precio" required>
-            <h2>Materiales</h2>
-            <input class="borde" type="text" name="materials" placeholder="Precio" required>
-            <!-- <select>
-            </select> -->
-            <button class="boton-entrar" type="sumit">Buscar</button>
+            <labbel>Nombre del Producto:</labbel>
+            <input class="borde" type="text" name="name" placeholder="Nombre del Producto"  required>
+            <labbel>Descripción</labbel>
+            <input class="borde" type="text" name="description" placeholder="Descripción"  required>
+            <labbel>Imagen</labbel>
+            <input id="imagen" class="borde" type="file" name="image" placeholder="Imagen"  required>
+            <labbel>Categoría</labbel>
+            <select class="borde" name="color"  required>
+                <option value="1">Silla</option>
+                <option value="2">Mesa</option>
+                <option value="3">Cama</option>
+            </select>
+            <labbel>Color</labbel>
+            <select class="borde" name="colors" required>
+                <option value="1">Madera</option>
+                <option value="2">Piedra</option>
+                <option value="3">Negro</option>
+                <option value="4">Blanco</option>
+            </select>    
+            <labbel>Precio</labbel>
+            <input class="borde" type="text" name="price" placeholder="Precio"  required>
+            <labbel>Dimensiones en formato: Alto x Ancho x Profundidad</labbel>
+            <input class="borde" type="text" name="dimensions" placeholder="Dimensiones"  required>
+            <labbel>Materiales</labbel>
+            <select class="borde" name="materials"  required>
+                <option value="1">Madera</option>
+                <option value="2">Piedra</option>
+                <option value="3">Vidrio</option>
+                <option value="4">Metal</option>
+            </select> 
+            <button class="boton-entrar" type="sumit">Crear producto</button>
         </form>
     </main>
 

@@ -238,6 +238,14 @@
         border:#cccccc79 1px solid; 
         box-sizing: border-box;
     }
+
+    .productText {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 12px;
+    }
+
     /* comienzo del editar */
 
     /* .mainEditar{

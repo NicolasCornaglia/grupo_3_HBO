@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/products.json'), 'utf-8'));
 
-
-
 const controller = {
     createProduct: (req, res) => {
         const body = req.body
@@ -23,14 +21,28 @@ const controller = {
         }
         productsData.push(newProduct);
         fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData))
-        res.status(201).json(newProduct);
-        res.send('Producto creado');
+/*         res.status(201).json(newProduct);
+        res.send('Producto creado'); */
+        res.redirect('/')
     },
 
     getProducts: (req, res) => {
+/*         res.status(200).json(productsData); */
+/*         res.send('Productos obtenidos'); */
+        res.render('home.ejs', {products: productsData})
+    },
 
-        res.status(200).json(productsData);
-        res.send('Productos obtenidos');
+    productToEdit: (req, res) => {
+        let productToEditId = req.params.id;
+        let productToEdit;
+
+        for (let product of productsData) {
+            if (product.id == productToEditId) {
+                productToEdit = product;
+            }
+        }
+
+        return res.render('editarPublicacion', { productToEdit: productToEdit} )
     },
 
     editProducts: (req, res) => {
@@ -38,10 +50,7 @@ const controller = {
         let body = req.body;
         console.log(body);
         console.log(productToEditId, 'Id del producto');
-        // aca pediriamos el producto segun algun boton que diga editar producto en la pag
-        // y tambien trayendonos lo que tenga el html con req.body + el id a la hora de seleeccional el prod a editar
 
-        // Para el producto que queremos editar, modificamos los atributos del mismo en la BD.
         let productToEdit = {
             name: body.name,
             description: body.description,
@@ -67,17 +76,56 @@ const controller = {
                 product.updated_at = new Date();
             }
         }
-
         // Guardamos en la BD los productos, incluido el editado
         fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData));
 
-        res.status(201).json(productsData);
-        res.send();
-    }
+        /* res.status(201).json(productsData); */
+        res.redirect('/') 
+    },
 
-
-
+    detailProduct: (req,res) => {
+        const itemId = parseInt(req.params.id, 10);
+        let itemEncontrado; 
+        
+        for (let i=0; i<productsData.length; i++) {
+           if (productsData[i].id === itemId) {
+              itemEncontrado = productsData[i];
+           }
+        }
+  
+        // si no se encuentra ningun producto
+        if (!itemEncontrado) {
+           res.status(404).send("No se encuentra el item");
+        } 
+        else {
+           return res.render('productDetail', {item: itemEncontrado});
+        }
+    },
+    destroy : (req, res) => {/*res.send("hola eliminar")*/
+			let productId = parseInt(req.params.id, 10);
+			for (let i = 0; i < productsData.length; i++) {
+				if ( productsData[i].id === productId ) {
+					productsData.splice(i, 1)
+				}
+			}
+			res.send(`se ha borrado el producto id ${productId}`);
+		}    
 }
+
+module.exports = controller;
+
+
+// function crearProducto(producto){
+//     productsData.push(producto);
+// }
+
+// function getProductos(){
+//     return productsData;
+// }
+
+// function getProductoById(id){
+//     return productsData.find(producto => producto.id == id);
+// }
 
 // {
 //     name: 'TEST PRODUCT',
@@ -102,20 +150,3 @@ const controller = {
 //     "color_id": 5,
 //     "image": "http://dummyimage.com/450x450.bmp/cc0000/ffffff"
 // },
-
-
-
-module.exports = controller;
-
-
-// function crearProducto(producto){
-//     productsData.push(producto);
-// }
-
-// function getProductos(){
-//     return productsData;
-// }
-
-// function getProductoById(id){
-//     return productsData.find(producto => producto.id == id);
-// }

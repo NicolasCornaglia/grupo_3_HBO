@@ -16,12 +16,18 @@
                     <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
                     <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
                     <div class="carrusel">
-                        <div class="product" id="product_0">
-                            <img src="images\silla-carrusel.jpg" width="195" height="100" />
-                            <h5>Silla Eames Blanca</h5>
-                            <p>$6000</p>
-                        </div>
-                        <div class="product" id="product_1">
+                        <% for (let i=0; i<products.length ; i++) { %>
+                            <div class="product" id="product_<%- i %>">
+                                <img src="/images/<%- products[i].image%>" width="195" height="100" />
+                                <div class="productText">
+                                    <h5><%= products[i].name %></h5>
+                                    <p>$<%= products[i].price %></p>
+                                </div>
+                            </div>
+                        <% } %>
+
+
+<!--                         <div class="product" id="product_1">
                             <img src="images\mesa-ratona.jpg" width="195" height="100" />
                             <h5>Mesa ratona de Madera</h5>
                             <p>$20000</p>
@@ -45,7 +51,7 @@
                             <img src="images\cama-2-plazas.jpeg" width="195" height="100" />
                             <h5>Cama Dulces Sueños- 2 plazas </h5>
                             <p>$70000</p>
-                        </div>
+                        </div> -->
                     </div>             
                 </div> 
 

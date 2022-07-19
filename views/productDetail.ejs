@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="css/stylesProductDetail.css">
+    <link rel="stylesheet" href="/css/stylesProductDetail.css">
 </head>
 <body>
     <header class="main-header">
@@ -14,14 +14,14 @@
             <div class="product">
 
                 <div class="top-img"> 
-                    <h2 class="product-name">Nombre</h2>
+                    <h2 class="product-name"> <%= item.name %> </h2>
                     <p class="product-description"> Alto Ancho Profundidad Color</p>
                 </div>
 
-                <img src="images/sillaSprint2.jpg" alt="producto a mostrar">
+                <img src="/images/<%= item.image %>" alt="producto a mostrar">
 
                 <div class="bottom-img">
-                    <h3 class="product-price">Precio total</h3>
+                    <h3 class="product-price"> <%= item.price %></h3>
                     <h4 class="product-cuotas">Precio en X cuotas</h4>
                     <p class="product-payment-options">Ver medios de pago</p>
                 </div>
@@ -46,14 +46,14 @@
             <div class="flexbox-producto">
                 <div class="left-miniaturas">
                     <h4> Fotos del producto </h4>
-                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
+                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
                 </div>
 
                 <div class="center-img">
-                    <img src="images/sillaSprint2.jpg" alt="producto a mostrar">
+                    <img src="/images/sillaSprint2.jpg" alt="producto a mostrar">
                 </div>
 
                 <div class="rigth-info">

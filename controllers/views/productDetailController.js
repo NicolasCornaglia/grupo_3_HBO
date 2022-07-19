@@ -1,8 +1,6 @@
-const controller = {
+/* const controller = {
+
    display: (req,res) => {
-      return res.render('productDetail.ejs')
-   },
-   obtenerPorId: (req,res) => {
       const itemId = parseInt(req.params.id, 10);
       let itemEncontrado; 
       
@@ -22,4 +20,4 @@ const controller = {
    }   
 }
 
-module.exports = controller;
+module.exports = controller; */

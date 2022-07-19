@@ -40,7 +40,7 @@ app.use(express.urlencoded());
 // app.use('/productCart', productCartRoutes);
 // app.use('/creacion', creacionRoutes);
 
-app.use('', routes);
+app.use('/', routes);
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT}`);
