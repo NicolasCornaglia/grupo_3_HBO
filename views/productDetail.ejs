@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="rigth-info">
-                    <h5> Nombre del producto </h5>
-                    <h6> Precio total </h6>
+                    <h5> <%= prod?.name %> </h5>
+                    <h6> <%= prod?.price %></h6>
                     <a href="#"> Ver medios de pago </a>
                     <div class="seguro">
                         <label>Seleccione tipo de seguro:</label>
@@ -76,12 +76,12 @@
             </div>
 
             <div class="flexbox-descripcion-producto">
-                <h3>Nombre del producto</h3>
-                <h4>Color:</h4>
-                <h4>Altura:</h4>
-                <h4>Ancho:</h4>
-                <h4>Profundidad:</h4>
-                <h4>Material:</h4>
+                <h3><%= prod?.name %></h3>
+                <h4>Color: <%= prod?.color_id %></h4>
+                <h4>Altura:<%= prod?.dimensions %></h4>
+                <h4>Ancho: <%= prod?.dimensions %></h4>
+                <h4>Profundidad: <%= prod?.dimensions %> </h4>
+                <h4>Material: <%= prod?.material_id %></h4>
                 <h4>Garantía:</h4>
             </div>
         </div>

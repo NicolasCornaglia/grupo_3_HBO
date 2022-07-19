@@ -44,6 +44,22 @@ const controller = {
 
         return res.render('editarPublicacion', { productToEdit: productToEdit} )
     },
+    
+    obtenerPorId: (req, res) => {
+        const productId = parseInt (req.params.id, 10)
+        let productoEncontrado;
+
+        for (let i = 0; i < productsData.length; i++){
+            if(productsData[i].id === productId){
+
+                productoEncontrado = productsData[i]
+
+            }
+
+        }
+        res.send (productoEncontrado)
+       
+    }, 
 
     editProducts: (req, res) => {
         let productToEditId = req.params.id;

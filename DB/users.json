@@ -1,0 +1,122 @@
+[{
+    "id": 1,
+    "firstname": "Auberta",
+    "lastname": "Marner",
+    "email": "amarner0@arizona.edu",
+    "password": "StYjRGhXDEr3",
+    "phonenumber": "8631841074",
+    "city": "Waepau",
+    "gender": "Female",
+    "category": "user",
+    "avatar": "https://robohash.org/utquiea.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 2,
+    "firstname": "Elvina",
+    "lastname": "Trevorrow",
+    "email": "etrevorrow1@webs.com",
+    "password": "sI9V1hhwUjx",
+    "phonenumber": "9318866899",
+    "city": "Troyes",
+    "gender": "Female",
+    "category": "user",
+    "avatar": "https://robohash.org/quiamolestiaeaut.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 3,
+    "firstname": "Misti",
+    "lastname": "Mafham",
+    "email": "mmafham2@github.com",
+    "password": "fR8ZsWTIQ3wR",
+    "phonenumber": "3777767309",
+    "city": "Pavliš",
+    "gender": "Female",
+    "category": "user",
+    "avatar": "https://robohash.org/minusdoloresdoloribus.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 4,
+    "firstname": "Ferdy",
+    "lastname": "McCrisken",
+    "email": "fmccrisken3@seattletimes.com",
+    "password": "75ii8zG",
+    "phonenumber": "3879573207",
+    "city": "Noemuti",
+    "gender": "Male",
+    "category": "user",
+    "avatar": "https://robohash.org/veritatisquibusdamdolores.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 5,
+    "firstname": "Alberto",
+    "lastname": "Baston",
+    "email": "abaston4@hp.com",
+    "password": "xSy1UjENCZ7h",
+    "phonenumber": "9672474165",
+    "city": "Fengcun",
+    "gender": "Male",
+    "category": "user",
+    "avatar": "https://robohash.org/utlaboreea.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 6,
+    "firstname": "Elvis",
+    "lastname": "Pietzner",
+    "email": "epietzner5@ucsd.edu",
+    "password": "Z04Z8YfM0",
+    "phonenumber": "9051002426",
+    "city": "Kapsan-ŭp",
+    "gender": "Male",
+    "category": "user",
+    "avatar": "https://robohash.org/velitofficiadolorum.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 7,
+    "firstname": "See",
+    "lastname": "Gieraths",
+    "email": "sgieraths6@ocn.ne.jp",
+    "password": "vfMoLHkA0T",
+    "phonenumber": "3116908383",
+    "city": "Södertälje",
+    "gender": "Male",
+    "category": "user",
+    "avatar": "https://robohash.org/iureminuset.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 8,
+    "firstname": "Lelia",
+    "lastname": "Sapir",
+    "email": "lsapir7@si.edu",
+    "password": "xGh3bUQ1EZzN",
+    "phonenumber": "5349536864",
+    "city": "Chuantang",
+    "gender": "Female",
+    "category": "user",
+    "avatar": "https://robohash.org/modietad.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 9,
+    "firstname": "Noellyn",
+    "lastname": "Tangye",
+    "email": "ntangye8@telegraph.co.uk",
+    "password": "w7CV00Ro",
+    "phonenumber": "4067878346",
+    "city": "Marechal Cândido Rondon",
+    "gender": "Female",
+    "category": "user",
+    "avatar": "https://robohash.org/dictamagnamofficiis.jpg?size=50x50&set=set1"
+  }, 
+  {
+    "id": 10,
+    "firstname": "Sancho",
+    "lastname": "Guidone",
+    "email": "sguidone9@squarespace.com",
+    "password": "0B22H4yVwH",
+    "phonenumber": "2829945997",
+    "city": "Póvoa de Penela",
+    "gender": "Male",
+    "category": "user",
+    "avatar": "https://robohash.org/voluptatemquaeratet.jpg?size=50x50&set=set1"
+  }
+]
+  
