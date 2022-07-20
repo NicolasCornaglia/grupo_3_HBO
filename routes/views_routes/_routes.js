@@ -10,22 +10,22 @@ const registerFormController = require('../../controllers/views/registerFormCont
 
 const productController = require('../../controllers/data/productsController');
 
-/* router.use('', require('./home.js'));
-router.use('/productDetail', require('./productDetail.js'));
-router.use('/login', require('./login.js'));
-router.use('/register', require('./registerForm.js'));
-router.use('/productCart', require('./productCart.js'));
-router.use('/creacion', require('./creacion.js'));
-router.use('/editar', require('./editar.js'));
-*/
-
+// vistas generales 
 router.get('/', productController.getProducts);
+
+
+// vistas de productos
 router.get('/creacion', creationController.display);
 router.get('/editar/:id', productController.productToEdit);
-router.get('/login', loginController.display);
 router.get('/productCart', productCartController.display);
 router.get('/productDetail/:id', productController.detailProduct);
+
+
+// vistas de usuarios
+router.get('/login', loginController.display);
 router.get('/register', registerFormController.display);
+
+
 
 module.exports = router;
 

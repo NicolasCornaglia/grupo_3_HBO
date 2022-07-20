@@ -33,10 +33,9 @@
             </select>
             <labbel>Color</labbel>
             <select class="borde" name="colors" value="<%= productToEdit.color_id %>" required>
-                <option value="1">Madera</option>
-                <option value="2">Piedra</option>
-                <option value="3">Negro</option>
-                <option value="4">Blanco</option>
+<!--               TODO  <% for (let material of materials) { %>
+                    <option value="<%= material.id %>"><%= material.material_name %></option>
+                <% { %> -->
             </select>    
             <labbel>Precio</labbel>
             <input class="borde" type="text" name="price" placeholder="Precio" value="<%= productToEdit.price %>" required>
@@ -59,3 +58,4 @@
 
 </body>
 </html>
+
