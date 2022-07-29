@@ -15,15 +15,15 @@
 
         <form class="login" action="/login" method="POST">
             <h2>Ingresá a tu cuenta</h2>
-            <input class="borde" type="text" name="usuario" placeholder="E-mail o usuario" required>
-            <input class="borde" type="password" name="contraseña" placeholder="Contraseña" required minlength="4">
+            <input class="borde" type="text" name="email" placeholder="E-mail" required>
+            <input class="borde" type="password" name="password" placeholder="Contraseña" required minlength="4">
             <div>
-                <input type="checkbox" id="usuario-contraseña" name="usuario-contraseña">
-                <label for="usuario-contraseña">Recordar usuario y contraseña</label>
+                <input type="checkbox" id="usuario-contraseña" name="rememberMe">
+                <label for="rememberMe">Recordar usuario y contraseña</label>
             </div>
             <a href="#">Olvidaste tu contraseña</a>
-            <button class="boton-entrar" type="sumit">Entrar</button>
-            <button class="boton-cuenta" type="sumit">Crear cuenta</button>
+            <button class="boton-entrar" type="submit">Entrar</button>
+            <button class="boton-cuenta" type="submit">Crear cuenta</button>
         </form>
     </main>
 
