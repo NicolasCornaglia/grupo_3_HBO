@@ -4,6 +4,7 @@ const PORT = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
 const routes = require("./routes/_routes");
+const busboyBodyParser = require('busboy-body-parser');
 
 
 const publicPath = path.resolve(__dirname, "./public");
@@ -32,6 +33,7 @@ app.set("views", path.resolve(__dirname, "./views"));
 // middleware
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(busboyBodyParser());
 
 // app.use('/', homeRoutes);
 // app.use('/productDetail', productDetailRoutes);

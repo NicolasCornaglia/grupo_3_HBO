@@ -12,26 +12,32 @@
 
     <main>
         <div class="main-mobile">
-            <form action="/register" method="POST" class="formulario">
+            <form action="/api/users/register" method="POST" class="formulario" enctype="multipart/form-data">
                     <h2>Registra tu cuenta</h2>
                     
                     <div class="label">
-                        <label for="Nombre de usuario:" class="floatLabel">Nombre de usuario:</label>
+                        <label class="floatLabel">Nombre de usuario:</label>
                     </div>
                     
-                    <input id="Nombre de usuario:" name="Nombre de usuario:" type="text" placeholder="Ej: Juan123" required minlength="4" class="write-space">
+                    <input name="username" type="text" placeholder="Ej: Juan123" required minlength="4" class="write-space">
                     
                     <div class="label">
-                        <label for="Correo electronico:" class="floatLabel">Correo electrónico:</label>
+                        <label class="floatLabel">Correo electrónico:</label>
                     </div>
                     
-                    <input id="Correo electronico:" name="Correo electronico:" type="email" placeholder="Ej: juan10@gmail.com" required minlength="4" class="write-space">
+                    <input name="email" type="email" placeholder="Ej: juan10@gmail.com" required minlength="4" class="write-space">
                     
                     <div class="label">
-                        <label for="Contraseña:" class="floatLabel">Contraseña:</label>
+                        <label class="floatLabel">Imagen de perfil:</label>
+                    </div>
+      
+                    <input name="image" type="file" placeholder="Imagen" class="write-space">
+
+                    <div class="label">
+                        <label class="floatLabel">Contraseña:</label>
                     </div>
                     
-                    <input id="Contraseña:" name="Contraseña:" type="password" placeholder="No compartir" required minlength="4" class="write-space">
+                    <input name="password" type="password" placeholder="No compartir" required minlength="4" class="write-space">
 
                     <button type="submit" class="boton-registrar"> Registrarse </button>
                     <button type="reset" class="boton-borrar"> Borrar </button>    
