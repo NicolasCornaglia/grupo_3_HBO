@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "color_name": "Vinyl"
+        "color_name": "Gris"
     },
     {
         "id": 2,
-        "color_name": "Stone"
+        "color_name": "Blanco"
     },
     {
         "id": 3,
-        "color_name": "Glass"
+        "color_name": "Negro"
     },
     {
         "id": 4,
-        "color_name": "Wood"
+        "color_name": "Madera"
     },
     {
         "id": 5,
-        "color_name": "Plastic"
+        "color_name": "Metalico"
     },
     {
         "id": 6,
-        "color_name": "Metal"
+        "color_name": "Marron"
     },
     {
         "id": 7,

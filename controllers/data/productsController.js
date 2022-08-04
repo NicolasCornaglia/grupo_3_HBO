@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/products.json'), 'utf-8'));
+const materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/materials.json'), 'utf-8'));
+const colorsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/colors.json'), 'utf-8'));
+const categorysData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/category.json'), 'utf-8'));
 
 const controller = {
     createProduct: (req, res) => {
@@ -21,15 +24,11 @@ const controller = {
         }
         productsData.push(newProduct);
         fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData))
-/*         res.status(201).json(newProduct);
-        res.send('Producto creado'); */
         res.redirect('/')
     },
 
     getProducts: (req, res) => {
-/*         res.status(200).json(productsData); */
-/*         res.send('Productos obtenidos'); */
-        res.render('home.ejs', {products: productsData})
+        res.render('home.ejs', { products: productsData })
     },
 
     productToEdit: (req, res) => {
@@ -42,24 +41,24 @@ const controller = {
             }
         }
 
-        return res.render('editarPublicacion', { productToEdit: productToEdit} )
+        return res.render('editarPublicacion.ejs', { data: { productToEdit: productToEdit, materials: materialsData, colors: colorsData, categorys: categorysData } })
     },
-    
+
     obtenerPorId: (req, res) => {
-        const productId = parseInt (req.params.id, 10)
+        const productId = parseInt(req.params.id, 10)
         let productoEncontrado;
 
-        for (let i = 0; i < productsData.length; i++){
-            if(productsData[i].id === productId){
+        for (let i = 0; i < productsData.length; i++) {
+            if (productsData[i].id === productId) {
 
                 productoEncontrado = productsData[i]
 
             }
 
         }
-        res.send (productoEncontrado)
-       
-    }, 
+        res.send(productoEncontrado)
+
+    },
 
     editProducts: (req, res) => {
         let productToEditId = req.params.id;
@@ -92,77 +91,39 @@ const controller = {
                 product.updated_at = new Date();
             }
         }
-        // Guardamos en la BD los productos, incluido el editado
+
         fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData));
-
-        /* res.status(201).json(productsData); */
-        res.redirect('/') 
+        res.redirect('/')
     },
 
-    detailProduct: (req,res) => {
-        const itemId = parseInt(req.params.id, 10);
-        let itemEncontrado; 
-        
-        for (let i=0; i<productsData.length; i++) {
-           if (productsData[i].id === itemId) {
-              itemEncontrado = productsData[i];
-           }
+    detailProduct: (req, res) => {
+        const IdUrl = parseInt(req.params.id, 10);
+        let productoEncontrado;
+
+        for (let product of productsData) {
+            if (product.id === IdUrl) {
+                productoEncontrado = product;
+            }
         }
-  
-        // si no se encuentra ningun producto
-        if (!itemEncontrado) {
-           res.status(404).send("No se encuentra el item");
-        } 
+
+        if (!productoEncontrado) {
+            res.status(404).send("No se encuentra el producto");
+        }
         else {
-           return res.render('productDetail', {item: itemEncontrado});
+            return res.render('productDetail.ejs', { data: { product: productoEncontrado } }); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
     },
-    destroy : (req, res) => {/*res.send("hola eliminar")*/
-			let productId = parseInt(req.params.id, 10);
-			for (let i = 0; i < productsData.length; i++) {
-				if ( productsData[i].id === productId ) {
-					productsData.splice(i, 1)
-				}
-			}
-			res.send(`se ha borrado el producto id ${productId}`);
-		}    
+    destroy: (req, res) => {
+        let productId = parseInt(req.params.id, 10);
+        for (let i = 0; i < productsData.length; i++) {
+            if (productsData[i].id === productId) {
+                productsData.splice(i, 1)
+            }
+        }
+        res.send(`se ha borrado el producto id ${productId}`);
+    }
 }
 
 module.exports = controller;
 
 
-// function crearProducto(producto){
-//     productsData.push(producto);
-// }
-
-// function getProductos(){
-//     return productsData;
-// }
-
-// function getProductoById(id){
-//     return productsData.find(producto => producto.id == id);
-// }
-
-// {
-//     name: 'TEST PRODUCT',
-//     description: 'TEST PRODUCT',
-//     image: 'FWlfVIlWIAAZqu7.jpeg',
-//     category: '1',
-//     colors: '2',
-//     price: '123',
-//     dimensions: '1231234123',
-//     materials: '1'
-//   }
-
-// {
-//     "id": 1,
-//     "name": "Rabbit - Legs",
-//     "dimensions": "vivamus",
-//     "description": "semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut",
-//     "price": 2112.85,
-//     "discount": 47,
-//     "category_id": 3,
-//     "material_id": 2,
-//     "color_id": 5,
-//     "image": "http://dummyimage.com/450x450.bmp/cc0000/ffffff"
-// },

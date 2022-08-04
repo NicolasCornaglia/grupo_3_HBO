@@ -10,18 +10,19 @@
     </header>
     
     <main>
-        <div class="main-mobile"> 
+        <div class="main-mobile" > 
+            
             <div class="product">
 
                 <div class="top-img"> 
-                    <h2 class="product-name"> <%= item.name %> </h2>
+                    <h2 class="product-name"> <%= data.product.name %> </h2>
                     <p class="product-description"> Alto Ancho Profundidad Color</p>
                 </div>
 
-                <img src="/images/<%= item.image %>" alt="producto a mostrar">
+                <img src="/images/<%= data.product.image %>" alt="producto a mostrar">
 
                 <div class="bottom-img">
-                    <h3 class="product-price"> <%= item.price %></h3>
+                    <h3 class="product-price"> <%= data.product.price %></h3>
                     <h4 class="product-cuotas">Precio en X cuotas</h4>
                     <p class="product-payment-options">Ver medios de pago</p>
                 </div>
@@ -57,8 +58,8 @@
                 </div>
 
                 <div class="rigth-info">
-                    <h5> <%= prod?.name %> </h5>
-                    <h6> <%= prod?.price %></h6>
+                    <h5> <%= data.product.name %> </h5>
+                    <h6> <%= data.product.price %></h6>
                     <a href="#"> Ver medios de pago </a>
                     <div class="seguro">
                         <label>Seleccione tipo de seguro:</label>
@@ -76,19 +77,13 @@
             </div>
 
             <div class="flexbox-descripcion-producto">
-                <h3><%= prod?.name %></h3>
-                <h4>Color: <%= prod?.color_id %></h4>
-                <h4>Altura:<%= prod?.dimensions %></h4>
-                <h4>Ancho: <%= prod?.dimensions %></h4>
-                <h4>Profundidad: <%= prod?.dimensions %> </h4>
-                <h4>Material: <%= prod?.material_id %></h4>
+                <h3><%= data.product.name %></h3>
+                <h4>Color: <%= data.product.color_id %></h4>
+                <h4>Altura, Ancho y Profundidad:<%= data.product.dimensions %></h4>
+                <h4>Material: <%= data.product.material_id %></h4>
                 <h4>Garantía:</h4>
             </div>
         </div>
-
-
-
-
 
     </main>
 

@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const User = require("../models/User"); //Requiero el CRUD de usuarios
+const User = require("../../models/User"); //Requiero el CRUD de usuarios
 const bcrypt = require("bcryptjs");
 
 const controller = {
@@ -31,7 +31,7 @@ const controller = {
                    res.cookie("userMail", req.body.mail, { maxAge: (1000 * 2) * 60 })
                }//Con esta cookie me voy al profile mas abajo y voy a poder loguear a la persona automaticamente para ello me voy al middleware de aplicacion del usuario previamente creado. Si tengo a alguien en una cookie quiero buscar a esa persona
 
-               return res.redirect("/userProfile")
+               return res.redirect("/")
            }
            return res.render("login", { errors: { mail: { msg: "Las credenciales son invalidas" } } });
        }

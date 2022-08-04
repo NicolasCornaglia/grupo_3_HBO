@@ -18,7 +18,7 @@
                     <div class="carrusel">
                         <% for (let i=0; i<products.length ; i++) { %>
                             <div class="product" id="product_<%- i %>">
-                                <img src="/images/<%- products[i].image%>" width="195" height="100" />
+                                <a href="/productDetail/<%- products[i].id %>"><img src="/images/<%- products[i].image%>" width="195" height="100" /></a>
                                 <div class="productText">
                                     <h5><%= products[i].name %></h5>
                                     <p>$<%= products[i].price %></p>
