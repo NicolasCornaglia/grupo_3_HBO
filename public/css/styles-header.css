@@ -94,7 +94,7 @@ a .logo {
 
 /* Fin del header */
 
-@media (min-width: 360px) {
+@media (min-width: 450px) {
    .hamburger-button {
        display: none;
    }
