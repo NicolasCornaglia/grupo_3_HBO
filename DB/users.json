@@ -1,9 +1,9 @@
 [{
     "id": 1,
-    "firstname": "Auberta",
-    "lastname": "Marner",
-    "email": "amarner0@arizona.edu",
-    "password": "StYjRGhXDEr3",
+    "firstname": "Nicolas",
+    "lastname": "Cornaglia",
+    "email": "test@test.com",
+    "password": "$2y$10$Hme4v3VL30k0WhO68ewhuODgRoSKy95tSAWHcZa1KJaz/7D9cOtl6",
     "phonenumber": "8631841074",
     "city": "Waepau",
     "gender": "Female",

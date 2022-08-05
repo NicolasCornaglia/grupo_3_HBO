@@ -4,7 +4,15 @@ const PORT = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
 const routes = require("./routes/_routes");
+const cookies = require("cookie-parser")
+const session = require("express-session");
 
+
+app.use(session({
+    secret: "Informacion confidencial",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));

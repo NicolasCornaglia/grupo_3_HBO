@@ -1,7 +1,12 @@
 {
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cookies-parser": "^1.2.0",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
     "method-override": "^3.0.0"
   },
   "name": "grupo_3_hbo",
@@ -10,7 +15,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "dev": "nodemon --ext '*' app.js"
   },
   "repository": {
