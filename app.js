@@ -6,17 +6,7 @@ const methodOverride = require('method-override');
 const routes = require("./routes/_routes");
 const cookies = require("cookie-parser")
 const session = require("express-session");
-
-
-app.use(session({
-    secret: "Informacion confidencial",
-    resave: false,
-    saveUninitialized: false,
-}));
-
 const publicPath = path.resolve(__dirname, "./public");
-app.use(express.static(publicPath));
-app.use(methodOverride('_method'));
 
 // LiveReload
 if (process.argv[2] !== 'prod') {
@@ -34,33 +24,26 @@ if (process.argv[2] !== 'prod') {
     app.use(connectLiveReload());
 }
 
+// Middlewares
+app.use(session({
+    secret: "Informacion confidencial",
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(express.static(publicPath));
+app.use(methodOverride('_method'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cookies());
+
+//Template Engine
 app.set('view engine', 'ejs');
 app.set("views", path.resolve(__dirname, "./views"));
 
-// middleware
-app.use(express.json());
-app.use(express.urlencoded());
-
-// app.use('/', homeRoutes);
-// app.use('/productDetail', productDetailRoutes);
-// app.use('/login', loginRoutes);
-// app.use('/register', registerFormRoutes);
-// app.use('/productCart', productCartRoutes);
-// app.use('/creacion', creacionRoutes);
-
 app.use('/', routes);
+
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT}`);
 });
 
-
-// const fs = require('fs');
-// const products = JSON.parse(fs.readFileSync(path.join(__dirname, '/DB/products.json'), 'utf-8'));
-
-// console.log('Productos antes de actualizar', products);
-// products.forEach(product => {
-//     product.category_id = Math.floor(Math.random() * 3)+1;;
-// })
-// console.log('Productos actualizados', products);
-// fs.writeFileSync(path.join(__dirname, '/DB/products.json'), JSON.stringify(products));

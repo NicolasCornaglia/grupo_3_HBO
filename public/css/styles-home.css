@@ -1,13 +1,17 @@
-
-    main{
-    text-align: center;
-    width: 90%;
-    box-sizing: border-box;
-    padding: 1em;
-    
+    body {
+        background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+        background-repeat: repeat;
+        background-position: center;
+        background-size: cover;
+        background-size: 200px;
     }
 
+
     .contenedor1{
+        text-align: center;
+        width: 90%;
+        box-sizing: border-box;
+        padding: 1em;
         display: flex ;
         flex-direction: column;
         justify-content: center;

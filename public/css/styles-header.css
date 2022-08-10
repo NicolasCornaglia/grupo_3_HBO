@@ -1,4 +1,4 @@
-*{
+* {
    margin: 0px;
    padding: 0px;
    box-sizing: border-box;
@@ -6,9 +6,16 @@
 
 }
 
-body {
-   background-color:#F5F5F5;
+
+
+main {
+   background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+   background-repeat: repeat;
+   background-position: center;
+   background-size: cover;
+   background-size: 200px;
 }
+
 
 p {
    font-size: 14px;
@@ -19,7 +26,6 @@ header {
    width: 100%;
    padding: 10px;
    border-bottom: 1px solid;
-
 }
 
 a .logo {
@@ -55,10 +61,10 @@ a .logo {
 .main-header-top-bar {
    display: flex;
    justify-content: space-around;
-   align-items: center;  
+   align-items: center;
 }
 
-.main-navbar li a{
+.main-navbar li a {
    color: black;
    text-decoration: none;
 }
@@ -74,7 +80,7 @@ a .logo {
    color: black;
    font-size: 20px;
    height: 40px;
-   margin: 10px 0px 10px 0px ;
+   margin: 10px 0px 10px 0px;
    padding: 10px;
    width: 40px;
 
@@ -96,60 +102,60 @@ a .logo {
 
 @media (min-width: 450px) {
    .hamburger-button {
-       display: none;
+      display: none;
    }
 
    .shop-cart {
-       display: inline-block;
-       align-self: center;
+      display: inline-block;
+      align-self: center;
    }
 
    .main-navbar {
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       padding: 5px;
-       color: black
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      color: black
    }
 
    .left-navbar,
    .right-navbar {
-       display: flex;
-       justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
 
    }
 
    ul {
-       list-style-type: none;
+      list-style-type: none;
    }
 
 
    .main-navbar li {
-       margin: 0 5px;
-       font-style: normal;
+      margin: 0 5px;
+      font-style: normal;
    }
 
-    /* Fin del header */
+   /* Fin del header */
 }
 
 @media (min-width: 768px) {
 
    /* Inicio del header */
-   
+
    .logo {
       width: 180px;
    }
-   
+
    .searcher {
       width: 80%;
       border-radius: 4px;
       font-size: 19px;
    }
-   
+
    .form .submit {
       border-radius: 4px;
       font-size: 19px;
    }
-   
+
    /* Fin del header */
 }

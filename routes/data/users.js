@@ -1,25 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
 
 //Controller
 const userController = require("../../controllers/data/usersController");
 
 //Middlewares
-//const uploadFile = require("../middlewares/multerMiddleware");
+const uploadFile = require("../../middlewares/multerMiddleware");
 //const validations = require("../middlewares/validateRegisterMiddleware");
 //const guestMiddleware = require("../middlewares/guestMiddleware");
 //const authMiddleware = require("../middlewares/authMiddleware");
 
-
-//Formulario de Registro
-//router.get("/register", guestMiddleware, userController.register);//Si alguien esta logueado no puede ingresar en register, si no es asi, el middleware ejecuta el siguiente proceso de peticion
-
 //Procesar el Registro
-//router.post("/register", uploadFile.single("avatar"), validations, userController.processRegister);
-
-//Formulario de Login
-router.get("/login", userController.login);//Reutilizo el middleware guestMiddleware por si hay alguien logueado, sera dirijio a Profile
+router.post("/register", uploadFile.single("avatar") ,userController.processRegister);
 
 //Proceso de Login
 router.post("/login", userController.loginProcess);
