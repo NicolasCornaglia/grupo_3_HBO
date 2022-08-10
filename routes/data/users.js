@@ -20,6 +20,6 @@ router.post("/login", userController.loginProcess);
 //router.get("/profile/", authMiddleware, userController.profile);//Si no hay nadie logueado, sera dirijido a Login, de lo contrario continua el proceso de peticion
 
 //Logout
-//router.get("/logout", userController.logOut)
+router.get("/logout", userController.logOut)
 
 module.exports = router; 
