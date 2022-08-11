@@ -39,19 +39,19 @@ const controller = {
                 if (req.body.rememberMe) {
                     res.cookie("userMail", req.body.email, { maxAge: (1000 * 2) * 60 })
                 }
-                return res.redirect("/")
+                return res.redirect("/profile")
             }
             return res.render("login", { errors: { mail: { msg: "Las credenciales son invalidas" } } });
         }
         return res.render("login", { errors: { mail: { msg: "El mail no se encuentra registrado" } } });
     },
 
-    //   profile: (req, res) => {
-    //      //console.log(req.cookies.userMail);//cuando quiero obtener una cookie debo poner req ya que viajan ahi
-    //      //console.log(req.cookies.colores)
-    //      //console.log(req.session); //Info del usuario. Con esta info puedo moverme en las distintas vistas con la session activa. Lo que no quiero es el password, por ello borraremos 
-    //      return res.render("userProfile", { user: req.session.usuarioLogueado })//le pasamos a la vista la variable user que va a tener del request toda la sesion del userlogged, luego debemos ir a configurar la vista porfile
-    //  },
+    profile: (req, res) => {
+        //console.log(req.cookies.userMail);//cuando quiero obtener una cookie debo poner req ya que viajan ahi
+        //console.log(req.cookies.colores)
+        //console.log(req.session); //Info del usuario. Con esta info puedo moverme en las distintas vistas con la session activa. Lo que no quiero es el password, por ello borraremos 
+        return res.render("userProfile", { user: req.session.loguedUser })//le pasamos a la vista la variable user que va a tener del request toda la sesion del userlogged, luego debemos ir a configurar la vista porfile
+    },
     logOut: (req, res) => {
         res.clearCookie('userMail');
         req.session.destroy();

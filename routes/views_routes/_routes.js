@@ -7,6 +7,7 @@ const homeController = require('../../controllers/views/homeController');
 const loginController = require('../../controllers/views/loginController');
 const productCartController = require('../../controllers/views/productCartController');
 const registerFormController = require('../../controllers/views/registerFormController');
+const userController = require("../../controllers/data/usersController");
 
 const productController = require('../../controllers/data/productsController');
 const guestMiddleware = require('../../middlewares/guestMiddleware');
@@ -26,6 +27,8 @@ router.get('/productDetail/:id', productController.detailProduct);
 // vistas de usuarios
 router.get('/login', loginController.display);
 router.get('/register', guestMiddleware, registerFormController.display);
+router.get('/profile', userController.profile);
+
 
 
 

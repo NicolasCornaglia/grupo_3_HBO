@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <%- include('./partials/head') %>
+      <link rel="stylesheet" href="\css\styles-userProfile.css">
+</head>
+
+<body>
+   <header class="main-header">
+      <%- include('./partials/header') %>
+   </header>
+
+   <main class="conteiner">
+      <div class="conteiner-items">
+         <% if(locals.isLogged) { %>
+            <h1>Perfil de <%= user.firstname %></h1>
+            <% if(user.gender == "Hombre") { %>
+               <h3>Bienvenido <%= user.firstname %> <%= user.lastname%></h3>
+            <% } %>
+            <% if(user.gender == "Mujer") { %>
+               <h3>Bienvenida <%= user.firstname %> <%= user.lastname%></h3>
+            <% } else { %>  
+               <h3>Bienvenido/a <%= user.firstname %> <%= user.lastname%></h3>
+            <% } %>       
+            <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
+            <h4>
+            <%= user.email %>
+            </h4>
+            <h5><a href="/api/users/logout">Salir de mi cuenta</a></li></h5>
+         <% } %>
+   </div>
+
+   </main>
+
+   <footer>
+      <%- include('./partials/footer') %>
+   </footer>
+</body>
+
+</html>

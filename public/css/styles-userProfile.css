@@ -1,0 +1,11 @@
+.conteiner {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 20px;
+}
+
+h1 {
+   text-align: center;
+   margin-bottom: 20px;
+}
