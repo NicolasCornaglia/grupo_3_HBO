@@ -18,7 +18,10 @@
             <div>
                 <label class="label-email">
                     <input type="email" class="text" name="email" placeholder="Email" tabindex="1" required />
-                    <span class="required">Email</span>  
+                    <span class="required">Email</span>
+                    <% if (errors) { %>
+                        <p class="mensaje-error" style="color: red;"><%= errors.mail.msg %> </p> 
+                    <% } %>   
                 </label>
             </div>
             <div>
@@ -54,12 +57,6 @@
                 <div class="shirt-2"></div>
             </figure>
         </form>
-
-        <div>
-            <% if (errors) { %>
-                <span color="red">errors</span>
-            <% } %>    
-        </div>
 
     </main>
 

@@ -9,6 +9,8 @@ const productCartController = require('../../controllers/views/productCartContro
 const registerFormController = require('../../controllers/views/registerFormController');
 
 const productController = require('../../controllers/data/productsController');
+const guestMiddleware = require('../../middlewares/guestMiddleware');
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 // vistas generales 
 router.get('/', productController.getProducts);
@@ -17,13 +19,13 @@ router.get('/', productController.getProducts);
 // vistas de productos
 router.get('/creacion', creationController.display);
 router.get('/editar/:id', productController.productToEdit);
-router.get('/productCart', productCartController.display);
+router.get('/productCart', authMiddleware, productCartController.display);
 router.get('/productDetail/:id', productController.detailProduct);
 
 
 // vistas de usuarios
 router.get('/login', loginController.display);
-router.get('/register', registerFormController.display);
+router.get('/register', guestMiddleware, registerFormController.display);
 
 
 

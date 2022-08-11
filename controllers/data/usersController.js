@@ -33,18 +33,17 @@ const controller = {
         console.log("REQ BODY: ", req.body);
         if (userToLogin) {
             let passwordMatch = bcrypt.compareSync(req.body.password, userToLogin.password);
-            console.log(passwordMatch);
             if (passwordMatch) {
-                delete userToLogin.password;
+                /* delete userToLogin.password; */
                 req.session.loguedUser = userToLogin;
                 if (req.body.rememberMe) {
                     res.cookie("userMail", req.body.email, { maxAge: (1000 * 2) * 60 })
                 }
                 return res.redirect("/")
             }
-            return res.render("login", { errors: "Usuario y contraseña invalidos" });
+            return res.render("login", { errors: { mail: { msg: "Las credenciales son invalidas" } } });
         }
-        return res.render("login", { errors: "El mail no se encuentra registrado" });
+        return res.render("login", { errors: { mail: { msg: "El mail no se encuentra registrado" } } });
     },
 
     //   profile: (req, res) => {
@@ -54,8 +53,8 @@ const controller = {
     //      return res.render("userProfile", { user: req.session.usuarioLogueado })//le pasamos a la vista la variable user que va a tener del request toda la sesion del userlogged, luego debemos ir a configurar la vista porfile
     //  },
     logOut: (req, res) => {
-        req.session.destroy(); //Borra todo lo que esta en session
-        console.log(req.session)
+        res.clearCookie('userMail');
+        req.session.destroy();
         return res.redirect("/");
     }
 }

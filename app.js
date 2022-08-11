@@ -7,6 +7,7 @@ const routes = require("./routes/_routes");
 const cookies = require("cookie-parser")
 const session = require("express-session");
 const publicPath = path.resolve(__dirname, "./public");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 // LiveReload
 if (process.argv[2] !== 'prod') {
@@ -35,6 +36,7 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookies());
+app.use(userLoggedMiddleware);
 
 //Template Engine
 app.set('view engine', 'ejs');
