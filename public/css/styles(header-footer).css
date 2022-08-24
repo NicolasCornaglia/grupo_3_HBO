@@ -7,7 +7,11 @@
 }
 
 body {
-   background-color:#F5F5F5;
+   background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+   background-repeat: repeat;
+   background-position: center;
+   background-size: cover;
+   background-size: 200px;
 }
 
 p {

@@ -6,8 +6,6 @@
 
 }
 
-
-
 main {
    background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
    background-repeat: repeat;
@@ -16,46 +14,48 @@ main {
    background-size: 200px;
 }
 
-
 p {
    font-size: 14px;
 }
 
 header {
-   background-color: #be8f8f;
+
    width: 100%;
    padding: 10px;
-   border-bottom: 1px solid;
+   background: linear-gradient(180deg, #dcdcdc, #dcdcdc, transparent);
 }
 
 a .logo {
    width: 100px;
 }
 
-
 .searcher {
    width: 80%;
-   border-radius: 4px;
+   border-radius: 0px;
+   border-width: 0;
    font-size: 15px;
 }
 
 .form .submit {
-   border-radius: 4px;
+   border-radius: 0px;
+   border-width: 0;
    font-size: 15px;
+   margin: -22px;
+   background-color: white;
 }
 
 
 .form {
    display: flex;
-   justify-content: center;
+   /* justify-content: center; */
    align-items: center;
    width: 55%;
 
 }
 
-.top-right-navbar,
-.main-navbar {
+.user-navbar {
    display: none;
+
 }
 
 .main-header-top-bar {
@@ -64,14 +64,15 @@ a .logo {
    align-items: center;
 }
 
-.main-navbar li a {
+.user-navbar li a {
    color: black;
    text-decoration: none;
+   
 }
 
-.main-navbar {
+/* .user-navbar {
    margin: 1% 2% 1% 2%;
-}
+} */
 
 
 .hamburger-button {
@@ -88,19 +89,24 @@ a .logo {
 
 .shop-cart {
    background-color: white;
-   border-radius: 5px;
+   border-radius: 3px;
    color: black;
-   font-size: 20px;
-   height: 40px;
-   margin: 10px 0px 10px 0px;
-   padding: 10px;
-   width: 40px;
+   font-size: 17px;
+   width: 35px;
+   height: 35px;
+   margin: 5px 0px 5px 0px;
+   padding: 8px;
+
    display: none;
 }
 
 /* Fin del header */
 
 @media (min-width: 450px) {
+   .form {
+      justify-content: center;
+   }
+
    .hamburger-button {
       display: none;
    }
@@ -110,7 +116,7 @@ a .logo {
       align-self: center;
    }
 
-   .main-navbar {
+   .user-navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -118,11 +124,15 @@ a .logo {
       color: black
    }
 
-   .left-navbar,
-   .right-navbar {
-      display: flex;
-      justify-content: space-between;
+   .searcher {
+      width: 80%;
+      border-radius: 2px;
+      font-size: 20px;
+   }
 
+   .form .submit {
+      border-radius: 2px;
+      font-size: 18px;
    }
 
    ul {
@@ -130,9 +140,8 @@ a .logo {
    }
 
 
-   .main-navbar li {
+   .user-navbar li {
       margin: 0 5px;
-      font-style: normal;
    }
 
    /* Fin del header */
@@ -142,19 +151,24 @@ a .logo {
 
    /* Inicio del header */
 
+
    .logo {
       width: 180px;
    }
 
    .searcher {
       width: 80%;
-      border-radius: 4px;
-      font-size: 19px;
+      border-radius: 2px;
+      font-size: 23px;
    }
 
    .form .submit {
-      border-radius: 4px;
-      font-size: 19px;
+      border-radius: 2px;
+      font-size: 20px;
+   }
+
+   .form {
+      justify-content: center;
    }
 
    /* Fin del header */

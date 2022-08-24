@@ -45,7 +45,7 @@ CREATE TABLE deco_hogar.users(
    city VARCHAR(50),
    gender VARCHAR(100),
    role VARCHAR(100),
-   avatar VARCHAR(50),
+   avatar VARCHAR,
    created_at DATETIME,
    updated_at DATETIME
 );

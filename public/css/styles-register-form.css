@@ -1,7 +1,13 @@
 
 /* Inicio del main */
 
-
+body {
+   background-image: url(../images/png-transparent-white-and-brown-wooden-surface-texture-wood-white-wooden-background-texture-white-photography-grey-thumbnail.png);
+   background-repeat: repeat;
+   background-position: center;
+   background-size: cover;
+   background-size: 200px;
+}
 .formulario {
    display: flex;
    flex-direction: column;

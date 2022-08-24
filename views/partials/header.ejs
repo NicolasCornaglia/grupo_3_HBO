@@ -18,6 +18,16 @@
             <button class="submit"><i class="fa fa-search"></i></button>
         </div>
 
+        <ul class="user-navbar">
+            <% if(locals.isLogged) { %>
+                <a href="/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" width="50px" style="border-radius: 5%;"></a>
+                <li style="display:flex;align-items: center;"><%= locals.loguedUser.firstname%> <%= locals.loguedUser.lastname%></li>
+            <% } else { %> 
+                <li><a href="/login">Ingresá</a></li>
+                <li><a href="/register">Registrate </a></li>
+            <% } %>
+        </ul>
+
         <div class="mobile-header">
             <a href="#" class="hamburger-button">
                 <i class="fas fa-bars"></i>
@@ -30,7 +40,7 @@
 
     </div>
 
-    <div class="main-navbar">
+<!--     <div class="main-navbar">
         <ul class="left-navbar">
             <li><a href="#">Ofertas</a></li>
             <li><a href="#">Tiendas Oficiales</a></li>
@@ -46,9 +56,9 @@
                 <li><a href="/login">Ingresá</a></li>
                 <li><a href="/register">Registrate </a></li>
             <% } %>
-
         </ul>
-    </div>
+
+    </div> -->
 
 
 </body>

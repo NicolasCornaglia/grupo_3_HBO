@@ -1,8 +1,7 @@
 /* inicio del footer */
 
 footer {
-   border-top: 1px solid;
-   background-color: #be8f8f;
+   background: linear-gradient(0deg, #555456, transparent);
    text-align: center;
    margin-top: 0px;
    margin-bottom: 0px;
