@@ -5,8 +5,11 @@ const materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/
 const colorsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/colors.json'), 'utf-8'));
 const categorysData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/category.json'), 'utf-8'));
 
+const db = require('../../database/models');
+const Product = db.Product;
+
 const controller = {
-    createProduct: (req, res) => {
+    createProduct: async (req, res) => {
         const body = req.body
         console.log(body);
         const newProduct = {
@@ -22,13 +25,14 @@ const controller = {
             created_at: new Date(),
             updated_at: new Date()
         }
-        productsData.push(newProduct);
-        fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData))
+        await Product.create(newProduct);
+        console.log(Product)
         res.redirect('/')
     },
 
-    getProducts: (req, res) => {
-        res.render('home.ejs', { products: productsData })
+    getProducts: async (req, res) => {
+        const products = await Product.findAll()
+        res.render('home.ejs', { products })
     },
 
     productToEdit: (req, res) => {
@@ -44,83 +48,44 @@ const controller = {
         return res.render('editarPublicacion.ejs', { data: { productToEdit: productToEdit, materials: materialsData, colors: colorsData, categorys: categorysData } })
     },
 
-    obtenerPorId: (req, res) => {
-        const productId = parseInt(req.params.id, 10)
-        let productoEncontrado;
-
-        for (let i = 0; i < productsData.length; i++) {
-            if (productsData[i].id === productId) {
-
-                productoEncontrado = productsData[i]
-
-            }
-
-        }
-        res.send(productoEncontrado)
-
+    obtenerPorId: async (req, res) => {
+        const foundProduct = await Product.findByPk(req.params.id);
+        res.send(foundProduct);
     },
 
-    editProducts: (req, res) => {
-        let productToEditId = req.params.id;
-        let body = req.body;
-        console.log(body);
-        console.log(productToEditId, 'Id del producto');
-
-        let productToEdit = {
-            name: body.name,
-            description: body.description,
-            price: body.price,
-            category_id: body.category,
-            image: body.image,
-            dimensions: body.dimensions,
-            color_id: body.colors,
-            material_id: body.materials,
+    editProducts: async (req, res) => {
+        const { name, description, price, category, image, dimensions, colors, materials } = req.body;
+        await Product.update({
+            name,
+            description,
+            price, 
+            category, 
+            image, 
+            dimensions, 
+            colors,
+            materials,
             updated_at: new Date()
-        }
-
-        for (let product of productsData) {
-            if (product.id == productToEditId) {
-                product.name = productToEdit.name;
-                product.description = productToEdit.description;
-                product.price = productToEdit.price;
-                product.category_id = productToEdit.category_id;
-                product.image = productToEdit.image;
-                product.dimensions = productToEdit.dimensions;
-                product.color_id = productToEdit.color_id;
-                product.material_id = productToEdit.material_id;
-                product.updated_at = new Date();
+        }, {
+            where: {
+                id: req.params.id
             }
-        }
+        });
 
-        fs.writeFileSync(path.join(__dirname, '../../DB/products.json'), JSON.stringify(productsData));
         res.redirect('/')
     },
 
-    detailProduct: (req, res) => {
-        const IdUrl = parseInt(req.params.id, 10);
-        let productoEncontrado;
-
-        for (let product of productsData) {
-            if (product.id === IdUrl) {
-                productoEncontrado = product;
-            }
-        }
-
-        if (!productoEncontrado) {
-            res.status(404).send("No se encuentra el producto");
-        }
-        else {
-            return res.render('productDetail.ejs', { data: { product: productoEncontrado } }); //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        }
+    detailProduct: async (req, res) => {
+        const foundProduct = await Product.findByPk(req.params.id);
+        return res.render('productDetail.ejs', { data: { product: foundProduct } });
     },
-    destroy: (req, res) => {
-        let productId = parseInt(req.params.id, 10);
-        for (let i = 0; i < productsData.length; i++) {
-            if (productsData[i].id === productId) {
-                productsData.splice(i, 1)
-            }
-        }
-        res.send(`se ha borrado el producto id ${productId}`);
+    destroy: async (req, res) => {
+        await Product.destroy({
+            where: { id: req.params.id }
+        });
+        res.redirect('/');
+    },
+    search: async (req,res) => {
+        
     }
 }
 
