@@ -19,14 +19,13 @@ p {
 }
 
 header {
-
    width: 100%;
    padding: 10px;
-   background: linear-gradient(180deg, #dcdcdc, #dcdcdc, transparent);
+   background-color: white
 }
 
 a .logo {
-   width: 100px;
+   width: 300px;
 }
 
 .searcher {
@@ -34,6 +33,7 @@ a .logo {
    border-radius: 0px;
    border-width: 0;
    font-size: 15px;
+   box-shadow: 1px 1px 1px 1px black;
 }
 
 .form .submit {

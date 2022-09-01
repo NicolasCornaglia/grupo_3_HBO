@@ -20,7 +20,7 @@
 
         <ul class="user-navbar">
             <% if(locals.isLogged) { %>
-                <a href="/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" width="50px" style="border-radius: 5%;"></a>
+                <a href="/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" width="50px" style="border-radius: 10%;"></a>
                 <li style="display:flex;align-items: center;"><%= locals.loguedUser.firstname%> <%= locals.loguedUser.lastname%></li>
             <% } else { %> 
                 <li><a href="/login">Ingresá</a></li>
