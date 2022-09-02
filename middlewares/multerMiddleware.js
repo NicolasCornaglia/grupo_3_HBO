@@ -1,6 +1,8 @@
 const multer = require("multer");
 const path = require("path");
 
+
+// TODO: Obtener ruta de imagen
 const storage = multer.diskStorage({
    destination: (req, file, cb) => {
       cb(null, path.resolve(__dirname, "../public/images"));

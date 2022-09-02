@@ -14,7 +14,7 @@ const guestMiddleware = require('../../middlewares/guestMiddleware');
 const authMiddleware = require("../../middlewares/authMiddleware");
 
 // vistas generales 
-router.get('/', productController.getProducts);
+router.get('/', homeController.display);
 
 
 // vistas de productos
