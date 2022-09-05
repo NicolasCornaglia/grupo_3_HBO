@@ -18,14 +18,15 @@ p {
    font-size: 14px;
 }
 
-header {
-   width: 100%;
+.main-header-top-bar{
+   width: 100;
    padding: 10px;
+   /* margin-top: 20px; */
    background-color: white
 }
 
 a .logo {
-   width: 300px;
+   width: 40vw;
 }
 
 .searcher {
@@ -47,9 +48,10 @@ a .logo {
 
 .form {
    display: flex;
-   /* justify-content: center; */
+   justify-content: center;
    align-items: center;
-   width: 55%;
+   width: 50%;
+   padding-right: 25px;
 
 }
 
@@ -67,8 +69,13 @@ a .logo {
 .user-navbar li a {
    color: black;
    text-decoration: none;
-   
 }
+
+.user-image {
+   width: 35px;
+   border-radius: 5%;
+}
+
 
 /* .user-navbar {
    margin: 1% 2% 1% 2%;
@@ -92,17 +99,38 @@ a .logo {
    border-radius: 3px;
    color: black;
    font-size: 17px;
-   width: 35px;
-   height: 35px;
+   width: 40px;
+   height: 40px;
    margin: 5px 0px 5px 0px;
    padding: 8px;
+   display: none;
+}
 
+.fixed-header {
    display: none;
 }
 
 /* Fin del header */
-
 @media (min-width: 450px) {
+
+   .fixed-header {
+      display: flex;
+      justify-content: center
+   }
+
+   a {
+      text-decoration: none;
+   }
+
+   a:visited { 
+      text-decoration: none; 
+      color: black; 
+   }
+
+   a .logo {
+      width: 250px;
+   }
+
    .form {
       justify-content: center;
    }
@@ -150,8 +178,6 @@ a .logo {
 @media (min-width: 768px) {
 
    /* Inicio del header */
-
-
    .logo {
       width: 180px;
    }
@@ -170,6 +196,24 @@ a .logo {
    .form {
       justify-content: center;
    }
+
+  /*  .fixed-header {
+      
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5%;
+      height: auto;
+      overflow: hidden;
+      
+      position: fixed; 
+      top: 0; 
+      z-index: 200;
+      height: 30px;
+      
+      width: 100vw; 
+   } */
+
 
    /* Fin del header */
 }

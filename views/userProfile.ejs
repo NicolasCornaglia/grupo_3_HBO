@@ -20,7 +20,8 @@
             <% } %>
             <% if(user.gender == "Mujer") { %>
                <h3>Bienvenida <%= user.firstname %> <%= user.lastname%></h3>
-            <% } else { %>  
+            <% } %>
+            <% if (user.gender != "Hombre" && user.gender != "Mujer") { %>  
                <h3>Bienvenido/a <%= user.firstname %> <%= user.lastname%></h3>
             <% } %>       
             <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">

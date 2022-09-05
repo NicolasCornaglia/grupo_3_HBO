@@ -109,48 +109,17 @@ main div img {
     gap: 3%;
     max-width: 1100px;
     align-self: center;
+    width: 80%;
 }
 
-
-    /* Left content start */
-.left-miniaturas {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    padding-bottom: 15px;
-    background-color: white;
-} 
-
-.left-miniaturas h4 {
-    padding-top: 10px;
-}
-
-.left-miniaturas .min-img {
-    width: 100%;
-}
-
-.left-miniaturas .min-img:hover {
-    width: 150px;
-    transition: all 0.8s;
-}
-
-.main-web .left-miniaturas img {
-    width: 50%;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin: 5px 0px 5px 0px;
-}
-    /* Left content end */
 
     /* Center content start */
-.center-img img {
+.product-img img {
     width: 500px;
 
 }
 
-.center-img {
+.product-img {
     display: flex;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     justify-content: center;
@@ -164,33 +133,56 @@ main div img {
     display: flex;
     flex-direction: column;
     align-self: space-evenly;
-    align-items: center;
+    align-items: right;
+    padding: 15px;
     font-size: 20px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     justify-content: space-around;
     background-color: white;
 }
 
-.rigth-info .seguro {
+.rigth-info .cantidad {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 5px
 }
-    /* Right content end */
 
-    /* Bottom content start */
-    .flexbox-descripcion-producto {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        align-self: center;
-        gap: 5px;
-        padding: 10px;
-        width: 50%;
-        max-width: 535px;
-    }
-    /* Bottom content end */
+.button {
+    background-color: white;
+    border: none;
+    box-shadow: 1px 1px gray;
+    height: 25px;
+}
+
+.cuantity {
+    width: 100%;
+    font-size: 15px;
+}
+
+.button:hover {
+    background-color: lightskyblue;
+    transition: all 1200ms;
+} 
+
+.buy-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.buy-buttons button {
+    background-color: lightgray;
+}
+
+.buy-buttons button:hover {
+    background-color: lightgreen;
+    transition: all 1200ms;
+} 
+
+
+
+    /* Right content end */
 
 /* Fin del main */
 

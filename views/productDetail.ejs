@@ -22,8 +22,8 @@
                 <img src="/images/<%= data.product.image %>" alt="producto a mostrar">
 
                 <div class="bottom-img">
-                    <h3 class="product-price"> <%= data.product.price %></h3>
-                    <h4 class="product-cuotas">Precio en X cuotas</h4>
+                    <h3 class="product-price"> $ <%= data.product.price %></h3>
+                    <h4 class="product-cuotas">Precio en 12 cuotas: $ <%= data.product.price/12 %></h4>
                     <p class="product-payment-options">Ver medios de pago</p>
                 </div>
 
@@ -45,44 +45,43 @@
 
         <div class="main-web">
             <div class="flexbox-producto">
-                <div class="left-miniaturas">
-                    <h4> Fotos del producto </h4>
-                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                    <img src="/images/sillaSprint2.jpg" alt="miniatura" class="min-img">
-                </div>
 
-                <div class="center-img">
+                <div class="product-img">
                     <img src="/images/sillaSprint2.jpg" alt="producto a mostrar">
                 </div>
 
                 <div class="rigth-info">
-                    <h5> <%= data.product.name %> </h5>
-                    <h6> <%= data.product.price %></h6>
-                    <a href="#"> Ver medios de pago </a>
-                    <div class="seguro">
-                        <label>Seleccione tipo de seguro:</label>
-                        <select name="seguro">
-                            <option value="none">Ninguno</option>
-                            <option value="accident">Seguro por accidente</option>
-                            <option value="steal">Seguro por accidente y/o robo</option>
-                        </select>
+                    <h2><%= data.product.name %></h2>
+                    <p><%= data.product.description %></p>
+                    <h4>Color: </h4>
+                    <span><%= data.product.color_id %></span> 
+                    <h4>Altura, Ancho y Profundidad: </h4>
+                    <span><%= data.product.dimensions %></span>
+                    <h4>Material: </h4>
+                    <span><%= data.product.material_id %></span>
+                
+                    <h4>Garantía: 6 meses</h4>
+                    
+                    <div class="cantidad">
+                        <!-- <label>Cantidad:</label> -->
+                        <div class="cantidad" action="#" method="GET">
+                            <input class="cuantity" placeholder="Ingrese cuantos items quiere"/>
+                            <button type="submit" class="button">Aplicar </button> 
+                            <button type="reset" class="button">Cancelar </button>
+                        </div>
                     </div>      
-                    <div class="rigth-buttons">
-                        <button>Comprar ahora</button>
-                        <button>Añadir al carrito</button>
+
+                    <p>Script para mostrar precio segun cantidad de productos</p>
+
+                    <a href="#"> Ver medios de pago </a>
+
+                    <div class="buy-buttons">
+                        <button class="button" >Comprar ahora</button>
+                        <button class="button" >Añadir al carrito</button>
                     </div>     
                 </div>
             </div>
 
-            <div class="flexbox-descripcion-producto">
-                <h3><%= data.product.name %></h3>
-                <h4>Color: <%= data.product.color_id %></h4>
-                <h4>Altura, Ancho y Profundidad:<%= data.product.dimensions %></h4>
-                <h4>Material: <%= data.product.material_id %></h4>
-                <h4>Garantía:</h4>
-            </div>
         </div>
 
     </main>
