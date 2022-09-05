@@ -1,6 +1,10 @@
+const db = require('../../database/models');
+const Product = db.Product;
+
 const controller = {
-   display: (req,res) => {
-      return res.render('home.ejs')
+   display: async (req, res) => {
+      const products = await Product.findAll()
+      return res.render('home.ejs', { products })
    }
 }
 

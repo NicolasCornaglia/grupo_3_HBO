@@ -4,6 +4,7 @@ const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/p
 const materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/materials.json'), 'utf-8'));
 const colorsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/colors.json'), 'utf-8'));
 const categorysData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/category.json'), 'utf-8'));
+const Sequelize = require('sequelize')
 
 const db = require('../../database/models');
 const Product = db.Product;
@@ -13,7 +14,6 @@ const controller = {
         const body = req.body
         console.log(body);
         const newProduct = {
-            id: productsData.length + 1,
             name: body.name,
             description: body.description,
             price: body.price,
@@ -29,10 +29,20 @@ const controller = {
         console.log(Product)
         res.redirect('/')
     },
-
     getProducts: async (req, res) => {
-        const products = await Product.findAll()
-        res.render('home.ejs', { products })
+        let products
+        const search = req.query.search
+        try {
+            if (search) {
+                products = await Product.findAll({ where: { name: { [Sequelize.Op.like]: `%${req.query.search}%` } } })
+            }
+            if (!search) {
+                products = await Product.findAll()
+            }
+        } catch (error) {
+            console.error("ERROR: ", error)
+        }
+        res.send(products)
     },
 
     productToEdit: (req, res) => {
@@ -58,10 +68,10 @@ const controller = {
         await Product.update({
             name,
             description,
-            price, 
-            category, 
-            image, 
-            dimensions, 
+            price,
+            category,
+            image,
+            dimensions,
             colors,
             materials,
             updated_at: new Date()
@@ -84,8 +94,8 @@ const controller = {
         });
         res.redirect('/');
     },
-    search: async (req,res) => {
-        
+    search: async (req, res) => {
+
     }
 }
 
