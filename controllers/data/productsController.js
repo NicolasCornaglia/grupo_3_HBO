@@ -18,7 +18,7 @@ const controller = {
             description: body.description,
             price: body.price,
             category_id: body.category,
-            image: body.image,
+            image: `${"/images/"}${req.file.filename}`,
             dimensions: body.dimensions,
             color_id: body.colors,
             material_id: body.materials,

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <%- include('./partials/head') %>
+      <link rel="stylesheet" href="\css\styles-userEdit.css">
+</head>
+
+<body>
+   <header class="main-header">
+      <%- include('./partials/header') %>
+   </header>
+
+   <main class="conteiner">
+      <div class="conteiner-items">
+         <% if(locals.isLogged) { %>
+            <h1>Perfil de <%= user.firstname %>
+            </h1>
+            <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
+            <h4>
+               <%= user.email %>
+            </h4>
+            <form class="form-edit" action="api/users/edit-user?_method=PUT" method="post">
+               <div class="input-form">
+                  <label for="currentPassword">Contraseña actual</label>
+                  <input type="text" id="currentPassword" name="currentPassword">
+               </div>
+               <div class="input-form">
+                  <label for="newPassword">Nueva contraseña</label>
+                  <input type="text" id="newPassword" name="newPassword">
+               </div>
+               <button class="button-profile">Cambiar contraseña</button>
+            </form>
+            <% } %>
+      </div>
+
+   </main>
+
+   <footer>
+      <%- include('./partials/footer') %>
+   </footer>
+</body>
+
+</html>

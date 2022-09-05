@@ -7,6 +7,8 @@ const usersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/user
 
 const controller = {
     processRegister: (req, res) => {
+        console.log("BODY: ", req.body)
+        console.log("FILE: ", req.file)
         const body = req.body;
         const newUser = {
             id: usersData.length + 1,
@@ -56,6 +58,16 @@ const controller = {
         res.clearCookie('userMail');
         req.session.destroy();
         return res.redirect("/");
+    },
+    editView: (req, res) => {
+        res.render("user-edit", {user: req.session.loguedUser})
+    },
+    editUser: (req, res) => {
+        const user = req.session.loguedUser
+        if(user){
+            
+        }
+        res.send(200)
     }
 }
 

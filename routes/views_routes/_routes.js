@@ -28,6 +28,7 @@ router.get('/productDetail/:id', productController.detailProduct);
 router.get('/login', loginController.display);
 router.get('/register', guestMiddleware, registerFormController.display);
 router.get('/profile', userController.profile);
+router.get('/edit-user', userController.editView)
 
 
 

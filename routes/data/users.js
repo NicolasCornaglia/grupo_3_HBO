@@ -17,4 +17,7 @@ router.post("/login", userController.loginProcess);
 //Logout
 router.get("/logout", userController.logOut)
 
+//Edit user
+router.put("/edit-user", userController.editUser)
+
 module.exports = router; 
