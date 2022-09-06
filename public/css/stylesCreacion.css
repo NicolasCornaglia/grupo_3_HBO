@@ -1,0 +1,81 @@
+.form-card form {
+   display: flex;
+   flex-direction: column;
+   width: 60vw;
+   max-width: 1400px;
+   align-items: right;
+   gap: 5px;
+   background-color: white;
+   padding: 20px;
+   border-radius: 2%;
+   box-shadow: 1px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   margin-bottom: 25px;
+}
+
+
+.form-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 15px;
+}
+
+h1 {
+   padding: 15px;
+}
+
+labbel {
+   margin-top: 25px;
+   text-decoration: none;
+   font-size: 22px;
+   margin-bottom: 10px;
+}
+
+form button {
+   margin-top: 20px;
+   background-color: white;
+   border: none;
+   box-shadow: 1px 1px black;
+   height: 30px;
+}
+
+form input {
+   height: 30px;
+   border: none;
+   border-color: gray;
+   box-shadow: 1px 1px black;
+   font-size: 18px;
+}
+
+form input:hover {
+   background-color: lightcyan
+}
+
+select {
+   height: 30px;
+   border: none;
+   height: 30px;
+   font-size: 18px;
+}
+
+.create-button {
+   margin-top: 40px;
+   font-size: 25px;
+}
+
+.create-button:hover {
+   background-color: lightgreen;
+}
+
+.reset-button {
+   font-size: 25px;
+}
+
+.reset-button:hover {
+   background-color: lightcoral;
+}
+
+
+
+

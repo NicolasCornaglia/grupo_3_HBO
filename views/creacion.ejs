@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head') %>
-        <link rel="stylesheet" href="/css/stylesLogin.css">
+        <link rel="stylesheet" href="/css/stylesCreacion.css">
 </head>
 
 <body>
@@ -12,40 +12,41 @@
     </header>
 
     <main>
-
-        <form id="form" class="login" action="/api/products" method="POST" enctype="multipart/form-data">
-            <labbel>Nombre del Producto:</labbel>
-            <input class="borde" type="text" name="name" placeholder="Nombre del Producto"  >
-            <labbel>Descripción</labbel>
-            <input class="borde" type="text" name="description" placeholder="Descripción"  >
-            <labbel>Imagen</labbel>
-            <input id="imagen" class="borde" type="file" name="image" placeholder="Imagen" > <!-- TODO habria q poner imagenes 2 3 4 para mostrar en el detalle -->
-            <labbel>Categoría</labbel>
-            <select class="borde" name="category"  >
-                <option value="1">Silla</option>
-                <option value="2">Mesa</option>
-                <option value="3">Cama</option>
-            </select>
-            <labbel>Color</labbel>
-            <select class="borde" name="colors" >
-                <option value="1">Madera</option>
-                <option value="2">Piedra</option>
-                <option value="3">Negro</option>
-                <option value="4">Blanco</option>
-            </select>    
-            <labbel>Precio</labbel>
-            <input class="borde" type="text" name="price" placeholder="Precio"  >
-            <labbel>Dimensiones en formato: Alto x Ancho x Profundidad</labbel>
-            <input class="borde" type="text" name="dimensions" placeholder="Dimensiones"  >
-            <labbel>Materiales</labbel>
-            <select class="borde" name="materials"  >
-                <option value="1">Madera</option>
-                <option value="2">Piedra</option>
-                <option value="3">Vidrio</option>
-                <option value="4">Metal</option>
-            </select> 
-            <button class="boton-entrar" type="sumit">Crear producto</button>
-        </form>
+        <div class="form-card">
+            <h1>Crear producto</h1>
+                <form id="form" action="/api/products" method="POST" enctype="multipart/form-data">    
+                    <labbel>Nombre del Producto:</labbel>
+                    <input type="text" name="name" required >
+                    <labbel>Descripción: </labbel>
+                    <input type="text" name="description"  required >
+                    <labbel>Imagen: </labbel>
+                    <input id="imagen" type="file" name="image" required> 
+                    <labbel>Categoría: </labbel>
+                    <select name="category" >
+                        <% for (let category of data.categories) { %>
+                            <option value="<%= category.id %>"><%= category.name %></option>
+                        <% } %>  
+                    </select>
+                    <labbel>Color: </labbel>
+                    <select name="colors" >
+                        <% for (let color of data.colors) { %>
+                            <option value="<%= color.id %>"><%= color.name %></option>
+                        <% } %> 
+                    </select>    
+                    <labbel>Precio: </labbel>
+                    <input type="text" name="price" >
+                    <labbel>Dimensiones en formato: Alto x Ancho x Profundidad</labbel>
+                    <input type="text" name="dimensions" >
+                    <labbel>Material: </labbel>
+                    <select name="materials" >
+                        <% for (let material of data.materials) { %>
+                            <option value="<%= material.id %>"><%= material.name %></option>
+                        <% } %>
+                    </select> 
+                    <button class="create-button" type="submit">Crear</button>
+                    <button class="reset-button" type="reset">Descartar</button>
+                </form>
+        </div>    
     </main>
 
     <footer>

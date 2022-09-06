@@ -175,8 +175,6 @@
 
 /*  home 2 */
 
-
-
 .carrusel {
     text-align: center;
 }
@@ -206,7 +204,7 @@
     flex-direction: column;
     width: 100vw;
     margin: auto;
-    max-width: 1500px 
+    
 }
 
 .products-row {
@@ -304,8 +302,6 @@ a:visited {
         align-items: center;
     }
   
-    
-
     body {
         height: 100vh;
         display: grid;
