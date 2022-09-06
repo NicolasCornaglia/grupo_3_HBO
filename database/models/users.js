@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-   let alias = 'Users';
+   let alias = 'User';
    let cols = {
       id: {
          type: dataTypes.BIGINT,
@@ -57,5 +57,5 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false
    }
 
-   return Users = sequelize.define(alias,cols,config)
+   return User = sequelize.define(alias,cols,config)
 }

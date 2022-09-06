@@ -4,9 +4,13 @@ const path = require('path');
 const User = require("../../models/User"); //Requiero el CRUD de usuarios */
 const bcrypt = require("bcryptjs");
 const usersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/users.json'), 'utf-8'));
+const Sequelize = require('sequelize')
+const db = require('../../database/models');
+const { resolveAny } = require('dns/promises');
+const User = db.User;
 
 const controller = {
-    processRegister: (req, res) => {
+    processRegister: async (req, res) => {
         console.log("BODY: ", req.body)
         console.log("FILE: ", req.file)
         const body = req.body;
@@ -16,7 +20,8 @@ const controller = {
             lastname: body.lastname,
             email: body.email,
             password: bcrypt.hashSync(body.password, 10),
-            phonenumber: body.phonenumber,
+            phone_number: body.phonenumber,
+            role: "customer",
             city: body.city,
             gender: body.gender,
             category: "user",
@@ -24,15 +29,14 @@ const controller = {
             created_at: new Date(),
             updated_at: new Date()
         };
-        usersData.push(newUser);
-        fs.writeFileSync(path.join(__dirname, '../../DB/users.json'), JSON.stringify(usersData));
+        await User.create(newUser);
         console.log(usersData);
         return res.redirect('/');
     },
-    loginProcess: (req, res) => {
-        const userToLogin = usersData.find((user) => user.email == req.body.email)
-        console.log("User to login: ", userToLogin);
-        console.log("REQ BODY: ", req.body);
+    loginProcess: async (req, res) => {
+        const userEmail = req.body.email;
+        console.log("body: " , req.body);
+        const userToLogin = await User.findOne({where: {email: userEmail}});
         if (userToLogin) {
             let passwordMatch = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (passwordMatch) {
@@ -62,12 +66,24 @@ const controller = {
     editView: (req, res) => {
         res.render("user-edit", {user: req.session.loguedUser})
     },
-    editUser: (req, res) => {
-        const user = req.session.loguedUser
+    editUser: async (req, res) => {
+        const user = req.session.loguedUser;
         if(user){
-            
+            const userToModify = await User.findOne({where: {email: user.email}});
+            const passwordMatch = bcrypt.compareSync(req.body.currentPassword, userToModify.password);
+            if (passwordMatch) {
+                User.update({
+                    password: bcrypt.hashSync(req.body.newPassword, 10)
+                },{where: { 
+                    id: userToModify.id
+                }})
+                res.status(204).redirect("/profile");
+            };
+            if (!passwordMatch) {
+                res.send(500)
+            }
         }
-        res.send(200)
+        
     }
 }
 

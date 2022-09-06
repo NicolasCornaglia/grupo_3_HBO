@@ -27,14 +27,14 @@
             <input id="imagen" class="borde" type="file" name="image" placeholder="Imagen" value="<%- data.productToEdit.image %>" required>
             <labbel>Categoría</labbel>
             <select class="borde" name="category" value="<%= data.productToEdit.category %>" required>
-                <% for (let category of data.categorys) { %>
-                    <option value="<%= category.id %>"><%= category.category_name %></option>
+                <% for (let category of data.categories) { %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
                 <% } %>  
             </select>
             <labbel>Color</labbel>
             <select class="borde" name="colors" value="<%= data.productToEdit.color_id %>" required>
                 <% for (let color of data.colors) { %>
-                    <option value="<%= color.id %>"><%= color.color_name %></option>
+                    <option value="<%= color.id %>"><%= color.name %></option>
                 <% } %>  
             </select>    
             <labbel>Precio</labbel>
@@ -44,7 +44,7 @@
             <labbel>Materiales</labbel>
             <select class="borde" name="materials" value="<%= data.productToEdit.material_id %>" required>
                 <% for (let material of data.materials) { %>
-                    <option value="<%= material.id %>"><%= material.material_name %></option>
+                    <option value="<%= material.id %>"><%= material.name %></option>
                 <% } %>  
             </select> 
             <button class="boton-entrar"  type="submit">Finalizar Edición</button>

@@ -1,8 +1,10 @@
-let materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/materials.json'), 'utf-8'));
+const Sequelize = require('sequelize')
+const db = require('../../database/models');
+const Material = db.Material;
 
 const controller = {
-    createMaterial: (req, res) => {
-        /* TODO:  crear variable con id y valor de material y luego escribir el producto en materials.json con fs.writefilesync */
+    createMaterial: async (req, res) => {
+        
         materialsData.push(req.body);
         res.status(201).json(materials);
 

@@ -8,6 +8,9 @@ const Sequelize = require('sequelize')
 
 const db = require('../../database/models');
 const Product = db.Product;
+const Material = db.Material;
+const Color = db.Color;
+const Category = db.Category;
 
 const controller = {
     createProduct: async (req, res) => {
@@ -45,17 +48,12 @@ const controller = {
         res.send(products)
     },
 
-    productToEdit: (req, res) => {
-        let productToEditId = req.params.id;
-        let productToEdit;
-
-        for (let product of productsData) {
-            if (product.id == productToEditId) {
-                productToEdit = product;
-            }
-        }
-
-        return res.render('editarPublicacion.ejs', { data: { productToEdit: productToEdit, materials: materialsData, colors: colorsData, categorys: categorysData } })
+    productToEdit: async (req, res) => {
+        const foundProduct = await Product.findByPk(req.params.id);
+        const materials = await Material.findAll();
+        const colors = await Color.findAll();
+        const categories = await Category.findAll();
+        return res.status(200).render('editarPublicacion.ejs', { data: { productToEdit: foundProduct, materials: materials, colors: colors, categories: categories } })
     },
 
     obtenerPorId: async (req, res) => {
