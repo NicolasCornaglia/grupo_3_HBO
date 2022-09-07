@@ -24,7 +24,7 @@ CREATE TABLE deco_hogar.products(
    name VARCHAR(50) NOT NULL,
    description VARCHAR(500),
    price float,
-   image VARCHAR(100),
+   image VARCHAR(500),
    dimensions VARCHAR(100),
    category_id INT(10) NOT NULL,
    color_id INT(10) NOT NULL,
