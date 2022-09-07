@@ -19,6 +19,7 @@ router.get('/creacion', creationController.display);
 router.get('/editar/:id', productController.productToEdit);
 router.get('/productCart', productCartController.display);
 router.get('/productDetail/:id', productController.detailProduct);
+router.get("/productos-destacados", productController.productsOutstanding)
 
 
 // vistas de usuarios

@@ -32,6 +32,9 @@ const controller = {
         res.render('home.ejs', {products: productsData})
     },
 
+    productsOutstanding:(req, res) => {
+        res.render("productos-destacados.ejs")
+    },
     productToEdit: (req, res) => {
         let productToEditId = req.params.id;
         let productToEdit;
