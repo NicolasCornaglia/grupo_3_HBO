@@ -19,7 +19,7 @@
     <main class="mainEditar">
         <div class="form-card">
             <h1 id="editar">Editar producto: <%= data.productToEdit.name %> </h1>
-            <form id="form" class="login" action="/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST">
+            <form id="form" class="login" action="/p/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST">
                 <labbel>Nombre del Producto:</labbel>
                 <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" required>
                 <labbel>Descripción</labbel>

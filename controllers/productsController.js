@@ -1,22 +1,29 @@
 const fs = require('fs');
 const path = require('path');
-const productsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/products.json'), 'utf-8'));
-const materialsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/materials.json'), 'utf-8'));
-const colorsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/colors.json'), 'utf-8'));
-const categorysData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../DB/category.json'), 'utf-8'));
 const Sequelize = require('sequelize')
 
-const db = require('../../database/models');
+const db = require('../database/models');
 const Product = db.Product;
 const Material = db.Material;
 const Color = db.Color;
 const Category = db.Category;
 
 const controller = {
+    displayCreate: async (req, res) => {
+        const materials = await Material.findAll();
+        const colors = await Color.findAll();
+        const categories = await Category.findAll();
+        return res.status(200).render('creacion.ejs', { data: {materials: materials, colors: colors, categories: categories} });
+    },
+    displayProductCart: (req,res) => {
+        return res.render('productCart.ejs');
+    },
     createProduct: async (req, res) => {
         const body = req.body
         console.log(body);
+        const products = await User.findAll()
         const newProduct = {
+            id: products.length + 1,
             name: body.name,
             description: body.description,
             price: body.price,
@@ -81,10 +88,12 @@ const controller = {
 
         return res.redirect('/')
     },
-
     detailProduct: async (req, res) => {
         const foundProduct = await Product.findByPk(req.params.id);
-        return res.render('productDetail.ejs', { data: { product: foundProduct } });
+        const materials = await Material.findAll();
+        const colors = await Color.findAll();
+        const categories = await Category.findAll();
+        return res.render('productDetail.ejs', { data: { product: foundProduct, materials: materials, colors: colors, categories: categories } });
     },
     destroy: async (req, res) => {
         await Product.destroy({
@@ -93,7 +102,7 @@ const controller = {
         res.redirect('/');
     },
     search: async (req, res) => {
-
+        
     }
 }
 

@@ -6,7 +6,6 @@
         background-size: 200px; 
     }
 
-
 /* 
     .contenedor1{
         text-align: center;
@@ -272,7 +271,7 @@ a:visited {
 @media (min-width: 450px) {
 
     .product-card {
-        width: 300px;
+        width: 250px;
     }
 
     .products-container img {
@@ -289,7 +288,8 @@ a:visited {
 @media (min-width: 768px) {
 
     .product-card {
-        width: 300px;
+        width: 250px;
+        
     }
 
     .products-row {
@@ -301,7 +301,17 @@ a:visited {
     .products-container {
         align-items: center;
     }
-  
+    
+    .description {
+        display: none;
+        transition-duration: 2s;
+    }
+
+    .product-card:hover .description {
+        display: block;
+        transition-duration: 2s;
+    }
+
     body {
         height: 100vh;
         display: grid;

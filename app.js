@@ -3,7 +3,10 @@ let app = express();
 const PORT = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
-const routes = require("./routes/_routes");
+const routes = require("./routes/routes");
+const userRoutes = require("./routes/user");
+const productRoutes = require("./routes/product");
+
 const cookies = require("cookie-parser")
 const session = require("express-session");
 const publicPath = path.resolve(__dirname, "./public");
@@ -43,7 +46,8 @@ app.set('view engine', 'ejs');
 app.set("views", path.resolve(__dirname, "./views"));
 
 app.use('/', routes);
-
+app.use('/u', userRoutes);
+app.use('/p', productRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT}`);

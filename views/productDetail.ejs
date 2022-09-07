@@ -52,13 +52,14 @@
 
                 <div class="rigth-info">
                     <h2><%= data.product.name %></h2>
+                    <h4>$ <%= data.product.price %></h4>
                     <p><%= data.product.description %></p>
                     <h4>Color: </h4>
-                    <span><%= data.product.color_id %></span> 
+                    <span><%= data.colors[data.product.color_id-1].name %></span> 
                     <h4>Altura, Ancho y Profundidad: </h4>
                     <span><%= data.product.dimensions %></span>
                     <h4>Material: </h4>
-                    <span><%= data.product.material_id %></span>
+                    <span><%= data.materials[data.product.color_id-1].name %></span>
                 
                     <h4>Garantía: 6 meses</h4>
                     

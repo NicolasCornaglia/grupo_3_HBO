@@ -20,11 +20,11 @@
 
         <ul class="user-navbar">
             <% if(locals.isLogged) { %>
-                <a href="/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" class="user-image" ></a>
+                <a href="/u/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" class="user-image" ></a>
                 <li style="display:flex;align-items: center;"><%= locals.loguedUser.firstname%> <%= locals.loguedUser.lastname%></li>
             <% } else { %> 
-                <li><a href="/login">Ingresá</a></li>
-                <li><a href="/register">Registrate </a></li>
+                <li><a href="/u/login">Ingresá</a></li>
+                <li><a href="/u/register">Registrate </a></li>
             <% } %>
         </ul>
 
@@ -33,7 +33,7 @@
                 <i class="fas fa-bars"></i>
             </a>
 
-            <a href="/productCart" class="shop-cart">
+            <a href="/p/productCart" class="shop-cart">
                 <i class="fas fa-shopping-cart"></i>
                 
             </a>
