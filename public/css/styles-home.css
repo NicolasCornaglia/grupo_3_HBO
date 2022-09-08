@@ -318,6 +318,70 @@ a:visited {
         /* place-items: center; */
       }
 
+      /* Start of top image slider */
+      .sliderTop {
+        width: 100%;
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 80px;
+      }
+
+      .slideTop {
+        width: 100%;
+        height: 450px;
+        text-align: center;
+        position: absolute;
+        transition: all 0.5s;
+      }
+
+      .slideTop img {
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .btn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        z-index: 1px;
+        cursor: pointer;
+        background-color: #fff;
+        font-size: 18px;
+      }
+
+      .btn-top {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        z-index: 1px;
+        cursor: pointer;
+        background-color: #fff;
+        font-size: 18px;
+      }
+      
+      .btn-top:active {
+        transform: scale(1.1);
+      }
+      
+      .btn-prev-top {
+        top: 45%;
+        left: 2%;
+      }
+      
+      .btn-next-top {
+        top: 45%;
+        right: 2%;
+      }
+
+      /* End of top image slider */
       .slider {
         background-image: url(../images/home_default-16.jpg);
         width: 100%;

@@ -12,6 +12,7 @@ router.get('/create', productController.displayCreate);
 router.get('/edit/:id', productController.productToEdit);
 router.get('/productCart', authMiddleware, productController.displayProductCart);
 router.get('/productDetail/:id', productController.detailProduct);
+/* router.get('/searchproduct', productController.) */
 
 router.get('/api/products', productController.getProducts);
 router.post('/api/products', uploadFile.single('image'), productController.createProduct);

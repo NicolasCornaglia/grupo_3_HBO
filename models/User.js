@@ -7,7 +7,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { all } = require("../routes/data/users");
+/* const { all } = require("../routes/data/users"); */
 
 const User = {
     // 1. Referenciamos cual es el archivo de nuestra BD
@@ -51,7 +51,7 @@ const User = {
         return userFound;
     },
 
-    create: function (userData/*objeto literal que llega del form. del registro*/) {
+    create: function (userData) {
         //Primero debo obtener todos los usuarios:
         let allUsers = this.findAll();
    
@@ -81,4 +81,4 @@ const User = {
     }
 }
 
-module.exports = User; //Ya puedo requerir User en el controller
+module.exports = User; 

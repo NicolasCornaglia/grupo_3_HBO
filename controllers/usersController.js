@@ -16,13 +16,13 @@ const controller = {
         return res.render('register-form.ejs')
     },
     processRegister: async (req, res) => {
-        console.log("BODY: ", req.body)
-        console.log("FILE: ", req.file)
+        /* console.log("BODY: ", req.body)
+        console.log("FILE: ", req.file) */
         const users = await User.findAll()
-        console.log(users);
+        /* console.log(users); */
         const body = req.body;
         const newUser = {
-            id: users.length + 1 ,
+            id: users.length + 1,
             firstname: body.firstname,
             lastname: body.lastname,
             email: body.email,
@@ -41,7 +41,7 @@ const controller = {
     },
     loginProcess: async (req, res) => {
         const userEmail = req.body.email;
-        console.log("body: " , req.body);
+        /* console.log("body: " , req.body); */
         const userToLogin = await User.findOne({where: {email: userEmail}});
         if (userToLogin) {
             let passwordMatch = bcrypt.compareSync(req.body.password, userToLogin.password);

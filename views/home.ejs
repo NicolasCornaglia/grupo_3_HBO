@@ -55,7 +55,32 @@
     </main> -->
 
     <main>
-        <h1 class="carrusel">Carrusel imagenes de muestra</h1>
+
+        <div class="sliderTop" >
+            
+            <!-- slide 1 -->
+            <div class="slideTop">
+                <img src="/images/carrusel-top-1.jpg" alt="">
+            </div>
+    
+            <!-- slide 2 -->
+            <div class="slideTop">
+                <img src="/images/carrusel-top-2.jpg" alt="">
+            </div>
+    
+            <!-- slide 3 -->
+            <div class="slideTop">
+                <img src="/images/carrusel-top-3.jpg" alt="">
+            </div>
+
+            <div class="slideTop">
+                <img src="/images/carrusel-top-4.jpg" alt="">
+            </div>
+    
+            <!-- Control buttons -->
+            <button class="btn-top btn-next-top">></button>
+            <button class="btn-top btn-prev-top"><</button>
+        </div>
 
         <div class="presentation">
             <h2 class="main-title">NUESTROS PRODUCTOS</h1>
@@ -379,6 +404,7 @@
 </body>
 </html>
 
+<!-- script for bottom slider -->
 <script>
     // Select all slides
 const slides = document.querySelectorAll(".slide");
@@ -426,6 +452,60 @@ prevSlide.addEventListener("click", function () {
   //   move slide by 100%
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  });
+});
+
+</script>
+
+<!-- Script for top slider down here -->
+
+<script>
+    // Select all slides
+const slidesTop = document.querySelectorAll(".slideTop");
+
+// loop through slides and set each slides translateX property to index * 100% 
+slidesTop.forEach((slide, indx) => {
+  slide.style.transform = `translateX(${indx * 100}%)`;
+});
+
+// select next slide button
+const nextSlideTop = document.querySelector(".btn-next-top");
+
+// current slide counter
+let curSlideTop = 0;
+// maximum number of slides
+let maxSlideTOP = slidesTop.length - 1;
+
+// add event listener and navigation functionality
+nextSlideTop.addEventListener("click", function () {
+  // check if current slide is the last and reset current slide
+  if (curSlideTop === maxSlide) {
+    curSlideTop = 0;
+  } else {
+    curSlideTop++;
+  }
+
+//   move slide by -100%
+  slidesTop.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${100 * (indx - curSlideTop)}%)`;
+  });
+});
+
+// select prev slide button
+const prevSlideTop = document.querySelector(".btn-prev-top");
+
+// add event listener and navigation functionality
+prevSlideTop.addEventListener("click", function () {
+  // check if current slide is the first and reset current slide to last
+  if (curSlideTop === 0) {
+    curSlideTop = maxSlide;
+  } else {
+    curSlideTop--;
+  }
+
+  //   move slide by 100%
+  slidesTop.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${100 * (indx - curSlideTop)}%)`;
   });
 });
 
