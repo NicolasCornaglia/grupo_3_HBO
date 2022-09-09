@@ -141,6 +141,18 @@ VALUES (
       now()
    ),
    (
+      "Placard Moderno Vestidor",
+      "Placard de madera color negro",
+      28699,
+      "https://http2.mlstatic.com/D_NQ_NP_713088-MLA44169136648_112020-O.webp",
+      "100 x 180 x 47",
+      10,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
       "Armario Metalico",
       "Armario Metálico de Puertas Batientes, ideal para la guarda segura en hogares industrias y oficinas",
       90247,
@@ -149,6 +161,90 @@ VALUES (
       4,
       5,
       2,
+      now(),
+      now()
+   ),
+   (
+      "Armario Despensero",
+      "Armario despensero de 4 estantes y 2 puertas color negro",
+      15441,
+      "https://http2.mlstatic.com/D_NQ_NP_639290-MLA44642894096_012021-O.webp",
+      "180 x 60 x 30",
+      4,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Cama Desmontable Pacifico Inmacol 201",
+      "Cucheta desmontable pacifico color caoba",
+      45999,
+      "https://http2.mlstatic.com/D_NQ_NP_958698-MLA27557449715_062018-O.webp",
+      "202 x 90 x 155",
+      4,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Cama Base Box Sommier",
+      "Base de cama sommier color negro",
+      15576,
+      "https://http2.mlstatic.com/D_NQ_NP_988242-MLA49904023168_052022-O.webp",
+      "200 X 80 x 36",
+      3,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Cama 2 plaza",
+      "Cama De Hierro 2 Plaza Estilo Industrial C009",
+      132000,
+      "https://http2.mlstatic.com/D_NQ_NP_943648-MLA43757736889_102020-O.webp",
+      "190 X 140 x 38",
+      3,
+      1,
+      2,
+      now(),
+      now()
+   ),
+   (
+      "Mesa de Luz Sajo",
+      "Mesa de luz simple con cajón y puerta sin patas para tu habitación. Con un espacio especial para tus libros o cualquier cosa que desees",
+      5263,
+      "https://http2.mlstatic.com/D_NQ_NP_693173-MLA50329723355_062022-O.webp",
+      "42 X 73 x 30",
+      5,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Mesa De Luz Flotante",
+      "Mesa De Luz Flotante decorada",
+      11990,
+      "https://http2.mlstatic.com/D_NQ_NP_611302-MLA48163648460_112021-O.webp",
+      "43 X 23 x 29",
+      5,
+      2,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Mesa De Luz Mobilarg",
+      "Mesa de Luz 1 Cajon 2 Estantes",
+      9490,
+      "https://http2.mlstatic.com/D_NQ_NP_905364-MLA49885989226_052022-O.webp",
+      "45 X 70 x 36",
+      5,
+      7,
+      1,
       now(),
       now()
    ),
@@ -211,4 +307,16 @@ VALUES (
     5,
     now(),
     now()
+),
+(
+   "Velador Moderno Artyluz",
+   "Velador Moderno Acero para Dormitorio",
+   8790,
+   "https://http2.mlstatic.com/D_NQ_NP_801191-MLA47604508749_092021-O.webp",
+   "18 X 40 x 18",
+   9,
+   1,
+   2,
+   now(),
+   now()
 );
