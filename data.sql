@@ -93,18 +93,6 @@ INSERT INTO deco_hogar.products(
       updated_at
    )
 VALUES (
-      "Mesa ratona",
-      "Mesa ratona estilo moderno ideal para living",
-      11000,
-      "https://http2.mlstatic.com/D_NQ_NP_927106-MLA42726561076_072020-O.webp",
-      "130 x 80 x 50",
-      1,
-      1,
-      1,
-      now(),
-      now()
-   ),
-   (
       "Silla de patio",
       "Silla de plastico oscuro con una gran utilidad y comodidad en espacios tanto abiertos como cerrados, con una alta durabilidad",
       7000,
@@ -201,14 +189,26 @@ VALUES (
     now()
 ),
 (
-    "Fuente"
-    "Fuente de marmol para decorar"
+    "Fuente",
+    "Fuente de marmol para decorar",
     2700000,
-    "https://www.fongar.com/488-large_default/fuente-marmol-101.jpg"
-    "133x35x35"
+    "https://www.fongar.com/488-large_default/fuente-marmol-101.jpg",
+    "133x35x35",
     9,
     3,
     5,
     now(),
     now()
-);
+),
+(
+      "Mesa ratona",
+      "Mesa ratona estilo moderno ideal para living",
+      11000,
+      "https://http2.mlstatic.com/D_NQ_NP_927106-MLA42726561076_072020-O.webp",
+      "130 x 80 x 50",
+      1,
+      1,
+      1,
+      now(),
+      now()
+   );

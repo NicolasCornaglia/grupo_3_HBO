@@ -11,51 +11,7 @@
         <%- include('./partials/header') %>
     </header>
      
-    <!-- <main class="contenedor1">   
-            <article class="contenedor3">
-                <div id="carrusel">
-                    <a href="#" class="left-arrow"><img src="images/left-arrow.png" /></a>
-                    <a href="#" class="right-arrow"><img src="images/right-arrow.png" /></a>
-                    <div class="carrusel">
-                        <% for (let i=0; i<products.length ; i++) { %>
-                            <div class="product" id="product_<%- i %>">
-                                <a href="/productDetail/<%- products[i].id %>"><img src="/images/<%- products[i].image%>" width="195" height="100" /></a>
-                                <div class="productText">
-                                    <h5><%= products[i].name %></h5>
-                                    <p>$<%= products[i].price %></p>
-                                </div>
-                            </div>
-                        <% } %>
-
-                    </div>             
-                </div> 
-
-            </article>
-        
-            <article class="contenedor2">
-
-                <div class="caja">
-                    <div class="texto">Productos Destacados</div>
-                    <div><a href="views/productos-destacados.html"><img id="presentacion" src="images\productos-destacados.jpeg"  alt="Productos Destacados" ></a></div>
-                </div>
-
-
-                <div class="caja">
-                    <div class="texto">OFERTAS</div>
-                    <div><a href="views/ofertas.html"><img id="presentacion"  src="images\ofertas.jpg" alt="OFERTAS" ></a></div>
-                </div>
-
-                    
-                <div class="caja">
-                    <div class="texto">Nuevos Ingresos</div>
-                    <div><a href="views/nuevos-ingresos.html"><img id="presentacion" src="images\nuevos-ingresos.jpg" alt="Nuevos Ingresos" ></a></div>
-                </div>
-
-            </article>
-    </main> -->
-
     <main>
-
         <div class="sliderTop" >
             
             <!-- slide 1 -->
@@ -65,7 +21,7 @@
     
             <!-- slide 2 -->
             <div class="slideTop">
-                <img src="/images/carrusel-top-2.jpg" alt="">
+                <img src="/images/carrusel-top-4.jpg" alt="">
             </div>
     
             <!-- slide 3 -->
@@ -73,10 +29,11 @@
                 <img src="/images/carrusel-top-3.jpg" alt="">
             </div>
 
+            <!-- slide 4 -->
             <div class="slideTop">
-                <img src="/images/carrusel-top-4.jpg" alt="">
+                <img src="/images/carrusel-top-2.jpg" alt="">
             </div>
-    
+
             <!-- Control buttons -->
             <button class="btn-top btn-next-top">></button>
             <button class="btn-top btn-prev-top"><</button>
@@ -95,77 +52,31 @@
         <div class="products-container">
 
             <div class="products-row">
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto" >
-                    <div class="main-card">
-                        <a href="/p/productCart"><i class="fas fa-cart-plus"></i></a>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                        <!-- <p class="description"> descripcion </p> -->
+                <% for (let i=0; i<4 ; i++) { %>
+                    <div class="product-card">
+                        <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
+                        <div class="main-card">
+                            <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                            <h4 class="product-name"><%= products[i].name %></h4>
+                            <h4> $ <%= products[i].price %></h4>
+                            <!-- <p class="description"> descripcion </p> -->
+                        </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                        <!-- <p class="description"> descripcion </p> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                        <!-- <p class="description"> descripcion </p> -->
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                        <!-- <p class="description"> descripcion 12333333 333 333333333 3333333333333333 333333</p> -->
-                    </div>
-                </div>
+                <% } %>  
             </div>
             
             <div class="products-row">
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
+                <% for (let i=4; i<8 ; i++) { %>
+                    <div class="product-card">
+                        <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
+                        <div class="main-card">
+                            <a href="/p/productCart"><i class="fas fa-cart-plus"></i></a>
+                            <h4 class="product-name"><%= products[i].name %></h4>
+                            <h4> $ <%= products[i].price %></h4>
+                            <!-- <p class="description"> descripcion </p> -->
+                        </div>
                     </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="/images/blackChair.webp" alt="Imagen del producto">
-                    <div class="main-card">
-                        <i class="fas fa-cart-plus"></i>
-                        <h4 class="product-name">Nombre del producto</h4>
-                        <h4>Precio: $</h4>
-                    </div>
-                </div>
+                <% } %>  
             </div>
         </div>
             
@@ -399,7 +310,6 @@
     <footer>
         <%- include('./partials/footer') %>
     </footer>
-
 
 </body>
 </html>

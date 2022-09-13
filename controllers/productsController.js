@@ -9,6 +9,10 @@ const Color = db.Color;
 const Category = db.Category;
 
 const controller = {
+    displayHome: async (req, res) => {
+        const products = await Product.findAll()
+        return res.render('home.ejs', { products })
+    },
     displayCreate: async (req, res) => {
         const materials = await Material.findAll();
         const colors = await Color.findAll();
