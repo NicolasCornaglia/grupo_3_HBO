@@ -297,11 +297,11 @@ VALUES (
     now()
 ),
 (
-    "Fuente"
-    "Fuente de marmol para decorar"
+    "Fuente",
+    "Fuente de marmol para decorar",
     2700000,
-    "https://www.fongar.com/488-large_default/fuente-marmol-101.jpg"
-    "133x35x35"
+    "https://www.fongar.com/488-large_default/fuente-marmol-101.jpg",
+    "133x35x35",
     9,
     3,
     5,
