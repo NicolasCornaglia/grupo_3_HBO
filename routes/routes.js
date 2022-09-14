@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const homeController = require('../controllers/views/homeController');
+const productController = require('../controllers/productsController');
 
 // vistas generales 
-router.get('/', homeController.display);
-
+router.get('/', productController.displayHome);
 
 module.exports = router;
