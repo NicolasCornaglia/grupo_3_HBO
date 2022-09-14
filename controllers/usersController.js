@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize')
-/* const { validationResult } = require("express-validator"); */
+const { validationResult } = require('express-validator');
 
 const bcrypt = require("bcryptjs");
 const db = require('../database/models');
@@ -9,40 +9,43 @@ const { resolveAny } = require('dns/promises');
 const User = db.User;
 
 const controller = {
-    displayLogin: (req,res) => {
-        return res.render('login.ejs', {errors: false})
+    displayLogin: (req, res) => {
+        return res.render('login.ejs', { errors: false })
     },
-    displayRegisterForm: (req,res) => {
-        return res.render('register-form.ejs')
+    displayRegisterForm: (req, res) => {
+        return res.render('register-form.ejs', { errors: [] })
     },
     processRegister: async (req, res) => {
-        /* console.log("BODY: ", req.body)
-        console.log("FILE: ", req.file) */
-        const users = await User.findAll()
-        /* console.log(users); */
-        const body = req.body;
-        const newUser = {
-            id: users.length + 1,
-            firstname: body.firstname,
-            lastname: body.lastname,
-            email: body.email,
-            password: bcrypt.hashSync(body.password, 10),
-            phone_number: body.phonenumber,
-            role: "customer",
-            city: body.city,
-            gender: body.gender,
-            category: "user",
-            avatar: `${"/images/"}${req.file.filename}`,
-            created_at: new Date(),
-            updated_at: new Date()
-        };
-        await User.create(newUser);
-        return res.redirect('/');
+        const errors = validationResult(req);
+        console.log("Errors: ", req.errorsValidation);
+        console.log("body: ", req.body)
+        if (errors.isEmpty()) {
+            const users = await User.findAll()
+            const body = req.body;
+            const newUser = {
+                id: users.length + 1,
+                firstname: body.firstname,
+                lastname: body.lastname,
+                email: body.email,
+                password: bcrypt.hashSync(body.password, 10),
+                phone_number: body.phonenumber,
+                role: "customer",
+                city: body.city,
+                gender: body.gender,
+                category: "user",
+                avatar: `${"/images/"}${req.file.filename}`,
+                created_at: new Date(),
+                updated_at: new Date()
+            };
+            await User.create(newUser);
+            return res.redirect('/u/login');
+        }
+        return res.render('register-form', { errors: errors.array() })
     },
     loginProcess: async (req, res) => {
         const userEmail = req.body.email;
         /* console.log("body: " , req.body); */
-        const userToLogin = await User.findOne({where: {email: userEmail}});
+        const userToLogin = await User.findOne({ where: { email: userEmail } });
         if (userToLogin) {
             let passwordMatch = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (passwordMatch) {
@@ -67,26 +70,28 @@ const controller = {
         return res.redirect("/");
     },
     editView: (req, res) => {
-        res.render("user-edit", {user: req.session.loguedUser})
+        res.render("user-edit", { user: req.session.loguedUser })
     },
     editUser: async (req, res) => {
         const user = req.session.loguedUser;
-        if(user){
-            const userToModify = await User.findOne({where: {email: user.email}});
+        if (user) {
+            const userToModify = await User.findOne({ where: { email: user.email } });
             const passwordMatch = bcrypt.compareSync(req.body.currentPassword, userToModify.password);
             if (passwordMatch) {
                 User.update({
                     password: bcrypt.hashSync(req.body.newPassword, 10)
-                },{where: { 
-                    id: userToModify.id
-                }})
+                }, {
+                    where: {
+                        id: userToModify.id
+                    }
+                })
                 res.status(204).redirect("/u/profile");
             };
             if (!passwordMatch) {
                 res.send(500)
             }
         }
-        
+
     }
 }
 

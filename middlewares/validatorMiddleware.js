@@ -11,8 +11,10 @@ const validate = validations => {
       if (errors.isEmpty()) {
          return next();
       }
-
-      res.status(400).json({ errors: errors.array() });
+      if (!errors.isEmpty()) {
+         req.errorsValidation = errors;
+         return next();
+      }
    };
 };
 
@@ -34,7 +36,7 @@ const validationsRegister = [
    body("password").notEmpty().withMessage("Tienes que escribir una contraseña").bail()
       .isLength({ min: 8, max: 99 }).withMessage("Su contraseña debe tener entre 8 y 99 caracteres").bail()
       .isAlphanumeric().withMessage("Su contraseña debe contener caracteres alfanumericos"),
-   body("phonenumber").isInt().withMessage("Debe ser un numero telefonico"),
+   body("phonenumber").isMobilePhone().withMessage("Debe ser un numero telefonico"),
    body("city").notEmpty().withMessage("Escribe tu ciudad de origen"),
    body("gender").notEmpty().withMessage("Tienes que elegir un genero"),
    body("avatar").custom((value, { req }) => {
@@ -57,7 +59,6 @@ const validationsLogin = [
    body("email").notEmpty().withMessage("Tienes que escribir un correo electronico").bail()
       .isEmail().withMessage("Debes escribir un formato de correo valido"),
    body("password").notEmpty().withMessage("Tienes que escribir una contraseña").bail()
-   /* contraseña debe coincidir con la existente en base, no lo hicimos en el controllador ya? */,
 ]
 
 const validationsCreateProduct = [

@@ -14,54 +14,59 @@
     <main>
         <div class="main-mobile">
             <form action="/u/api/users/register" method="POST" class="formulario" enctype="multipart/form-data">
+
+                <% for (let error of errors) { %> 
+                    <p> <%= error.msg %> </p>
+                <% } %>
+
                 <h2>Registra tu cuenta</h2>
 
                 <div class="label">
                     <label for="Nombre de usuario:" class="floatLabel">Nombre:</label>
                 </div>
-                <input id="Nombre de usuario:" name="firstname" type="text" placeholder="Ej: Juan" required
-                    minlength="4" class="write-space">
+                <input id="Nombre de usuario:" name="firstname" type="text" placeholder="Ej: Juan"
+                     class="write-space">
 
                 <div class="label">
                     <label for="Nombre de usuario:" class="floatLabel">Apellido:</label>
                 </div>
-                <input id="Nombre de usuario:" name="lastname" type="text" placeholder="Ej: Martinez" required
-                    minlength="4" class="write-space">
+                <input id="Nombre de usuario:" name="lastname" type="text" placeholder="Ej: Martinez"
+                     class="write-space">
 
                 <div class="label">
                     <label for="Correo electronico:" class="floatLabel">Correo electrónico:</label>
                 </div>
-                <input id="Correo electronico:" name="email" type="email" placeholder="Ej: juan10@gmail.com" required
-                    minlength="4" class="write-space">
+                <input id="Correo electronico:" name="email" type="email" placeholder="Ej: juan10@gmail.com"
+                     class="write-space">
 
                 <div class="label">
                     <label for="Contraseña:" class="floatLabel">Contraseña:</label>
                 </div>
-                <input id="Contraseña:" name="password" type="password" placeholder="No compartir" required
-                    minlength="4" class="write-space">
+                <input id="Contraseña:" name="password" type="password" placeholder="No compartir"
+                     class="write-space">
 
                 <div class="label">
                     <label for="phonenumber" class="floatLabel">Número telefónico:</label>
                 </div>
-                <input id="phonenumber" name="phonenumber" type="number" placeholder="Ej: 549 3492 112233" required
-                    minlength="4" class="write-space">
+                <input id="phonenumber" name="phonenumber" type="number" placeholder="Ej: 549 3492 112233"
+                     class="write-space">
 
                 <div class="label">
                     <label for="city" class="floatLabel">Ciudad:</label>
                 </div>
-                <input id="city" name="city" type="text" placeholder="Ej: Rosario" required minlength="4"
+                <input id="city" name="city" type="text" placeholder="Ej: Rosario" 
                     class="write-space">
 
                 <div class="label">
                     <label for="genero" class="floatLabel">Genero:</label>
                 </div>
-                <input id="genero" name="gender" type="text" placeholder="Ej: Mujer" required minlength="4"
+                <input id="genero" name="gender" type="text" placeholder="Ej: Mujer" 
                     class="write-space">
 
                 <div class="label">
                     <label for="avatar" class="floatLabel">Avatar:</label>
                 </div>
-                <input id="avatar" name="avatar" type="file" class="write-space"  required>
+                <input id="avatar" name="avatar" type="file" class="write-space" >
 
 
                 <button type="submit" class="boton-registrar"> Registrarse </button>
