@@ -42,10 +42,12 @@ main {
     box-shadow: 0 1rem 1rem -0.75rem var(--border);
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1rem;
     position: relative;
     overflow: hidden;
     margin: 10px 0px;
+    width: 80vw;
     
   }
   
@@ -159,13 +161,13 @@ main {
     border: 1px solid var(--border);
     border-radius: var(--borderRadius);
     box-sizing: border-box;
-    font-size: 1rem;
-    height: 2.25rem;
+    font-size: 0.8rem;
+    height: 2rem;
     line-height: 1.25rem;
     margin-top: 0.25rem;
     order: 2;
     padding: 0.25rem 0.5rem;
-    width: 15rem;
+    width: 23vw;
     transition: all 0.25s;
   }
   
@@ -274,10 +276,11 @@ main {
     margin: auto auto;
     margin-bottom: 2rem;
     order: 1;
-    padding-top: 60%;
+    padding-top: 50%;
     position: relative;
-    width: 60%;
+    width: 50%;
     overflow: hidden;
+    display: none
   }
   
   figure div {
@@ -443,4 +446,98 @@ main {
     transform: skew(10deg) rotate(-15deg);
   }
 
-/* Fin del main */
+
+  .email-error {
+    display: none;
+    color: #BB2D3B;
+    font-size: 0.8em;
+    padding: 2px;
+  }
+  
+  .password-error {
+    display: none;
+    color:#BB2D3B;
+    font-size: 0.8em;
+    padding: 2px;
+  }
+
+  .is-valid {
+    border-color: #198754;
+  }
+  
+  .is-invalid {
+    border-color: #842029;
+  }
+
+  #email {
+    width: 60vw;
+  }
+
+  #password {
+    width: 60vw;
+  }
+
+  #login-button {
+    width: 60vw
+  }
+
+
+  @media (min-width: 768px) {
+    figure {
+      display: block;
+    }
+
+    .text {
+      border: 1px solid var(--border);
+      border-radius: var(--borderRadius);
+      box-sizing: border-box;
+      font-size: 1rem;
+      height: 2.25rem;
+      line-height: 1.25rem;
+      margin-top: 0.25rem;
+      order: 2;
+      padding: 0.25rem 0.5rem;
+      width: 28vw;
+      transition: all 0.25s;
+    }
+
+    .login-form {
+      width: 40vw
+    }
+
+    .email-error {
+      display: none;
+      color: #BB2D3B;
+      font-size: 0.8em;
+      padding: 2px;
+    }
+    
+    .password-error {
+      display: none;
+      color:#BB2D3B;
+      font-size: 0.8em;
+      padding: 2px;
+    }
+  
+    .is-valid {
+      border-color: #198754;
+    }
+    
+    .is-invalid {
+      border-color: #842029;
+    }
+    
+  #email {
+    width: 35vw;
+  }
+
+  #password {
+    width: 35vw;
+  }
+
+  #login-button {
+    width: 35vw
+  }
+
+
+  }

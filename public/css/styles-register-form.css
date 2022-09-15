@@ -12,7 +12,6 @@ body {
    display: flex;
    flex-direction: column;
    margin: auto;
-   gap: 15px;
    padding: 15px;
    width: 70%;
    border-radius:3px;
@@ -20,6 +19,12 @@ body {
 
 .label {
    text-decoration: underline;
+   margin-top: 15px;
+}
+
+input {
+   margin-bottom: 5px;
+   height: 2.25rem;
 }
 
 .write-space {
@@ -41,7 +46,9 @@ body {
    color: white;
    border-radius:3px;
    border:1px solid #1259c3;
+   height: 2vw;
    padding:3px 10px;
+   margin-top:8px;
 
 }
 .boton-registrar:hover{
@@ -55,7 +62,10 @@ body {
    color: #1259c3;
    border-radius:3px;
    border:1px solid #1259c3;
+   margin-top:8px;
+   margin-bottom: 8px;
    padding:3px 10px;
+   height: 2vw;
 }
 .boton-borrar:hover{
    background-color: #0022AA;
@@ -70,7 +80,49 @@ main input:disabled {
     background-color: beige;
 }
 
-/* Fin del main */
+.firstname-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .lastname-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+.email-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+ 
+ .password-error {
+   display: none;
+   color:#BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .avatar-error {
+   display: none;
+   color: #BB2D3B;
+   font-size: 1em;
+   padding: 2px;
+ }
+
+ .is-valid {
+   border-color: #198754;
+ }
+ 
+ .is-invalid {
+   border-color: #842029;
+ }
+
 
 
  

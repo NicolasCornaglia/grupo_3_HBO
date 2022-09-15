@@ -3,6 +3,7 @@
 <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="\css\stylesCreacion.css">  
+    <script src="/js/product-create-validation.js"></script>
 </head>
 
 <script>
@@ -21,11 +22,14 @@
             <h1 id="editar">Editar producto: <%= data.productToEdit.name %> </h1>
             <form id="form" class="login" action="/p/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST">
                 <labbel>Nombre del Producto:</labbel>
-                <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" required>
+                <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" id="name">
+                <div class="name-error"></div>
                 <labbel>Descripción</labbel>
-                <input type="text" name="description" placeholder="Descripción" value="<%= data.productToEdit.description %>" required>
+                <input type="text" name="description" placeholder="Descripción" value="<%= data.productToEdit.description %>" id="description">
+                <div class="description-error"></div>
                 <labbel>Imagen</labbel>
-                <input id="imagen" type="file" name="image" placeholder="Imagen" value="<%- data.productToEdit.image %>" required>
+                <input  type="file" name="image" placeholder="Imagen" value="<%- data.productToEdit.image %>" id="image">
+                <div class="image-error"></div>
                 <labbel>Categoría</labbel>
                 <select name="category" value="<%= data.productToEdit.category %>" required>
                     <% for (let category of data.categories) { %>
