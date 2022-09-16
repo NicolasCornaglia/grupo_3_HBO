@@ -4,7 +4,7 @@
 <head>
     <%- include('./partials/head') %>
         <link rel="stylesheet" href="\css\styles-register-form.css">
-        <script src="/js/register-validation.js"></script>
+        <!-- <script src="/js/register-validation.js"></script> -->
 </head>
 
 <body>
@@ -15,11 +15,6 @@
     <main>
         <div class="main-mobile">
             <form action="/u/api/users/register" method="POST" class="formulario" enctype="multipart/form-data">
-
-                <% for (let error of errors) { %> 
-                    <p> <%= error.msg %> </p>
-                <% } %>
-
                 <h2>Registra tu cuenta</h2>
 
                 <div class="label">
@@ -27,24 +22,42 @@
                 </div>
                 <input  name="firstname" type="text" id="firstname" placeholder="Ej: Juan" class="write-space">
                 <div class="firstname-error"></div>
-
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "firstname") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
                 <div class="label">
                     <label class="floatLabel">Apellido:</label>
                 </div>
                 <input name="lastname" type="text" id="lastname" placeholder="Ej: Martinez" class="write-space">
                 <div class="lastname-error"></div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "lastname") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
 
                 <div class="label">
                     <label class="floatLabel">Correo electrónico:</label>
                 </div>
                 <input  name="email" type="email" id="email" placeholder="Ej: juan10@gmail.com" class="write-space">
                 <div class="email-error"></div>
-
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "email") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
                 <div class="label">
                     <label class="floatLabel">Contraseña:</label>
                 </div>
                 <input name="password" type="password" id="password" placeholder="No compartir" class="write-space">
                 <div class="password-error"></div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "password") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
 
                 <div class="label">
                     <label class="floatLabel">Número telefónico:</label>
@@ -66,6 +79,11 @@
                 </div>
                 <input name="avatar" type="file" class="write-space" id="avatar">
                 <div class="avatar-error"></div>
+                <% for (let error of errors) { %> 
+                    <% if (error.param == "avatar") { %> 
+                        <p style="color: red"> <%= error.msg %> </p>
+                    <% } %>
+                <% } %> 
 
                 <button type="submit" class="boton-registrar"> Registrarse </button>
                 <button type="reset" class="boton-borrar"> Borrar </button>

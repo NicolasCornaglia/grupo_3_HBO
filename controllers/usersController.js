@@ -17,8 +17,6 @@ const controller = {
     },
     processRegister: async (req, res) => {
         const errors = validationResult(req);
-        console.log("Errors: ", req.errorsValidation);
-        console.log("body: ", req.body)
         if (errors.isEmpty()) {
             const users = await User.findAll()
             const body = req.body;

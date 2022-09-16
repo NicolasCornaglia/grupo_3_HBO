@@ -16,7 +16,7 @@ router.get('/productDetail/:id', productController.detailProduct);
 
 router.get('/api/products', productController.getProducts);
 router.post('/api/products', validate(validationsCreateProduct), uploadFile.single('image'), productController.createProduct);
-router.put('/api/products/:id', productController.editProducts);
+router.put('/api/products/:id',validate(validationsCreateProduct), productController.editProducts);
 router.delete('/api/products/:id', productController.destroy);
 
 

@@ -18,7 +18,7 @@
             <h1 class="a11y-hidden">Login Form</h1>
             <div>
                 <label class="label-email">
-                    <input type="email" class="text " name="email" id="email" placeholder="Email" tabindex="1" required />
+                    <input type="email" class="text " name="email" id="email" placeholder="Email" tabindex="1"  />
                     <span class="required"> Email</span>
                     <% if (errors) { %>
                         <p class="mensaje-error" style="color: red;"><%= errors.mail.msg %> </p> 
@@ -39,7 +39,7 @@
             <div>
                 <label class="label-password">
                     <span class="required">Password</span>
-                    <input type="text" class="text" id="password" name="password" placeholder="Password" tabindex="2" required />
+                    <input type="text" class="text" id="password" name="password" placeholder="Password" tabindex="2"  />
                     
                 </label>
                 <div class="password-error"></div>
