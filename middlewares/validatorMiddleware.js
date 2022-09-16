@@ -5,17 +5,11 @@ const { validationResult } = require('express-validator');
 
 const validate = validations => {
    return async (req, res, next) => {
+      console.log("Body from middleware", req.body)
       await Promise.all(validations.map(validation => validation.run(req)));
-
-      const errors = validationResult(req);
-      if (errors.isEmpty()) {
-         return next();
-      }
-      if (!errors.isEmpty()) {
-         req.errorsValidation = errors;
-         return next();
-      }
-   };
+      
+      return next();
+   }
 };
 
 const validationsRegister = [

@@ -20,7 +20,7 @@ router.get('/register', guestMiddleware, userController.displayRegisterForm);
 router.get('/profile', authMiddleware, userController.displayProfile);
 router.get('/editUser', authMiddleware, userController.editView)
 
-router.post("/api/users/register", validate(validationsRegister), uploadFile.single("avatar"), userController.processRegister);
+router.post("/api/users/register", uploadFile.single("avatar"), validate(validationsRegister), userController.processRegister);
 router.post("/api/users/login", validate(validationsLogin), userController.loginProcess);
 router.get("/api/users/logout", userController.logOut)
 router.put("/api/users/editUser", userController.editUser)
