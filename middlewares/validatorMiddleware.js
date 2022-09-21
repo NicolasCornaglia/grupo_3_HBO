@@ -6,6 +6,8 @@ const { validationResult } = require('express-validator');
 const validate = validations => {
    return async (req, res, next) => {
       console.log("Body from middleware", req.body)
+
+      console.log("Req body", req.body);
       await Promise.all(validations.map(validation => validation.run(req)));
       
       return next();
@@ -62,7 +64,7 @@ const validationsCreateProduct = [
       .isLength({ min: 20, max: 99 }).withMessage("La descripcion debe tener entre 20 y 99 caracteres"),
    body("image").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif", "jpeg"];
+      let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (!file) {
          throw new Error("Tienes que subir una imagen");

@@ -15,24 +15,19 @@ const controller = {
         return res.render('home.ejs', { products })
     },
     displayCreate: async (req, res) => {
-        const materials = await Material.findAll();
-        const colors = await Color.findAll();
-        const categories = await Category.findAll();
-        return res.status(200).render('creacion.ejs', { errors: [] , data: {materials: materials, colors: colors, categories: categories} } );
+        const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
+
+        return res.status(200).render('creacion.ejs', { errors: [], data: { materials: materials, colors: colors, categories: categories } });
     },
-    displayProductCart: (req,res) => {
+    displayProductCart: (req, res) => {
         return res.render('productCart.ejs',);
     },
     createProduct: async (req, res) => {
-        const materials = await Material.findAll();
-        const colors = await Color.findAll();
-        const categories = await Category.findAll();
+        const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
         const body = req.body
-        const products = await User.findAll()
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             const newProduct = {
-                id: products.length + 1,
                 name: body.name,
                 description: body.description,
                 price: body.price,
@@ -46,9 +41,10 @@ const controller = {
             }
             await Product.create(newProduct);
             console.log(Product)
+
             return res.redirect('/')
         }
-        return res.render('creacion.ejs', { errors: errors.array() , data: {materials: materials, colors: colors, categories: categories}})
+        return res.render('creacion.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
     },
     getProducts: async (req, res) => {
         let products
@@ -63,22 +59,21 @@ const controller = {
         } catch (error) {
             console.error("ERROR: ", error)
         }
+        console.log("Hola")
         res.send(products)
     },
 
     productToEdit: async (req, res) => {
         const foundProduct = await Product.findByPk(req.params.id);
-        const materials = await Material.findAll();
-        const colors = await Color.findAll();
-        const categories = await Category.findAll();
+        const [categories, colors, materials] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll()]);
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            return res.status(200).render('editarPublicacion.ejs', { 
+            return res.status(200).render('editarPublicacion.ejs', {
                 errors: [],
-                data: { productToEdit: foundProduct, materials: materials, colors: colors, categories: categories } 
+                data: { productToEdit: foundProduct, materials: materials, colors: colors, categories: categories }
             })
         }
-        return res.render('editarPublicacion.ejs', { errors: errors.array() , data: {materials: materials, colors: colors, categories: categories}})
+        return res.render('editarPublicacion.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
     },
 
     obtenerPorId: async (req, res) => {
@@ -88,10 +83,7 @@ const controller = {
 
     editProducts: async (req, res) => {
         const { name, description, price, category, image, dimensions, colors, materials } = req.body;
-        const foundProduct = await Product.findByPk(req.params.id);
-        const materialsDB = await Material.findAll();
-        const colorsDB = await Color.findAll();
-        const categoriesDB = await Category.findAll();
+        const [categoriesDB, colorsDB, materialsDB, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             await Product.update({
@@ -112,13 +104,10 @@ const controller = {
 
             return res.redirect('/')
         }
-        return res.render('editarPublicacion.ejs', { errors: errors.array() , data: { productToEdit: foundProduct, materials: materialsDB, colors: colorsDB, categories: categoriesDB }})
+        return res.render('editarPublicacion.ejs', { errors: errors.array(), data: { productToEdit: foundProduct, materials: materialsDB, colors: colorsDB, categories: categoriesDB } })
     },
     detailProduct: async (req, res) => {
-        const foundProduct = await Product.findByPk(req.params.id);
-        const materials = await Material.findAll();
-        const colors = await Color.findAll();
-        const categories = await Category.findAll();
+        const [categories, colors, materials, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
         return res.render('productDetail.ejs', { data: { product: foundProduct, materials: materials, colors: colors, categories: categories } });
     },
     destroy: async (req, res) => {
@@ -128,7 +117,7 @@ const controller = {
         res.redirect('/');
     },
     search: async (req, res) => {
-        
+
     }
 }
 
