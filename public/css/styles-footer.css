@@ -34,9 +34,11 @@
   flex-wrap: nowrap;
   
 }
+.help h4{
+  text-decoration: underline;
+}
 .help a{
   font-size: 15px;
-  
 }
 
 .legal-info{
@@ -44,7 +46,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
- 
+  
+}
+.legal-info h4{
+  text-decoration: underline;
   
 }
 .legal-info a{
@@ -57,12 +62,11 @@
   flex-direction: column;
   justify-content: space-between;
  
-  
 }
 .logo-footer{
    width: 17vw;
    
- }
+}
 .about-us p{
   display: flex;
   font-size: 12px;
