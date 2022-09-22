@@ -307,4 +307,52 @@ VALUES (
    2,
    now(),
    now()
+),
+(
+   "Mesa de jardin redonda",
+   "Ideal exterior, pinotea laqueada. Cuatro patas reforzadas",
+   28999,
+   "https://assets.tramontina.com.br/upload/tramon/imagens/BEL/10835076PNM001G.png",
+   "170x108",
+   1,
+   7,
+   1,
+   now(),
+   now()
+),
+(
+"Cama simple en pino",
+"Se trata de un diseño de cabecera simple y minimalista",
+1200,
+"https://tokstok.vtexassets.com/arquivos/ids/2269197/cama-solteiro-88-am-ndoa-am-ndoa-vila_spin8.jpg?v=637297779254230000",
+"100x180x70",
+3,
+7,
+1,
+now(),
+now()
+),
+(
+ "Fuente de granito",
+ "Hermosa fuente de jardin con motor de agua y mini cascada",
+ 250000,
+ "https://industrialdemonterroso.com/wp-content/uploads/2017/01/fuente-adosada-vieira.jpg",
+ "197x155x49",
+ 9,
+ 5,
+ 6,
+ now(),
+ now()
+),
+(
+   "Mesita de luz",
+   "Pequeña mesa de luz con dos cajones",
+   9600,
+   "https://f.fcdn.app/imgs/4778c8/rusticohogar.com.uy/ruhouy/01ce/original/catalogo/155_155_1/1500-1500/mesa-de-luz-iryna-2-cajones-mesa-de-luz-iryna-2-cajones.jpg",
+   "46x75x24",
+   5,
+   2,
+   1,
+   now(),
+   now()
 );
