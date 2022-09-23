@@ -12,83 +12,42 @@
     <header class="main-header">
         <%- include('./partials/header') %>
     </header>
+    <%if(products.length> 0){%>
+        <h3 class="title">Productos encontrados</h3>
+        <%} else {%>
+            <h3 class="title error">No se encontraron productos con el criterio de busqueda</h3>
+            <a href="/"><span class="back-home-button">Volver a Home</span></a>
+            <%}%>
+                <div class="products-container">
 
+                    <div class="products-row">
 
-    <h3 class="title">Productos encontrados</h3>
+                        <% for (let product of products) { %>
 
-    <div class="products-container">
+                            <div class="product-card">
 
-        <div class="products-row">         
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <a href="/productCart"><i class="fas fa-cart-plus"></i></a>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <a href="/productCart"><i class="fas fa-cart-plus"></i></a>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/images/blackChair.webp" alt="Imagen del producto">
-                <div class="main-card">
-                    <i class="fas fa-cart-plus"></i>
-                    <h4 class="product-name">Nombre del producto</h4>
-                    <h4 class="product-price">$0000</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+                                <img src="<%- product.image%>" alt="Imagen del producto">
+                                <div class="main-card">
+                                    <a href="/productCart"><i class="fas fa-cart-plus"></i></a>
+                                    <h4 class="product-name">
+                                        <%= product.name%>
+                                    </h4>
+                                    <h4 class="product-price">$0000</h4>
+                                    <p class="product-description">
+                                        <%= product.description %>
+                                    </p>
+                                    <div class="link">Ver detalle</div>
+                                </div>
 
-    <footer>
-        <%- include('./partials/footer') %>
-    </footer>
+                            </div>
+
+                            <% }%>
+                    </div>
+                </div>
+
+                <footer>
+                    <%- include('./partials/footer') %>
+                </footer>
 
 
 </body>

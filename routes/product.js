@@ -14,7 +14,7 @@ router.get('/productCart', authMiddleware, productController.displayProductCart)
 router.get('/productDetail/:id', productController.detailProduct);
 /* router.get('/searchproduct', productController.) */
 
-router.get('/api/products', productController.getProducts);
+router.get('/api/products', productController.renderSearchView);
 router.post('/api/products', uploadFile.single('image'), validate(validationsCreateProduct), productController.createProduct);
 router.put('/api/products/:id', validate(validationsCreateProduct), productController.editProducts);
 router.delete('/api/products/:id', productController.destroy);

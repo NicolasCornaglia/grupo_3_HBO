@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,29 @@
     <link rel="stylesheet" href="\css\styles-header.css">
     <title>Header</title>
 </head>
+
 <body>
 
     <div class="main-header-top-bar">
 
         <a href="/"> <img src="/images/LogoDH.png" class="logo"> </a>
 
-        <div class="form" action="#" method="GET">
-            <input class="searcher" placeholder="Buscar productos" name="search"/>
+        <form class="form" action="/p/api/products" method="GET">
+            <input class="searcher" placeholder="Buscar productos" name="search" />
             <button class="submit"><i class="fa fa-search"></i></button>
-        </div>
+        </form>
 
         <ul class="user-navbar">
             <% if(locals.isLogged) { %>
-                <a href="/u/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" class="user-image" ></a>
-                <li style="display:flex;align-items: center;"><%= locals.loguedUser.firstname%> <%= locals.loguedUser.lastname%></li>
-            <% } else { %> 
-                <li><a href="/u/login">Ingresá</a></li>
-                <li><a href="/u/register">Registrate </a></li>
-            <% } %>
+                <a href="/u/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" class="user-image"></a>
+                <li style="display:flex;align-items: center;">
+                    <%= locals.loguedUser.firstname%>
+                        <%= locals.loguedUser.lastname%>
+                </li>
+                <% } else { %>
+                    <li><a href="/u/login">Ingresá</a></li>
+                    <li><a href="/u/register">Registrate </a></li>
+                    <% } %>
         </ul>
 
         <div class="mobile-header">
@@ -35,12 +40,12 @@
 
             <a href="/p/productCart" class="shop-cart">
                 <i class="fas fa-shopping-cart"></i>
-                
+
             </a>
         </div>
     </div>
 
- <!--    <div class="fixed-header ">
+    <!--    <div class="fixed-header ">
         <a href="/">Inicio</a>
         <a href="/aboutUs">Sobre nosotros</a>
         <a href="">Sillas</a>
@@ -51,7 +56,7 @@
         <a href="">Contacto</a>     
     </div> -->
 
-<!--     <div class="main-navbar">
+    <!--     <div class="main-navbar">
         <ul class="left-navbar">
             <li><a href="#">Ofertas</a></li>
             <li><a href="#">Tiendas Oficiales</a></li>
@@ -73,4 +78,5 @@
 
 
 </body>
+
 </html>

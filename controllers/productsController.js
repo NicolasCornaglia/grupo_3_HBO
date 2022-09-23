@@ -46,7 +46,7 @@ const controller = {
         }
         return res.render('creacion.ejs', { errors: errors.array(), data: { materials: materials, colors: colors, categories: categories } })
     },
-    getProducts: async (req, res) => {
+    renderSearchView: async (req, res) => {
         let products
         const search = req.query.search
         try {
@@ -59,7 +59,23 @@ const controller = {
         } catch (error) {
             console.error("ERROR: ", error)
         }
-        console.log("Hola")
+        console.log("products: ",products)
+        res.render("searchproducts.ejs", { products })
+
+    },
+    getAll: async (req, res) => {
+        let products
+        const search = req.query.search
+        try {
+            if (search) {
+                products = await Product.findAll({ where: { name: { [Sequelize.Op.like]: `%${req.query.search}%` } } })
+            }
+            if (!search) {
+                products = await Product.findAll()
+            }
+        } catch (error) {
+            console.error("ERROR: ", error)
+        }
         res.send(products)
     },
 
