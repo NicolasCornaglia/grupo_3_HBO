@@ -3,6 +3,7 @@
 <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/stylesProductDetail.css">
+    <script src="/js/product-detail.js" ></script>
 </head>
 <body>
     <header class="main-header">
@@ -19,7 +20,7 @@
                     <p class="product-description"> Alto Ancho Profundidad Color</p>
                 </div>
 
-                <img src="/images/<%= data.product.image %>" alt="producto a mostrar">
+                <img src="<%= data.product.image %>" alt="producto a mostrar">
 
                 <div class="bottom-img">
                     <h3 class="product-price"> $ <%= data.product.price %></h3>
@@ -52,27 +53,27 @@
 
                 <div class="rigth-info">
                     <h2><%= data.product.name %></h2>
-                    <h4>$ <%= data.product.price %></h4>
+                    <h4>Precio por unidad: $ <%= data.product.price %></h4>
+                    <span id="productPrice" style="display: none;"><%= data.product.price %></span>
                     <p><%= data.product.description %></p>
                     <h4>Color: </h4>
                     <span><%= data.colors[data.product.color_id-1].name %></span> 
                     <h4>Altura, Ancho y Profundidad: </h4>
-                    <span><%= data.product.dimensions %></span>
+                    <span><%= data.product.dimensions %> (cm)</span>
                     <h4>Material: </h4>
                     <span><%= data.materials[data.product.color_id-1].name %></span>
                 
                     <h4>Garantía: 6 meses</h4>
                     
                     <div class="cantidad">
-                        <!-- <label>Cantidad:</label> -->
                         <div class="cantidad" action="#" method="GET">
-                            <input class="cuantity" placeholder="Ingrese cuantos items quiere"/>
-                            <button type="submit" class="button">Aplicar </button> 
-                            <button type="reset" class="button">Cancelar </button>
+                            <input class="cuantity" id="cuantity" placeholder="Ingrese cuantos items quiere"/>
+                            <button type="submit" class="button" id="applyButton">Aplicar </button> 
+                            <button type="reset" class="button" id="cancelButton">Cancelar </button>
                         </div>
                     </div>      
 
-                    <p>Script para mostrar precio segun cantidad de productos</p>
+                    <p id="priceWithCuantity" style="font-style:italic">Precio para 1 unidad: $ <%= data.product.price %></p>
 
                     <a href="#"> Ver medios de pago </a>
 

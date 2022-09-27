@@ -70,7 +70,8 @@ VALUES ("Negro", now(), now()),
    ("Azul", now(), now()),
    ("Gris", now(), now()),
    ("Rojo", now(), now()),
-   ("Caoba", now(), now());
+   ("Caoba", now(), now()),
+   ("Verde", now(), now());
 
 INSERT INTO deco_hogar.materials(name, created_at, updated_at)
 VALUES("Madera", now(), now()),
@@ -177,31 +178,7 @@ VALUES (
       now()
    ),
    (
-      "Cama Base Box Sommier",
-      "Base de cama sommier color negro",
-      15576,
-      "https://http2.mlstatic.com/D_NQ_NP_988242-MLA49904023168_052022-O.webp",
-      "200 X 80 x 36",
-      3,
-      1,
-      1,
-      now(),
-      now()
-   ),
-   (
-      "Cama 2 plaza",
-      "Cama De Hierro 2 Plaza Estilo Industrial C009",
-      132000,
-      "https://http2.mlstatic.com/D_NQ_NP_943648-MLA43757736889_102020-O.webp",
-      "190 X 140 x 38",
-      3,
-      1,
-      2,
-      now(),
-      now()
-   ),
-   (
-      "Mesa de Luz Sajo",
+      "Mesa de Luz con cajon y puertas",
       "Mesa de luz simple con cajón y puerta sin patas para tu habitación. Con un espacio especial para tus libros o cualquier cosa que desees",
       5263,
       "https://http2.mlstatic.com/D_NQ_NP_693173-MLA50329723355_062022-O.webp",
@@ -221,6 +198,30 @@ VALUES (
       5,
       2,
       1,
+      now(),
+      now()
+   ),
+   (
+      "Cama Base Box Sommier",
+      "Base de cama sommier color negro",
+      15576,
+      "https://http2.mlstatic.com/D_NQ_NP_988242-MLA49904023168_052022-O.webp",
+      "200 X 80 x 36",
+      3,
+      1,
+      1,
+      now(),
+      now()
+   ),
+   (
+      "Cama Matrimonial Queen",
+      "Cama De Hierro 2 Plaza Matrimonial Estilo Industrial C009",
+      132000,
+      "https://http2.mlstatic.com/D_NQ_NP_943648-MLA43757736889_102020-O.webp",
+      "190 X 140 x 38",
+      3,
+      1,
+      2,
       now(),
       now()
    ),

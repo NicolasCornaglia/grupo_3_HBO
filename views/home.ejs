@@ -85,90 +85,33 @@
             <div class="products-container">
 
                 <div class="products-row">
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto" class="product-image">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
+                    <% for (let i=8; i<12 ; i++) { %>
+                        <div class="product-card">
+                            <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
+                            <div class="main-card">
+                                <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                                <h4 class="product-name"><%= products[i].name %></h4>
+                                <h4> $ <%= products[i].price %></h4>
+                                <!-- <p class="description"> descripcion </p> -->
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
+                    <% } %>  
                 </div>
                 
                 <div class="products-row">
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
+                    <% for (let i=12; i<16 ; i++) { %>
+                        <div class="product-card">
+                            <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
+                            <div class="main-card">
+                                <a href="/p/productCart"><i class="fas fa-cart-plus"></i></a>
+                                <h4 class="product-name"><%= products[i].name %></h4>
+                                <h4> $ <%= products[i].price %></h4>
+                                <!-- <p class="description"> descripcion </p> -->
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
+                    <% } %>  
                 </div>
+                
             </div>
         
         <h3 class="title">Lo mas comprado</h3>
@@ -176,90 +119,20 @@
             <div class="products-container">
 
                 <div class="products-row">
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto" class="product-image">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
+                    <% for (let i=16; i<20 ; i++) { %>
+                        <div class="product-card">
+                            <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
+                            <div class="main-card">
+                                <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                                <h4 class="product-name"><%= products[i].name %></h4>
+                                <h4> $ <%= products[i].price %></h4>
+                                <!-- <p class="description"> descripcion </p> -->
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
+                    <% } %>  
                 </div>
                 
-                <div class="products-row">
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="/images/blackChair.webp" alt="Imagen del producto">
-                        <div class="main-card">
-                            <i class="fas fa-cart-plus"></i>
-                            <h4 class="product-name">Nombre del producto</h4>
-                            <!-- <h4>Descripcion:</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti distinctio veritatis rem amet voluptas</p> -->
-                            <h4>Precio: $</h4>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
         <!-- slider container -->

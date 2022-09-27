@@ -611,7 +611,14 @@ a:visited {
         flex-direction: row;
     }
     .presentation{
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+        justify-content: center;
+        padding: 10px;
+        font-style: italic;
     }
     
     /* .sliderTop {
