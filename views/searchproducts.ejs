@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head') %>
-        <link rel="stylesheet" href="\css\styles-products.css">
+        <link rel="stylesheet" href="\css\styles-searchProducts.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <script src="https://kit.fontawesome.com/5d251886e4.js" crossorigin="anonymous"></script>
 </head>
@@ -32,7 +32,7 @@
                                     <h4 class="product-name">
                                         <%= product.name%>
                                     </h4>
-                                    <h4 class="product-price">$0000</h4>
+                                    <h4 class="product-price">$<%= product.price%></h4>
                                     <p class="product-description">
                                         <%= product.description %>
                                     </p>
