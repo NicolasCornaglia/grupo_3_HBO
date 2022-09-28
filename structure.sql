@@ -26,6 +26,7 @@ CREATE TABLE deco_hogar.products(
    price float,
    image VARCHAR(500),
    dimensions VARCHAR(100),
+   marked BOOLEAN,
    category_id INT(10) NOT NULL,
    color_id INT(10) NOT NULL,
    material_id INT(10) NOT NULL,
@@ -47,5 +48,31 @@ CREATE TABLE deco_hogar.users(
    role VARCHAR(100),
    avatar VARCHAR(150),
    created_at DATETIME,
-   updated_at DATETIME
+   updated_at DATETIME,
+   deleted_at DATETIME
 );
+CREATE TABLE deco_hogar.orders(
+   id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   userId INT(10) NOT NULL,
+   total DECIMAL(10, 2),
+   paymentMethod VARCHAR(25),
+   shippingMethod VARCHAR(25),
+   FOREIGN KEY (userId) REFERENCES deco_hogar.users(id),
+   created_at DATETIME,
+   updated_at DATETIME,
+   deleted_at DATETIME
+);
+CREATE TABLE deco_hogar.orderitems(
+   id INT(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   orderId INT(10) NOT NULL,
+   productId INT(10) NOT NULL,
+   name VARCHAR(100),
+   price DECIMAL(10, 2),
+   quantity INTEGER(11),
+   FOREIGN KEY (orderId) REFERENCES deco_hogar.orders(id),
+   FOREIGN KEY (productId) REFERENCES deco_hogar.products(id),
+   created_at DATETIME,
+   updated_at DATETIME,
+   deleted_at DATETIME
+);
+

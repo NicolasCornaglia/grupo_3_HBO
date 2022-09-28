@@ -26,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
          type: dataTypes.STRING,
          allowNull: false
       },
+      marked: {
+        type: dataTypes.BOOLEAN,
+        defaultValue: false,
+      },
       category_id: {
          type: dataTypes.STRING,
          allowNull: false
