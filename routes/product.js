@@ -7,6 +7,8 @@ const { validationsCreateProduct, validate } = require('../middlewares/validator
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+const productCartController = require('../controllers/productCartController');
+
 //  productos
 router.get('/create', productController.displayCreate);
 router.get('/edit/:id', productController.productToEdit);
@@ -19,5 +21,7 @@ router.post('/api/products', uploadFile.single('image'), validate(validationsCre
 router.put('/api/products/:id', validate(validationsCreateProduct), productController.editProducts);
 router.delete('/api/products/:id', productController.destroy);
 
+// api for product cart
+router.get('/api/productCartItem/:id', productCartController.productById);
 
 module.exports = router;

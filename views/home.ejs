@@ -56,9 +56,11 @@
                     <div class="product-card">
                         <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
                         <div class="main-card">
-                            <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                            <button class="agregar_carrito" data-id="<%- products[i].id %>">
+                                <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
+                            </button>
                             <h4 class="product-name"><%= products[i].name %></h4>
-                            <h4> $ <%= products[i].price %></h4>
+                            <h3 class="product-price"> $ <%= products[i].price %></h3>
                             <!-- <p class="description"> descripcion </p> -->
                         </div>
                     </div>
@@ -70,9 +72,11 @@
                     <div class="product-card">
                         <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
                         <div class="main-card">
-                            <a href="/p/productCart"><i class="fas fa-cart-plus"></i></a>
+                            <button class="agregar_carrito" data-id="<%- products[i].id %>">
+                                <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
+                            </button>
                             <h4 class="product-name"><%= products[i].name %></h4>
-                            <h4> $ <%= products[i].price %></h4>
+                            <h3 class="product-price"> $ <%= products[i].price %></h3>
                             <!-- <p class="description"> descripcion </p> -->
                         </div>
                     </div>
@@ -89,9 +93,11 @@
                         <div class="product-card">
                             <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
                             <div class="main-card">
-                                <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                                <button class="agregar_carrito" data-id="<%- products[i].id %>">
+                                    <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
+                                </button>
                                 <h4 class="product-name"><%= products[i].name %></h4>
-                                <h4> $ <%= products[i].price %></h4>
+                                <h3 class="product-price"> $ <%= products[i].price %></h3>
                                 <!-- <p class="description"> descripcion </p> -->
                             </div>
                         </div>
@@ -103,9 +109,11 @@
                         <div class="product-card">
                             <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
                             <div class="main-card">
-                                <a href="/p/productCart"><i class="fas fa-cart-plus"></i></a>
+                                <button class="agregar_carrito" data-id="<%- products[i].id %>">
+                                    <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
+                                </button>
                                 <h4 class="product-name"><%= products[i].name %></h4>
-                                <h4> $ <%= products[i].price %></h4>
+                                <h3 class="product-price"> $ <%= products[i].price %></h3>
                                 <!-- <p class="description"> descripcion </p> -->
                             </div>
                         </div>
@@ -123,9 +131,11 @@
                         <div class="product-card">
                             <a href="/p/productDetail/<%- products[i].id %>"><img src="<%- products[i].image%>" alt="Imagen del producto" class="product-image"></a>
                             <div class="main-card">
-                                <a href="/#"><i class="fas fa-cart-plus cart-icon"></i></a>
+                                <button class="agregar_carrito" data-id="<%- products[i].id %>">
+                                    <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
+                                </button>
                                 <h4 class="product-name"><%= products[i].name %></h4>
-                                <h4> $ <%= products[i].price %></h4>
+                                <h3 class="product-price"> $ <%= products[i].price %></h3>
                                 <!-- <p class="description"> descripcion </p> -->
                             </div>
                         </div>

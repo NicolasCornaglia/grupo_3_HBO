@@ -1,5 +1,3 @@
-
-
 /* Inicio del main */
 
 body {
@@ -10,7 +8,7 @@ body {
     background-size: 200px;
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -19,6 +17,7 @@ main{
     margin: auto;
 }
 
+/* 
 main section img{
     width: 80px;
     padding: 5px;  
@@ -52,15 +51,10 @@ h3{
     display: flex;
     justify-content: space-between;  
 }
-
+ */
 /* Fin del main */
 
-
-
-
-@media (min-width: 768px) {
-
-    /* Inicio del main */
+/* @media (min-width: 768px) {
 
     .items {
         display: flex;
@@ -78,5 +72,73 @@ h3{
         width: 40%;
     }
 
-    /* Fin del main */
+} */
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.styled-table {
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 45px;
+    font-size: 0.9em;
+    font-family: Roboto;
+    min-width: 60vw;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.styled-table thead tr {
+    background-color: #006a98;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #006a98;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #006a98;
+}
+
+.card-footer {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    padding: 7px;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+}
+
+.buyButton {
+    margin-top: 45px;
+    background: none;
+    border: none;
+    color: white;
+    font-style: bold;
+    border-radius: 5px;
+    font-size: 1.1em;
+    padding: 7px;
+    width: 100%;
+    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    background-color: #006a98;
+    
 }

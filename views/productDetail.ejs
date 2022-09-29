@@ -61,7 +61,7 @@
                     <h4>Altura, Ancho y Profundidad: </h4>
                     <span><%= data.product.dimensions %> (cm)</span>
                     <h4>Material: </h4>
-                    <span><%= data.materials[data.product.color_id-1].name %></span>
+                    <span><%= data.materials[data.product.material_id-1].name %></span>
                 
                     <h4>Garantía: 6 meses</h4>
                     
@@ -79,7 +79,7 @@
 
                     <div class="buy-buttons">
                         <button class="button" >Comprar ahora</button>
-                        <button class="button" >Añadir al carrito</button>
+                        <button class="button agregar_carrito" data-id="<%- data.product.id %>" >Añadir al carrito</button>
                     </div>     
                 </div>
             </div>

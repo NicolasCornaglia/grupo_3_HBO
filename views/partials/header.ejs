@@ -33,50 +33,24 @@
                     <% } %>
         </ul>
 
+
+        <a href="/p/productCart">
+            <div class="shop-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-word">Carrito</div>
+                <div class="cart-number badge">0</div>
+            </div>
+        </a>
+
         <div class="mobile-header">
             <a href="#" class="hamburger-button">
                 <i class="fas fa-bars"></i>
             </a>
-
-            <a href="/p/productCart" class="shop-cart">
-                <i class="fas fa-shopping-cart"></i>
-
-            </a>
         </div>
     </div>
-
-    <!--    <div class="fixed-header ">
-        <a href="/">Inicio</a>
-        <a href="/aboutUs">Sobre nosotros</a>
-        <a href="">Sillas</a>
-        <a href="">Mesas</a>
-        <a href="">Camas</a>
-        <a href="">Accesorios</a>
-        <a href="">Novedades</a>
-        <a href="">Contacto</a>     
-    </div> -->
-
-    <!--     <div class="main-navbar">
-        <ul class="left-navbar">
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Tiendas Oficiales</a></li>
-            <li><a href="#">Categorias</a></li>
-            <li><a href="#">Ayuda</a></li>
-        </ul>
-
-        <ul class="right-navbar">
-            <% if(locals.isLogged) { %>
-                <li style="display:flex;align-items: center;"><%= locals.loguedUser.firstname%> <%= locals.loguedUser.lastname%></li>
-                <a href="/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" width="50px" style="border-radius: 5%;"></a>
-            <% } else { %> 
-                <li><a href="/login">Ingresá</a></li>
-                <li><a href="/register">Registrate </a></li>
-            <% } %>
-        </ul>
-
-    </div> -->
-
 
 </body>
 
 </html>
+
+<script src="/js/script-home-shop-cart.js"></script>

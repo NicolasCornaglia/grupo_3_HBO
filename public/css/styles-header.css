@@ -128,7 +128,7 @@ a .logo {
    }
 
    a .logo {
-      width: 250px;
+      width: 200px;
    }
 
    .form {
@@ -140,9 +140,19 @@ a .logo {
    }
 
    .shop-cart {
-      display: inline-block;
-      align-self: center;
+      display: flex;
+      width: 100%;
+      flex-direction: row;
    }
+
+   .cart-word {
+      display: none;
+   }
+
+   .cart-number {
+      display: none;
+   }
+
 
    .user-navbar {
       display: flex;
@@ -178,9 +188,10 @@ a .logo {
 @media (min-width: 768px) {
 
    /* Inicio del header */
-   .logo {
-      width: 180px;
+   a .logo {
+      width: 250px;
    }
+
 
    .searcher {
       width: 80%;
@@ -197,23 +208,31 @@ a .logo {
       justify-content: center;
    }
 
-  /*  .fixed-header {
-      
-      display:flex;
+   .shop-cart {
+      display: flex;
+      width: 150px;
+      flex-direction: row;
+   }
+
+   .cart-word {
+      display: block;
+   }
+
+   .cart-number {
+      display: block;
+   }
+
+   .badge {
+      color: #fff !important;
+      border-radius: 0.11rem;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+      background-color: red;
+      display: flex;
+      height: 55%;
       justify-content: center;
-      align-items: center;
-      gap: 5%;
-      height: auto;
-      overflow: hidden;
-      
-      position: fixed; 
-      top: 0; 
-      z-index: 200;
-      height: 30px;
-      
-      width: 100vw; 
-   } */
-
-
-   /* Fin del header */
+      align-items: top;
+      font-size: 0.7em;
+      width: 8%;
+   };
+    
 }
