@@ -6,7 +6,8 @@ const methodOverride = require('method-override');
 const routes = require("./routes/routes");
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
-
+const apiUsersRoutes = require("./routes/apiUsersRoutes")
+const apiProductsRoutes = require("./routes/apiProductsRoutes")
 const cookies = require("cookie-parser")
 const session = require("express-session");
 const publicPath = path.resolve(__dirname, "./public");
@@ -48,6 +49,9 @@ app.set("views", path.resolve(__dirname, "./views"));
 app.use('/', routes);
 app.use('/u', userRoutes);
 app.use('/p', productRoutes);
+// apis for dashboard
+app.use('/api/users', apiUsersRoutes);
+app.use('/api/products', apiProductsRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor funcionando en el puerto ${PORT}`);

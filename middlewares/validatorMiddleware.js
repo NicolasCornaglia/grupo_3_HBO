@@ -1,6 +1,7 @@
 const { body } = require("express-validator");
 const path = require("path");
-const User = require("../database/models/users");
+const db = require('../database/models');
+const User = db.User;
 const { validationResult } = require('express-validator');
 
 const validate = validations => {
