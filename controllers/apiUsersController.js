@@ -23,8 +23,8 @@ const controller = {
    },
    show: async (req,res) => {
       try {
-         const {id, firstname, lastname, email, phoneNumber, city, gender, avatar} = await User.findByPk(req.params.id)
-         const userShow = {id, firstname, lastname, email, phoneNumber, city, gender, avatar}
+         const {id, firstname, lastname, email, phone_number, city, gender, avatar} = await User.findByPk(req.params.id)
+         const userShow = {id, firstname, lastname, email, phone_number, city, gender, avatar}
          res.send(userShow)
       }
       catch (error) {

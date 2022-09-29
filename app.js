@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+var cors = require('cors')
 const PORT = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
@@ -41,6 +42,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookies());
 app.use(userLoggedMiddleware);
+app.use(cors())
 
 //Template Engine
 app.set('view engine', 'ejs');
