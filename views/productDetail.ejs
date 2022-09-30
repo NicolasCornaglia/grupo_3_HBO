@@ -54,7 +54,7 @@
                 <div class="rigth-info">
                     <h2><%= data.product.name %></h2>
                     <h4>Precio por unidad: $ <%= data.product.price %></h4>
-                    <span id="productPrice" style="display: none;"><%= data.product.price %></span>
+                    <span id="productPrice" style="display: none;"><%= data.product.price.toFixed(2) %></span>
                     <p><%= data.product.description %></p>
                     <h4>Color: </h4>
                     <span><%= data.colors[data.product.color_id-1].name %></span> 
