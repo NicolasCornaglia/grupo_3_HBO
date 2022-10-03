@@ -17,62 +17,7 @@ main {
     margin: auto;
 }
 
-/* 
-main section img{
-    width: 80px;
-    padding: 5px;  
-}
 
-.descripciones{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    background-color: white;  
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin: 1em;
-    font-size: 0.8em;
-}
-h2{
-    margin-bottom: 10px; 
-}
-h3{
-    text-align: center;
-    margin-top: 20px; 
-}
-.datos{
-    margin-left: 0px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: space-between;
-}
-
-.botones-selector{
-    display: flex;
-    justify-content: space-between;  
-}
- */
-/* Fin del main */
-
-/* @media (min-width: 768px) {
-
-    .items {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 95%;
-        font-size: 0.8em;
-    }
-
-    .descripciones{
-        font-size: 1em;
-    }
-
-    .items img {
-        width: 40%;
-    }
-
-} */
 
 h2 {
     display: flex;
