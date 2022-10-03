@@ -1,0 +1,11 @@
+.kpi-container{
+    height: 33vh;
+    width: 50%;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
