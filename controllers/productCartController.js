@@ -9,11 +9,18 @@ module.exports = {
    },
    checkout: async (req,res) => {
       let order = await Order.create(
-         {...req.body, userId: req.session.loguedUser.id},
+         { ...req.body, userId: req.session.loggedUser.id},
          {
             include: Order.OrderItems,
          }
       );
       res.json({ok: true, status: 200, order: order});
+   },
+   order: async function (req, res) {
+      let order = await Order.findByPk(req.params.id, {
+        include: Order.OrderItems,
+      });
+      // res.send(order);
+      return res.render("order", { order });
    }
 }

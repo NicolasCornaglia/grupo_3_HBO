@@ -12,8 +12,8 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2>Productos en el carrito de <%= locals.loguedUser.firstname%>
+        <div >
+            <h2 class="main-title">Productos en el carrito de <%= locals.loggedUser.firstname%>
             </h2>
             <table class="styled-table">
                 <thead>
@@ -28,6 +28,8 @@
                 </thead>
 
                 <tbody class="cartRows">
+                    <% if (true) { %>
+                    <% }%>
                 </tbody>
                 
             </table>
@@ -43,8 +45,6 @@
                             <th>Medio de Pago</th>
                         </tr>
                     </thead>
-                    <tbody class="cartRows">
-                    </tbody>
                     <tbody>
 
                         <tr>

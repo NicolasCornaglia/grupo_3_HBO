@@ -132,7 +132,6 @@ main div img {
 .rigth-info {
     display: flex;
     flex-direction: column;
-    align-self: space-evenly;
     align-items: right;
     padding: 15px;
     font-size: 20px;
@@ -158,6 +157,7 @@ main div img {
 .cuantity {
     width: 100%;
     font-size: 15px;
+    height: 35px
 }
 
 .button:hover {
@@ -179,6 +179,11 @@ main div img {
     background-color: lightgreen;
     transition: all 1200ms;
 } 
+
+.title {
+    text-decoration: underline;
+    margin-top: 20px
+}
 
 
 

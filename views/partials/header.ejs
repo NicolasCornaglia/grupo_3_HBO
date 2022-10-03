@@ -22,10 +22,10 @@
 
         <ul class="user-navbar">
             <% if(locals.isLogged) { %>
-                <a href="/u/profile"><img src="<%= locals.loguedUser.avatar%>" alt="" class="user-image"></a>
+                <a href="/u/profile"><img src="<%= locals.loggedUser.avatar%>" alt="" class="user-image"></a>
                 <li style="display:flex;align-items: center;">
-                    <%= locals.loguedUser.firstname%>
-                        <%= locals.loguedUser.lastname%>
+                    <%= locals.loggedUser.firstname%>
+                        <%= locals.loggedUser.lastname%>
                 </li>
                 <% } else { %>
                     <li><a href="/u/login">Ingresá</a></li>

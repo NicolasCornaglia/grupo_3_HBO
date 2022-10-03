@@ -15,6 +15,7 @@ router.get('/edit/:id', productController.productToEdit);
 router.get('/productCart', authMiddleware, productController.displayProductCart);
 router.get('/productDetail/:id', productController.detailProduct);
 /* router.get('/searchproduct', productController.) */
+router.get('/order/:id', authMiddleware, productCartController.order )
 
 router.get('/api/products', productController.renderSearchView);
 router.post('/api/products', uploadFile.single('image'), validate(validationsCreateProduct), productController.createProduct);
@@ -23,5 +24,6 @@ router.delete('/api/products/:id', productController.destroy);
 
 // api for product cart
 router.get('/api/productCartItem/:id', productCartController.productById);
+router.post('/api/checkout', productCartController.checkout);
 
 module.exports = router;

@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 const db = require('../database/models');
 const { resolveAny } = require('dns/promises');
 const User = db.User;
+const Order = db.Order;
 
 const controller = {
     displayLogin: (req, res) => {
@@ -43,12 +44,12 @@ const controller = {
     loginProcess: async (req, res) => {
         const userEmail = req.body.email;
         /* console.log("body: " , req.body); */
-        const userToLogin = await User.findOne({ where: { email: userEmail } });
+        const userToLogin = await User.findOne({ where: { email: userEmail } }); // solucionaod en el master del trabajo
         if (userToLogin) {
             let passwordMatch = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (passwordMatch) {
                 /* delete userToLogin.password; */
-                req.session.loguedUser = userToLogin;
+                req.session.loggedUser = userToLogin;
                 if (req.body.rememberMe) {
                     res.cookie("userMail", req.body.email, { maxAge: (1000 * 2) * 60 })
                 }
@@ -59,8 +60,11 @@ const controller = {
         return res.render("login", { errors: { mail: { msg: "El mail no se encuentra registrado" } } });
     },
 
-    displayProfile: (req, res) => {
-        return res.render("userProfile", { user: req.session.loguedUser })
+    displayProfile: async (req, res) => {
+        let orders = await Order.findAll({
+            where: {userId: req.session.loggedUser.id}
+        })
+        return res.render("userProfile", { user: req.session.loggedUser, orders: orders })
     },
     logOut: (req, res) => {
         res.clearCookie('userMail');
@@ -68,10 +72,10 @@ const controller = {
         return res.redirect("/");
     },
     editView: (req, res) => {
-        res.render("user-edit", { user: req.session.loguedUser })
+        res.render("user-edit", { user: req.session.loggedUser })
     },
     editUser: async (req, res) => {
-        const user = req.session.loguedUser;
+        const user = req.session.loggedUser;
         if (user) {
             const userToModify = await User.findOne({ where: { email: user.email } });
             const passwordMatch = bcrypt.compareSync(req.body.currentPassword, userToModify.password);

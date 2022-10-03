@@ -18,6 +18,7 @@ window.onload = function () {
    });
 
    cancelButton.addEventListener("click", () => {
+      let productPrice = document.querySelector('#productPrice')
       priceWithCuantity.innerHTML = "Precio para 1 unidad: $ "+ productPrice.innerText
    });
 
