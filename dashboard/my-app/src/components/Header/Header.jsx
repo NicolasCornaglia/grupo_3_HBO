@@ -1,13 +1,17 @@
 import React from 'react';
 import './Header.css'
-import { Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Users from '../../pages/Users';
+import logo from '../../logo.png';
 
 function Header() {
     return (
-        <>
+        <div>
             <div className='header-container'>
-                <h1 className='logo'>Soy el header</h1>
+                <Link to="/">
+                   <img src={logo}/> 
+                </Link>
+
                 <div className='nav-container'>
                     <Link to="/products">
                         <span className='nav-item'>Products</span>
@@ -16,14 +20,8 @@ function Header() {
                         <span className='nav-item'>Users</span>
                     </Link>
                 </div>
-                {/* <Route exact path="/products">
-
-                </Route>
-                <Route exact path="/users">
-                    <Users />
-                </Route> */}
             </div>
-        </>
+        </div>
     )
 }
 

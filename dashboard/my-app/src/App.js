@@ -1,22 +1,34 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Sidebar from './components/SideBar'
 import KpiItem from './components/KpiItem/KpiItem';
+import Users from './pages/Users'
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      {/* <Sidebar /> */}
-      <div className='grid-col'>
-        <div className='grid-row'>
-          <KpiItem />
-          <KpiItem />
-          <KpiItem />
-          <KpiItem />
-          <KpiItem />
-          <KpiItem />
-        </div>
-      </div>
+      <Routes>
+        <Route path="/users" element={<Users />}>
+        </Route>
+      </Routes>
+
+      <Routes>
+        <Route path="/" element={
+          
+            <div className='grid-col'>
+              <div className='grid-row'>
+                <KpiItem />
+                <KpiItem />
+                <KpiItem />
+                <KpiItem />
+                <KpiItem />
+                <KpiItem />
+              </div>
+            </div>
+          }>
+
+        </Route>
+      </Routes>
     </div>
   );
 }
