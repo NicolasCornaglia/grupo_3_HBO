@@ -1,7 +1,7 @@
 .header-container{
-    height: 100px;
+    height: 150px;
     width: 100%;
-    background-color: lightblue;
+    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -9,7 +9,7 @@
 }
 
 .logo{
-    font-size: 30px;
+    width: 300px
 }
 
 .nav-item{
