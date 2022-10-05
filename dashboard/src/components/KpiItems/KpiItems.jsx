@@ -4,7 +4,7 @@ import KpiItem from '../KpiItem/KpiItem';
 import KpiTotalCategories from "../KpiItem/KpiTotalCategories";
 import KpiTotalPorudcts from "../KpiItem/KpiTotalPorducts";
 import KpiTotalUsers from "../KpiItem/KpiTotalUsers";
-import KpiLastProduct from "../KpiItem/KpiLastProduct";
+
 
 
 function KpiItems() {
@@ -16,13 +16,9 @@ function KpiItems() {
                 <KpiTotalPorudcts />
                 <KpiTotalUsers />
                 <KpiTotalCategories />
-                <KpiLastProduct />
-                <KpiItem />
-                <KpiItem />
               </div>
             </div>
           }>
-
         </Route>
       </Routes>
     )
