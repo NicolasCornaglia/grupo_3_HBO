@@ -28,20 +28,25 @@
 
                                 <img src="<%- product.image%>" alt="Imagen del producto">
                                 <div class="main-card">
-                                    <a href="/productCart"><i class="fas fa-cart-plus"></i></a>
+                                    <!-- <a href="/productCart"><i class="fas fa-cart-plus"></i></a> -->
+                                    <button class="agregar_carrito" data-id="<%- products.id %>">
+                                        <i class="fas fa-cart-plus cart-icon" data-id="<%- product.id %>"></i>
+                                    </button>
                                     <h4 class="product-name">
                                         <%= product.name%>
                                     </h4>
-                                    <h4 class="product-price">$<%= product.price%></h4>
+                                    <h4 class="product-price">$<%= product.price.toFixed(2)%></h4>
                                     <p class="product-description">
                                         <%= product.description %>
                                     </p>
-                                    <div class="link">Ver detalle</div>
+                                    <div class="link"><a href="/p/productDetail/<%- product.id %>"> Ver detalle </a></div>
                                 </div>
 
                             </div>
 
                             <% }%>
+
+                            <div class="space-div"></div>
                     </div>
                 </div>
 

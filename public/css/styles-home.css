@@ -244,6 +244,7 @@ cursor: pointer;
     align-items: center;
     margin-top: 15px;
     width: 80vw;
+
 }
 
 .product-card:hover {
@@ -251,14 +252,15 @@ cursor: pointer;
     transition: all 450ms;
 }
 
-.product-card .main-card i {
+/* .product-card .main-card i {
     position: absolute;
-    left: 85%;
+    left: 83%;
     top: 4%;
     background-color: white;
     border-radius: 50%;
     padding: 2%;
-}
+    z-index: 1;
+} */
 
 .product-card .main-card i:hover {
     transform: rotate(360deg);
@@ -271,7 +273,12 @@ cursor: pointer;
 }
 
 .product-name {
-    margin-bottom: 2%
+    margin-bottom: 4%;
+    color: rgb(62, 60, 60);
+}
+
+.product-price {
+    color: rgb(0, 0, 0);
 }
 
 a:visited {
@@ -282,6 +289,17 @@ a:visited {
 .sliderTop {
     display: none;
 }
+
+.agregar_carrito {
+   position: absolute;
+   left: 83%;
+   top: 3%;
+   background-color: white;
+   border-radius: 50%;
+   padding: 2%;
+   z-index: 2;
+}
+
 @media (max-width: 1280px) {
 
     .product-card {
@@ -452,7 +470,7 @@ a:visited {
 
     .product-card {
         width: 250px;
-
+        height: 330px
     }
 
     .products-row {

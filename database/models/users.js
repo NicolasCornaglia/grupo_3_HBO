@@ -4,7 +4,8 @@ module.exports = (sequelize, dataTypes) => {
       id: {
          type: dataTypes.BIGINT,
          primaryKey: true,
-         autoIncrement: true
+         autoIncrement: true,
+         allowNull: false
       },
       firstname: {
          type: dataTypes.STRING,
@@ -57,5 +58,14 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false
    }
 
-   return User = sequelize.define(alias,cols,config)
+   const User = sequelize.define(alias, cols, config);
+
+   User.associate = (models) => {
+      User.hasMany(models.Order, {
+         as: "orders",
+         foreignKey: "userId",
+      });
+   };
+
+   return User;
 }

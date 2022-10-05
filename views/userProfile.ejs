@@ -11,27 +11,97 @@
       <%- include('./partials/header') %>
    </header>
 
-   <main class="conteiner">
-      <div class="conteiner-items">
-         <% if(locals.isLogged) { %>
-            <h1>Perfil de <%= user.firstname %></h1>
-            <% if(user.gender == "Hombre") { %>
-               <h3>Bienvenido <%= user.firstname %> <%= user.lastname%></h3>
+   <main>
+      <div class="conteiner">
+         <div class="conteiner-items">
+            <% if(locals.isLogged) { %>
+               <h1>Perfil de <%= user.firstname %>
+               </h1>
+               <% if(user.gender=="Hombre" ) { %>
+                  <h3>Bienvenido <%= user.firstname %>
+                        <%= user.lastname%>
+                  </h3>
+                  <% } %>
+                     <% if(user.gender=="Mujer" ) { %>
+                        <h3>Bienvenida <%= user.firstname %>
+                              <%= user.lastname%>
+                        </h3>
+                        <% } %>
+                           <% if (user.gender !="Hombre" && user.gender !="Mujer" ) { %>
+                              <h3>Bienvenido/a <%= user.firstname %>
+                                    <%= user.lastname%>
+                              </h3>
+                              <% } %>
+                                 <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
+                                 <h4>
+                                    <%= user.email %>
+                                 </h4>
+                                 <a href="/u/editUser"><button class="button-profile">Cambiar contraseña</button></a>
+                                 <a href="/u/api/users/logout"><button class="button-profile">Salir de mi
+                                       cuenta</button><a>
+                                       <% } %>
+         </div>
+      </div>
+
+      <h4 class="subtitle">Mis pedidos</h4>
+      <table class="styled-table">
+         <thead>
+            <tr>
+               <th>#</th>
+               <th>Fecha</th>
+               <th>Envío</th>
+               <th>Pago</th>
+               <th>Total</th>
+               <th>Ver Pedido</th>
+            </tr>
+         </thead>
+         <tbody>
+            <% if (orders.length != 0) { %>
+               <% orders.forEach((order,index)=> { %>
+                  <tr>
+                     <th scope="row">
+                        <%= index + 1%>
+                     </th>
+                     <td>
+                        <%= new Intl.DateTimeFormat('es-ES', {year: 'numeric' , month: 'numeric' , day: '2-digit' ,
+                           hour: 'numeric' , minute: 'numeric' }).format(order.createdAt) %>
+                     </td>
+                     <td>
+                        <%= order.shippingMethod %>
+                     </td>
+                     <td>
+                        <%= order.paymentMethod %>
+                     </td>
+                     <td>
+                        $ <%= order.total.toFixed(2) %>
+                     </td>
+                     <td><a href="<%= `/p/order/${order.id}` %>"><button class="btn btn-warning btn-sm"><i
+                                 class="fas fa-eye"></i></button></a></td>
+                  </tr>
+                  <% }); %>
+            <% } else { %>
+               <tr>
+                  <th scope="row">
+                     -
+                  </th>
+                  <td>
+                     -
+                  </td>
+                  <td>
+                     -
+                  </td>
+                  <td>
+                     -
+                  </td>
+                  <td>
+                     $ 0
+                  </td>
+                  <td><button class="btn btn-warning btn-sm"><i
+                              class="fas fa-eye"></i></button></td>
+               </tr>
             <% } %>
-            <% if(user.gender == "Mujer") { %>
-               <h3>Bienvenida <%= user.firstname %> <%= user.lastname%></h3>
-            <% } %>
-            <% if (user.gender != "Hombre" && user.gender != "Mujer") { %>  
-               <h3>Bienvenido/a <%= user.firstname %> <%= user.lastname%></h3>
-            <% } %>       
-            <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
-            <h4>
-            <%= user.email %>
-            </h4>
-            <a href="/u/editUser"><button class="button-profile">Cambiar contraseña</button></a>
-            <a href="/u/api/users/logout"><button class="button-profile">Salir de mi cuenta</button><a>
-         <% } %>
-   </div>
+         </tbody>
+      </table>
 
    </main>
 
