@@ -1,8 +1,9 @@
 
 import './App.css';
-import KpiItem from './components/KpiItem/KpiItem';
+import KpiItems from './components/KpiItems/KpiItems';
 import Users from './pages/Users'
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
+
 
 function App() {
   return (
@@ -12,23 +13,8 @@ function App() {
         </Route>
       </Routes>
 
-      <Routes>
-        <Route path="/" element={
-          
-            <div className='grid-col'>
-              <div className='grid-row'>
-                <KpiItem />
-                <KpiItem />
-                <KpiItem />
-                <KpiItem />
-                <KpiItem />
-                <KpiItem />
-              </div>
-            </div>
-          }>
+      <KpiItems/>
 
-        </Route>
-      </Routes>
     </div>
   );
 }

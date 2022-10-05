@@ -11,7 +11,7 @@ const controller = {
                id: user.id,
                name: `${user.firstname} ${user.lastname}`,
                email: user.email,
-               detail: `http://localhost:3000/api/users/${user.id}`
+               detail: `http://localhost:3001/api/users/${user.id}`
             }
          })
          res.send({ count, users })
