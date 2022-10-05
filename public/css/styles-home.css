@@ -178,29 +178,8 @@ cursor: pointer;
     padding: 10px
 }
 
-.box-info {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px;
-    
-}
-
-.box{
-    border: solid black 1px;
-    border-radius: 5px;
-    background-color: #e6e6e6;
-    padding: 3px;
-}
-.icono{
-    /* position: absolute;
-    right: 6%;
-    top: 50%; */
-}
-.box-title{
-    color: black;
-    display: flex;
-    flex-direction: column;
+.presentation h2 {
+    text-decoration: underline;
 }
 
 .title {
@@ -461,12 +440,13 @@ a:visited {
         font-style: italic;
         font-size: 1.5em;
     }
-    
-    
+    .sliderTop {
+        display: none;
+    }
     
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 
     .product-card {
         width: 250px;
@@ -627,15 +607,6 @@ a:visited {
         font-style: italic;
         font-size: 1.5em;
     }
-    .box {
-        display: none;
-    }
-    .sliderTop {
-        display: none;
-    }
-    .slider{
-        display: none;
-    }
     
     
 
@@ -667,7 +638,10 @@ a:visited {
         padding: 10px;
         font-style: italic;
     }
-
-
+    
+    /* .sliderTop {
+        display: none;
+    }
+*/
 
 }
