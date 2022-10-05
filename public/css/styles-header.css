@@ -33,6 +33,7 @@ a .logo {
    width: 80%;
    border-radius: 0px;
    border-width: 0;
+   height: 25px;
    font-size: 15px;
    box-shadow: 1px 1px 1px 1px black;
 }
@@ -142,6 +143,7 @@ a .logo {
    .shop-cart {
       display: flex;
       width: 100%;
+      align-items: center;
       flex-direction: row;
    }
 
@@ -164,8 +166,10 @@ a .logo {
 
    .searcher {
       width: 80%;
-      border-radius: 2px;
+      border-radius: 0px;
+      height: 35px;
       font-size: 20px;
+      padding: 3px
    }
 
    .form .submit {
@@ -195,8 +199,10 @@ a .logo {
 
    .searcher {
       width: 80%;
-      border-radius: 2px;
+      border-radius: 0px;
+      height: 35px;
       font-size: 23px;
+      padding: 5px;
    }
 
    .form .submit {
