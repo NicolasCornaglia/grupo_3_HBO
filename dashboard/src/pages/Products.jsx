@@ -1,11 +1,11 @@
 import React from "react";
-import KpiLastProduct from "../components/KpiItem/KpiLastProduct";
+import Home from "../components/KpiItems/Home";
 
 
 function Products() {
    return (
       <div>
-         <KpiLastProduct/>
+         
       </div>
    )
 }

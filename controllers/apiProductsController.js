@@ -1,6 +1,8 @@
 const db = require('../database/models');
+const sequelize = require('sequelize');
 const Product = db.Product;
 const Category = db.Category;
+const OrderItem = db.OrderItem
 
 
 const controller = {
@@ -31,12 +33,12 @@ const controller = {
       try {
          const { id, name, description, price, image, dimensions, category_id, color_id, material_id } = await Product.findByPk(req.params.id)
          const productShow = {
-            id, 
-            name, 
-            description, 
-            price, 
-            image, 
-            dimensions, 
+            id,
+            name,
+            description,
+            price,
+            image,
+            dimensions,
             relations: {
                category_id: category_id,
                color_id: color_id,
@@ -50,13 +52,13 @@ const controller = {
          res.status(404).send(error)
       }
    },
-   getAllCategories: async (req,res) => {
+   getAllCategories: async (req, res) => {
       try {
          let [categories, count] = await Promise.all([Category.findAll(), Category.count()]);
          categories = categories.map((category) => {
             return {
                id: category.id,
-               name: category.name            
+               name: category.name
             }
          })
          res.send({ count, categories })
@@ -65,8 +67,22 @@ const controller = {
          res.status(404).send(error)
       }
    },
-   productsByCategory: async (req,res) => {
-      
+   // TODO
+   productsByCategory: async (req, res) => {
+
+   },
+   getAmountProductsSold: async (req, res) => {
+      try {
+         const amount = await OrderItem.sequelize.query('SELECT sum(quantity) as amount FROM orderitems', {
+            model: OrderItem,
+            mapToModel: true
+         });
+         console.log("Amount: ", amount)
+         res.send(amount[0])
+      } catch (error) {
+         console.error("ERROR: ", error)
+         res.status(500).send(error)
+      }
    }
 
 }
