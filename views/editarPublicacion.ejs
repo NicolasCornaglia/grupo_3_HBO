@@ -20,55 +20,72 @@
     <main class="mainEditar">
         <div class="form-card">
             <h1 id="editar">Editar producto: <%= data.productToEdit.name %> </h1>
-            <form id="form" class="login" action="/p/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST">
-                <labbel>Nombre del Producto:</labbel>
-                <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" id="name">
+            <form id="form" class="login" action="/p/api/products/<%- data.productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <label class="label">Nombre del Producto:</label>
+                <input type="text" name="name" placeholder="Nombre del Producto" value="<%- data.productToEdit.name %>" id="name" class="formInput">
                 <div class="name-error"></div>
                 <% for (let error of errors) { %> 
                     <% if (error.param == "name") { %> 
                         <p style="color: red"> <%= error.msg %> </p>
                     <% } %>
                 <% } %> 
-                <labbel>Descripción</labbel>
-                <input type="text" name="description" placeholder="Descripción" value="<%= data.productToEdit.description %>" id="description">
+                <label class="label">Descripción:</label>
+                <input type="text" name="description" placeholder="Descripción" value="<%= data.productToEdit.description %>"  id="description" class="formInput">
                 <div class="description-error"></div>
                 <% for (let error of errors) { %> 
                     <% if (error.param == "description") { %> 
                         <p style="color: red"> <%= error.msg %> </p>
                     <% } %>
                 <% } %> 
-                <labbel>Imagen</labbel>
-                <input  type="file" name="image" placeholder="Imagen" value="<%- data.productToEdit.image %>" id="image">
+                <label  class="label">Imagen:</label>
+                <input  type="file" name="image" placeholder="Imagen"  id="image" class="formInput" > 
                 <div class="image-error"></div>
+                <div style="color: grey"> Si desea mantener la imagen original, no seleccione ningun archivo.</div>
                 <% for (let error of errors) { %> 
                     <% if (error.param == "image") { %> 
                         <p style="color: red"> <%= error.msg %> </p>
                     <% } %>
                 <% } %> 
-                <labbel>Categoría</labbel>
-                <select name="category" value="<%= data.productToEdit.category %>" required>
+                <label  class="label">Categoría:</label>
+                <select name="category" value="<%= data.productToEdit.category %>"  required class="select">
                     <% for (let category of data.categories) { %>
-                        <option value="<%= category.id %>"><%= category.name %></option>
-                    <% } %>  
+                        <% if (category.id == data.productToEdit.category_id) { %>
+                        <option value="<%= category.id %>" selected ><%= category.name %></option>
+                        <% } else {%>
+                            <option value="<%= category.id %>" ><%= category.name %></option>
+                        <% } %>
+                    <% } %> 
                 </select>
-                <labbel>Color</labbel>
-                <select name="colors" value="<%= data.productToEdit.color_id %>" required>
+                <label class="label">Color:</label>
+                <select name="colors" value="<%= data.productToEdit.color_id %>" required class="select">
                     <% for (let color of data.colors) { %>
+                        <% if (color.id == data.productToEdit.color_id) { %>
+                        <option value="<%= color.id %>" selected ><%= color.name %></option>
+                        <% } else {%>
                         <option value="<%= color.id %>"><%= color.name %></option>
+                        <% } %>
                     <% } %>  
                 </select>    
-                <labbel>Precio</labbel>
-                <input type="text" name="price" placeholder="Precio" value="<%= data.productToEdit.price %>" required>
-                <labbel>Dimensiones en formato: Alto x Ancho x Profundidad</labbel>
-                <input type="text" name="dimensions" placeholder="Dimensiones" value="<%= data.productToEdit.dimensions %>" required>
-                <labbel>Materiales</labbel>
-                <select name="materials" value="<%= data.productToEdit.material_id %>" required>
+                <label class="label">Precio:</label>
+                <input type="text" name="price" placeholder="Precio" value="<%= data.productToEdit.price %>" required class="formInput">
+                <label class="label">Dimensiones en formato Alto x Ancho x Profundidad:</label>
+                <input type="text" name="dimensions" placeholder="Dimensiones" value="<%= data.productToEdit.dimensions %>" required class="formInput">
+                <label class="label">Materiales:</label>
+                <select name="materials" value="<%= data.productToEdit.material_id %>" required class="select">
                     <% for (let material of data.materials) { %>
                         <option value="<%= material.id %>"><%= material.name %></option>
                     <% } %>  
+
+                    <% for (let material of data.materials) { %>
+                        <% if (material.id == data.productToEdit.material_id) { %>
+                        <option value="<%= material.id %>" selected ><%= material.name %></option>
+                        <% } else {%>
+                            <option value="<%= material.id %>"><%= material.name %></option>
+                        <% } %>
+                    <% } %> 
                 </select> 
-                <button class="create-button" type="submit">Finalizar Edición</button>
-                <button class="reset-button"><a href="/">Cancelar Edición</a></button>
+                <button class="create-button" type="submit" id="formButton">Finalizar Edición</button>
+                <button class="reset-button" id="formButton"><a href="/">Cancelar Edición</a></button>
             </form>
         </div>
     </main>

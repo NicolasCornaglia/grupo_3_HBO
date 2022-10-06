@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
-const { validationResult } = require('express-validator');
+const { validationResult, body } = require('express-validator');
 
 const db = require('../database/models');
 const Product = db.Product;
@@ -40,7 +40,7 @@ const controller = {
                 updated_at: new Date()
             }
             await Product.create(newProduct);
-            console.log(Product)
+            /*  console.log(Product) */
 
             return res.redirect('/')
         }
@@ -59,7 +59,7 @@ const controller = {
         } catch (error) {
             console.error("ERROR: ", error)
         }
-        console.log("products: ",products)
+        /* console.log("products: ",products) */
         res.render("searchproducts.ejs", { products })
 
     },
@@ -101,23 +101,56 @@ const controller = {
         const { name, description, price, category, image, dimensions, colors, materials } = req.body;
         const [categoriesDB, colorsDB, materialsDB, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
         const errors = validationResult(req);
+        const oldImage = foundProduct.image;
+        
+        console.log("old image before editProdct", oldImage)
+        console.log("body en controller editPRoducts", req.body)
         if (errors.isEmpty()) {
-            await Product.update({
-                name,
-                description,
-                price,
-                category,
-                image,
-                dimensions,
-                colors,
-                materials,
-                updated_at: new Date()
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            });
-
+            if (!image) {
+                await Product.update({
+                    name: name,
+                    description:description,
+                    price: price,
+                    category_id: category,
+                    image: oldImage,
+                    dimensions: dimensions,
+                    color_id: colors,
+                    material_id: materials,
+                    updated_at: new Date()
+                }, {
+                    where: {
+                        id: req.params.id
+                    }
+                });
+            } else {
+                const newImage = `${"/images/"}${req.file.filename}`
+                await Product.update({
+                    name: name,
+                    description:description,
+                    price: price,
+                    category_id: category,
+                    image: newImage,
+                    dimensions: dimensions,
+                    color_id: colors,
+                    material_id: materials,
+                    updated_at: new Date()
+                }, {
+                    where: {
+                        id: req.params.id
+                    }
+                });
+                console.log("Producto editado modificando imagen",{
+                    name: name,
+                    description:description,
+                    price: price,
+                    category_id: category,
+                    image: newImage,
+                    dimensions: dimensions,
+                    color_id: colors,
+                    material_id: materials,
+                    updated_at: new Date()
+                })
+            }
             return res.redirect('/')
         }
         return res.render('editarPublicacion.ejs', { errors: errors.array(), data: { productToEdit: foundProduct, materials: materialsDB, colors: colorsDB, categories: categoriesDB } })

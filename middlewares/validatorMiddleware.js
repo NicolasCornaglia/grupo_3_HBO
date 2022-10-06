@@ -7,8 +7,6 @@ const { validationResult } = require('express-validator');
 const validate = validations => {
    return async (req, res, next) => {
       console.log("Body from middleware", req.body)
-
-      console.log("Req body", req.body);
       await Promise.all(validations.map(validation => validation.run(req)));
       
       return next();
@@ -30,18 +28,17 @@ const validationsRegister = [
             }
          })
       }),
-   body("password").notEmpty().withMessage("Tienes que escribir una contraseña").bail()
-      .isLength({ min: 8, max: 99 }).withMessage("Su contraseña debe tener entre 8 y 99 caracteres").bail()
-      .isAlphanumeric().withMessage("Su contraseña debe contener caracteres alfanumericos"),
+   body("password").isLength({ min: 8, max: 99 }).withMessage("Su contraseña debe tener entre 8 y 99 caracteres"),
+   body("password").matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i").withMessage("Su contraseña debe contener caracteres alfanumericos"),
    body("phonenumber").isMobilePhone().withMessage("Debe ser un numero telefonico"),
    body("city").notEmpty().withMessage("Escribe tu ciudad de origen"),
    body("gender").notEmpty().withMessage("Tienes que elegir un genero"),
    body("avatar").custom((value, { req }) => {
       let file = req.file;
-      let acceptedExtensions = [".jpg", ".png", ".gif", "jpeg"];
+      let acceptedExtensions = [".jpg", ".png", ".jpeg", ".gif"];
 
       if (!file) {
-         throw new Error("Tienes que subir una imagen");
+         throw new Error("Debes elegir una imagen de perfil");
       } else {
          let fileExtension = path.extname(file.originalname);
          if (!acceptedExtensions.includes(fileExtension)) {
@@ -61,14 +58,14 @@ const validationsLogin = [
 const validationsCreateProduct = [
    body("name").notEmpty().withMessage("El nombre debe tener al menos 5 caracteres").bail()
       .isLength({ min: 5, max: 35 }).withMessage("El nombre debe tener entre 5 y 35 caracteres"),
-   body("description").notEmpty().withMessage("La descripcion no puede estar vacia").bail()
+   body("description")
       .isLength({ min: 20, max: 99 }).withMessage("La descripcion debe tener entre 20 y 99 caracteres"),
    body("image").custom((value, { req }) => {
       let file = req.file;
       let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (!file) {
-         throw new Error("Tienes que subir una imagen");
+         throw new Error("Debes subir una imagen del producto");
       } else {
          let fileExtension = path.extname(file.originalname);
          if (!acceptedExtensions.includes(fileExtension)) {
@@ -80,9 +77,32 @@ const validationsCreateProduct = [
    body("dimensions").isLength({ min: 5, max: 99 }).withMessage("Debe ingesar las dimensiones del producto")
 ]
 
+const validationsEditProduct = [
+   body("name").notEmpty().withMessage("El nombre debe tener al menos 5 caracteres").bail()
+      .isLength({ min: 5, max: 50 }).withMessage("El nombre debe tener entre 5 y 35 caracteres"),
+   body("description")
+      .isLength({ min: 20, max: 99 }).withMessage("La descripcion debe tener entre 20 y 99 caracteres"),
+   body("image").custom((value, { req }) => {
+      let file = req.file;
+      let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+
+      if (!file) {
+         /* req.file.filename = ''; */
+      } else {
+         let fileExtension = path.extname(file.originalname);
+         if (!acceptedExtensions.includes(fileExtension)) {
+            throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`)
+         }
+      }
+      return true;
+   }) ,
+   body("dimensions").isLength({ min: 5, max: 99 }).withMessage("Debe ingesar las dimensiones del producto")
+]
+
 module.exports = {
    validationsLogin,
    validationsRegister,
    validationsCreateProduct,
+   validationsEditProduct,
    validate
 };

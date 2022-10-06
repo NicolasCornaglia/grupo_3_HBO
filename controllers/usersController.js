@@ -72,7 +72,8 @@ const controller = {
         return res.redirect("/");
     },
     editView: (req, res) => {
-        res.render("user-edit", { user: req.session.loggedUser })
+        let error = ""
+        res.render("user-edit", { user: req.session.loggedUser, error })
     },
     editUser: async (req, res) => {
         const user = req.session.loggedUser;
@@ -90,7 +91,9 @@ const controller = {
                 res.status(204).redirect("/u/profile");
             };
             if (!passwordMatch) {
-                res.send(500)
+                let error;
+                error = "La contraseña actual no fue ingresada correctamente";
+                res.render("user-edit", { user: req.session.loggedUser, error });
             }
         }
 

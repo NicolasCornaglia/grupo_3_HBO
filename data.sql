@@ -27,13 +27,13 @@ VALUES (
    (
       "Nicolas",
       "Cornaglia",
-      "nicolascornaglia@hotmail.com",
-      "$2y$10$47BX4KWts95KWG4uDrsiFO4cU2keM1R9ahjzjdh.EzlTgRSZczfxi",
+      "nicolascornaglia1@hotmail.com",
+      "$2y$10$r5ZGdQR9F0TAeDqC/yIdu.Mg4twYCM6LmK03wkjxf4zJvtbHsk3t2",
       "3492587649",
       "Rafaela",
       "Hombre",
       "admin",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg",
+      "/images/1662154109639.jpg",
       now(),
       now()
    ),
@@ -113,7 +113,7 @@ VALUES (
       "https://cordobamuebles.com/wp-content/uploads/2020/08/silla-valencia-negra-600x904.jpg",
       "82 x 41 x 41",
       2,
-      2,
+      1,
       3,
       now(),
       now()

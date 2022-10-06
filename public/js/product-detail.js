@@ -2,11 +2,9 @@ window.onload = function () {
 
    let cantidad = document.querySelector('#cuantity')
    let priceWithCuantity = document.querySelector('#priceWithCuantity')
-   let applyButton = document.querySelector('#applyButton')
-   let cancelButton = document.querySelector('#cancelButton')
    let productPrice = document.querySelector('#productPrice')
 
-   applyButton.addEventListener("click", () => {
+   cantidad.addEventListener("input", () => {
       priceWithCuantity.innerHTML = ""
       if (cantidad.value > 1) {
          priceWithCuantity.innerHTML = "Precio total para "+ cantidad.value + " unidades: $ " + Number(productPrice.innerText)*cantidad.value
@@ -17,9 +15,5 @@ window.onload = function () {
       }
    });
 
-   cancelButton.addEventListener("click", () => {
-      let productPrice = document.querySelector('#productPrice')
-      priceWithCuantity.innerHTML = "Precio para 1 unidad: $ "+ productPrice.innerText
-   });
 
 }

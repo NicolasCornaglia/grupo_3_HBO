@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/stylesProductDetail.css">
-    <script src="/js/product-detail.js" ></script>
+        <link rel="stylesheet" href="/css/stylesProductDetail.css">
+        <script src="/js/product-detail.js"></script>
 </head>
+
 <body>
     <header class="main-header">
         <%- include('./partials/header') %>
     </header>
-    
+
     <main>
-        <div class="main-mobile" > 
-            
+        <div class="main-mobile">
+
             <div class="product">
 
-                <div class="top-img"> 
-                    <h2 class="product-name"> <%= data.product.name %> </h2>
+                <div class="top-img">
+                    <h2 class="product-name">
+                        <%= data.product.name %>
+                    </h2>
                     <p class="product-description"> Alto Ancho Profundidad Color</p>
                 </div>
 
                 <img src="<%= data.product.image %>" alt="producto a mostrar">
 
                 <div class="bottom-img">
-                    <h3 class="product-price"> $ <%= data.product.price %></h3>
-                    <h4 class="product-cuotas">Precio en 12 cuotas: $ <%= data.product.price/12 %></h4>
+                    <h3 class="product-price"> $ <%= data.product.price %>
+                    </h3>
+                    <h4 class="product-cuotas">Precio en 12 cuotas: $ <%= data.product.price/12 %>
+                    </h4>
                     <p class="product-payment-options">Ver medios de pago</p>
                 </div>
 
@@ -32,17 +38,17 @@
 
             <div class="bottom-buttons">
                 <div class="cantidad" action="#" method="GET">
-                    <input class="cuantity" placeholder=" Cantidad"/>
-                    <button type="submit">Aplicar </button> 
+                    <input class="cuantity" placeholder=" Cantidad" />
+                    <button type="submit">Aplicar </button>
                     <button type="reset">Cancelar </button>
                 </div>
 
                 <button type="submit" class="buy-now">Comprar ahora</button>
 
                 <button type="idk" class="add-to-cart">Añadir al carrito</button>
-            
+
             </div>
-        </div>   
+        </div>
 
         <div class="main-web">
             <div class="flexbox-producto">
@@ -52,39 +58,63 @@
                 </div>
 
                 <div class="rigth-info">
-                    <h2 ><%= data.product.name %></h2>
-                    <p><%= data.product.description %></p>
+                    <h2>
+                        <%= data.product.name %>
+                    </h2>
+                    <p>
+                        <%= data.product.description %>
+                    </p>
                     <h4 class="title">Precio por unidad:</h4>
-                    <p> $ <%= data.product.price.toFixed(2) %></p>
-                    <span id="productPrice" style="display: none;" ><%= data.product.price.toFixed(2) %></span>
+                    <p> $ <%= data.product.price.toFixed(2) %>
+                    </p>
+                    <span id="productPrice" style="display: none;">
+                        <%= data.product.price.toFixed(2) %>
+                    </span>
                     <h4 class="title">Color: </h4>
-                    <span><%= data.colors[data.product.color_id-1].name %></span> 
+                    <span>
+                        <%= data.colors[data.product.color_id-1].name %>
+                    </span>
                     <h4 class="title">Altura, Ancho y Profundidad: </h4>
-                    <span><%= data.product.dimensions %> (cm)</span>
+                    <span>
+                        <%= data.product.dimensions %> (cm)
+                    </span>
                     <h4 class="title">Material: </h4>
-                    <span><%= data.materials[data.product.material_id-1].name %></span>
-                
+                    <span>
+                        <%= data.materials[data.product.material_id-1].name %>
+                    </span>
+
                     <h4 class="title">Garantía:</h4>
                     <p>6 meses</p>
-                    
+
                     <h7 class="title">Calcule precio para varias unidades:</h7>
                     <div class="cantidad">
                         <div class="cantidad" action="#" method="GET">
-                            <input class="cuantity" id="cuantity" placeholder="Ingrese cuantos items quiere"/>
-                            <button type="submit" class="button" id="applyButton">Aplicar </button> 
-                            <button type="reset" class="button" id="cancelButton">Cancelar </button>
+                            <input class="cuantity" id="cuantity" placeholder="Ingrese cuantos items quiere" />
                         </div>
-                    </div>      
+                    </div>
 
-                    
-                    <p id="priceWithCuantity" style="font-style:italic; color: rgb(74, 161, 74)">Precio para 1 unidad: $ <%= data.product.price %></p>
+
+                    <p id="priceWithCuantity" style="font-style:italic; color: rgb(74, 161, 74)">Precio para 1 unidad: $
+                        <%= data.product.price %>
+                    </p>
 
                     <a href="#"> Ver medios de pago </a>
 
                     <div class="buy-buttons">
-                        <!-- <button class="button" >Comprar ahora</button> -->
-                        <button class="button agregar_carrito" data-id="<%- data.product.id %>" >Añadir al carrito</button>
-                    </div>     
+                        <button class="button agregar_carrito" data-id="<%- data.product.id %>">Añadir al
+                            carrito</button>
+                    </div>
+                    <% if(locals.isLogged) { %>
+                        <% if (locals.loggedUser.role=="admin" ) { %>
+                            <a href='/p/edit/<%- data.product.id %>'>
+                            <div class="buy-buttons">
+                                <button class="button agregar_carrito">
+                                    Editar producto
+                                </button>
+                            </div>
+                            </a>
+                            <% } %>
+                                <% } %>
                 </div>
             </div>
 
@@ -97,4 +127,5 @@
     </footer>
 
 </body>
+
 </html>

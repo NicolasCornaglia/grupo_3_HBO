@@ -18,8 +18,8 @@ body {
  }
  
  .avatar {
-    width: 300px;
- }
+   width: 400px;
+}
  
  .input-form{
    display: flex;
@@ -32,10 +32,24 @@ body {
    border-width: 0 1px 1px 0;
    width: 100%;
    height: 30px;
-   margin: 5px 0;
+   margin: 20px 0;
    background: white
 }
 
 .form-edit{
   margin: 40px 0;
+}
+
+.inputPassword {
+   height: 30px;
+   font-size: 1.1em
+}
+
+.title {
+   font-style: black;
+   font-size: 1.3em;
+}
+
+.errorPassword {
+   color: red;
 }

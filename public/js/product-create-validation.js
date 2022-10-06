@@ -26,7 +26,7 @@ window.onload = function () {
    }
 
 
-   name.addEventListener("blur", () => {
+   name.addEventListener("input", () => {
       if (name.value.length < 5) {
          nameError.innerHTML = ""
          name.classList.add("is-invalid");
@@ -42,7 +42,7 @@ window.onload = function () {
       }
    });
 
-  description.addEventListener("blur", () => {
+  description.addEventListener("input", () => {
       if (description.value.length < 20) {
          descriptionError.innerHTML = ""
          description.classList.add("is-invalid");
@@ -95,7 +95,7 @@ window.onload = function () {
       }
    });
 
-   image.addEventListener("click", () => {
+/*    image.addEventListener("click", () => {
       if (image.value.length == 0) {
          imageError.innerHTML = ""
          image.classList.add("is-invalid");
@@ -108,6 +108,6 @@ window.onload = function () {
          imageError.style.display = "none";
          imageError.innerHTML = "";
       }
-   });
+   }); */
 
 }

@@ -34,8 +34,17 @@
                               <% } %>
                                  <img src="<%= user.avatar %>" alt="foto-perfil" class="avatar">
                                  <h4>
-                                    <%= user.email %>
+                                    Email: <%= user.email %> 
+                                    <div>
+                                       <% if (user.role == "admin") { %>
+                                          Permisos: <%= user.role %>                                   
+                                       <% } %>
+                                    </div>
                                  </h4>
+                                 <% if (user.role == "admin") { %>
+                                    <a href="/p/create"><button class="button-profile">Crear un producto</button></a>
+                                 <% } %>
+                                 
                                  <a href="/u/editUser"><button class="button-profile">Cambiar contraseña</button></a>
                                  <a href="/u/api/users/logout"><button class="button-profile">Salir de mi
                                        cuenta</button><a>
@@ -102,6 +111,8 @@
             <% } %>
          </tbody>
       </table>
+
+
 
    </main>
 

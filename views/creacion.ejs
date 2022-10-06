@@ -16,54 +16,54 @@
         <div class="form-card">
             <h1>Crear producto</h1>
                 <form id="form" action="/p/api/products" method="POST" enctype="multipart/form-data">    
-                    <labbel>Nombre del Producto:</labbel>
-                    <input type="text" name="name" id="name" >
+                    <label class="label">Nombre del Producto:</label>
+                    <input type="text" name="name" id="name" class="formInput">
                     <div class="name-error"></div>
                     <% for (let error of errors) { %> 
                         <% if (error.param == "name") { %> 
                             <p style="color: red"> <%= error.msg %> </p>
                         <% } %>
                     <% } %> 
-                    <labbel>Descripción: </labbel>
-                    <input type="text" name="description" id="description" >
+                    <label class="label">Descripción: </label>
+                    <input type="text" name="description" id="description" class="formInput">
                     <div class="description-error"></div>
                     <% for (let error of errors) { %> 
                         <% if (error.param == "description") { %> 
                             <p style="color: red"> <%= error.msg %> </p>
                         <% } %>
                     <% } %> 
-                    <labbel>Imagen: </labbel>
-                    <input type="file" name="image" id="image"> 
+                    <label class="label">Imagen: </label>
+                    <input type="file" name="image" id="image" class="formInput"> 
                     <div class="image-error"></div>
                     <% for (let error of errors) { %> 
                         <% if (error.param == "image") { %> 
                             <p style="color: red"> <%= error.msg %> </p>
                         <% } %>
                     <% } %> 
-                    <labbel>Categoría: </labbel>
-                    <select name="category" >
+                    <label class="label">Categoría: </label>
+                    <select name="category" class="select">
                         <% for (let category of data.categories) { %>
                             <option value="<%= category.id %>"><%= category.name %></option>
                         <% } %>  
                     </select>
-                    <labbel>Color: </labbel>
-                    <select name="colors" >
+                    <label class="label">Color: </label>
+                    <select name="colors" class="select">
                         <% for (let color of data.colors) { %>
                             <option value="<%= color.id %>"><%= color.name %></option>
                         <% } %> 
                     </select>    
-                    <labbel>Precio: </labbel>
-                    <input type="text" name="price" >
-                    <labbel>Dimensiones en formato: Alto x Ancho x Profundidad</labbel>
-                    <input type="text" name="dimensions" >
-                    <labbel>Material: </labbel>
-                    <select name="materials" >
+                    <label class="label">Precio: </label>
+                    <input type="text" name="price" class="formInput">
+                    <label class="label">Dimensiones en formato Alto x Ancho x Profundidad:</label>
+                    <input type="text" name="dimensions" class="formInput">
+                    <label class="label">Material: </label>
+                    <select name="materials" class="select">
                         <% for (let material of data.materials) { %>
                             <option value="<%= material.id %>"><%= material.name %></option>
                         <% } %>
                     </select> 
-                    <button class="create-button" type="submit">Crear</button>
-                    <button class="reset-button" type="reset">Descartar</button>
+                    <button class="create-button" id="formButton" type="submit">Crear</button>
+                    <button class="reset-button" id="formButton" type="reset">Descartar</button>
                 </form>
         </div>    
     </main>

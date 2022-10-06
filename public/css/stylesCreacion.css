@@ -1,4 +1,4 @@
-.form-card form {
+.form-card #form {
    display: flex;
    flex-direction: column;
    width: 60vw;
@@ -13,7 +13,6 @@
    margin-bottom: 25px;
 }
 
-
 .form-card {
    display: flex;
    flex-direction: column;
@@ -25,16 +24,15 @@ h1 {
    padding: 15px;
 }
 
-
-form button {
-   margin-top: 20px;
-   background-color: white;
-   border: none;
-   box-shadow: 1px 1px black;
-   height: 30px;
+.label {
+   margin-top: 10px
 }
 
-form input {
+#form .create-button {
+   margin-top: 20px;
+}
+
+#form .formInput {
    height: 30px;
    border: 0px;
    border-color: none;
@@ -42,11 +40,11 @@ form input {
    font-size: 18px;
 }
 
-form input:hover {
+#form .formInput:hover {
    background-color: lightcyan
 }
 
-select {
+.select {
    height: 30px;
    border: none;
    height: 30px;
@@ -56,6 +54,10 @@ select {
 .create-button {
    margin-top: 40px;
    font-size: 25px;
+   background-color: white;
+   border: none;
+   box-shadow: 1px 1px black;
+   height: 30px;
 }
 
 .create-button:hover {
@@ -64,6 +66,11 @@ select {
 
 .reset-button {
    font-size: 25px;
+   margin-top: 20px;
+   background-color: white;
+   border: none;
+   box-shadow: 1px 1px black;
+   height: 30px;
 }
 
 .reset-button:hover {
@@ -100,8 +107,12 @@ select {
    box-shadow: 0px 0px 1px 1px #842029;
  }
 
- ::placeholder {
+ #form ::placeholder {
    color: white;
  }
 
-/*  -webkit-box-shadow: 0 0 0 30px white inset !important; */
+
+ #image {
+   background-color: white;
+ }
+

@@ -30,7 +30,7 @@ window.onload = function () {
 
 
 
-   email.addEventListener("blur", () => {
+   email.addEventListener("input", () => {
       if (!ValidateEmail(email)) {
          emailError.innerHTML = ""
          email.classList.add("is-invalid");
@@ -45,8 +45,8 @@ window.onload = function () {
       }
    });
 
-   firstname.addEventListener("blur", () => {
-      if (firstname.value.length <= 2) {
+   firstname.addEventListener("input", () => {
+      if (firstname.value.length < 2) {
          firstnameError.innerHTML = ""
          firstname.classList.add("is-invalid");
          errors.firstname = "Su nombre debe contener al menos 2 caracteres"
@@ -60,7 +60,7 @@ window.onload = function () {
       }
    });
 
-   lastname.addEventListener("blur", () => {
+   lastname.addEventListener("input", () => {
       if (lastname.value.length < 2) {
          lastnameError.innerHTML = ""
          lastname.classList.add("is-invalid");
@@ -75,11 +75,11 @@ window.onload = function () {
       }
    });
 
-   password.addEventListener("blur", () => {
+   password.addEventListener("input", () => {
       if (password.value.length < 8) {
          passwordError.innerHTML = ""
          password.classList.add("is-invalid");
-         errors.password = "Debes ingresar una contraseña de al menos 8 caracteres"
+         errors.password = "Debes ingresar una contraseña de al menos 8 caracteres, con numeros y letras."
          passwordError.innerHTML += errors.password;
          passwordError.style.display = "block";
       } else {
@@ -91,7 +91,7 @@ window.onload = function () {
    });
 
    avatar.addEventListener("input", () => {
-      var _validFileExtensions = [".jpg", ".jpeg", ".gif", ".png"]
+      var _validFileExtensions = [".jpg", ".gif", ".png", ".jpeg"]
       function ValidateSingleInput(oInput) {
          if (oInput.type == "file") {
             var sFileName = oInput.value;
@@ -128,11 +128,11 @@ window.onload = function () {
       }
    });
 
-   avatar.addEventListener("click", () => {
+/*    avatar.addEventListener("input", () => {
       if (avatar.value.length == 0) {
          avatarError.innerHTML = ""
          avatar.classList.add("is-invalid");
-         errors.avatar = "Debes ingresar un imagen de perfil"
+         errors.avatar = "Debes ingresar un imagen de perfil con extension permitida: .jpg .jpeg .gif .png"
          avatarError.innerHTML += errors.avatar;
          avatarError.style.display = "block";
       } else {
@@ -141,6 +141,6 @@ window.onload = function () {
          avatarError.style.display = "none";
          avatarError.innerHTML = "";
       }
-   });
+   }); */
 
 }
