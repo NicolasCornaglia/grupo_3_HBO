@@ -101,18 +101,15 @@ const controller = {
         const { name, description, price, category, image, dimensions, colors, materials } = req.body;
         const [categoriesDB, colorsDB, materialsDB, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
         const errors = validationResult(req);
-        const oldImage = foundProduct.image;
         
-        console.log("old image before editProdct", oldImage)
-        console.log("body en controller editPRoducts", req.body)
+        console.log("body en controller editProducts", req.body)
         if (errors.isEmpty()) {
-            if (!image) {
+            if (!req.file) {
                 await Product.update({
                     name: name,
                     description:description,
                     price: price,
                     category_id: category,
-                    image: oldImage,
                     dimensions: dimensions,
                     color_id: colors,
                     material_id: materials,
@@ -122,7 +119,8 @@ const controller = {
                         id: req.params.id
                     }
                 });
-            } else {
+            } 
+            if (req.file) {
                 const newImage = `${"/images/"}${req.file.filename}`
                 await Product.update({
                     name: name,

@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
 
 const validate = validations => {
    return async (req, res, next) => {
-      console.log("Body from middleware", req.body)
+      /* console.log("Body from middleware", req.body) */
       await Promise.all(validations.map(validation => validation.run(req)));
       
       return next();

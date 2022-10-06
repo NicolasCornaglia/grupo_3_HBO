@@ -37,8 +37,8 @@
                         <p style="color: red"> <%= error.msg %> </p>
                     <% } %>
                 <% } %> 
-                <label  class="label">Imagen:</label>
-                <input  type="file" name="image" placeholder="Imagen"  id="image" class="formInput" > 
+                <label class="label">Imagen:</label>
+                <input type="file" name="image" id="image" class="formInput" > 
                 <div class="image-error"></div>
                 <div style="color: grey"> Si desea mantener la imagen original, no seleccione ningun archivo.</div>
                 <% for (let error of errors) { %> 
