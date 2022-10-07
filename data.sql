@@ -120,7 +120,7 @@ VALUES (
       now(),
       now()
    ),
-   (  "Silla Eames Style Aqua",
+   (  "Silla Eames Style",
       "Réplica de la silla DSW de Ray & Charles Eames, diseñada en los 50's para MOMA",
       11400,
       "https://areidesign.com.mx/wp-content/uploads/2019/11/Silla-Eames-Turquesa-Aqua.jpg",
@@ -131,7 +131,7 @@ VALUES (
       now(),
       now() 
    ),
-   (  "Silla rosa de escritorio",
+   (  "Silla de escritorio Ergonomic Style",
       "Silla ideal para nenas y nenes color rosa. Comodisima con respaldo flexible y ajuste de altura",
       12430,
       "https://r.btcdn.co/r/eyJzaG9wX2lkIjozNTI2LCJnIjoiMTAwMHgifQ/d2e0a32ec170e1a/639780-1296950-1.jpg",
@@ -142,7 +142,7 @@ VALUES (
       now(),
       now() 
    ),
-   (  "Silla de madera para comedor",
+   (  "Silla de comedor estilo Colonial",
       "Silla de madera realizada con laminas verticales de alta calidad de acabado caoba",
       33420,
       "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/517-0LPf39L._AC_SY879_.jpg",
@@ -201,7 +201,7 @@ VALUES (
       now()
    ),
    (
-      "Armario Metalico",
+      "Armario Metalico Puertas Batientes",
       "Armario Metálico de Puertas Batientes, ideal para la guarda segura en hogares industrias y oficinas",
       90247,
       "https://http2.mlstatic.com/D_NQ_NP_876262-MLA49772428482_042022-O.webp",
@@ -213,7 +213,7 @@ VALUES (
       now()
    ),
    (
-      "Armario Despensero",
+      "Armario Despensero Puertas Batientes",
       "Armario despensero de 4 estantes y 2 puertas color negro",
       15441,
       "https://http2.mlstatic.com/D_NQ_NP_639290-MLA44642894096_012021-O.webp",
@@ -236,7 +236,7 @@ VALUES (
       now(),
       now()   
    ),
-   (  "Armario nordico", 
+   (  "Armario Nordico", 
       "Se destacta por su estilo nordico y amplitud. Guarda todo lo que necesitas en tu dormitorio",
       160400,
       "https://muebleslufe.com/8686-large_default/armario-madera-pino.jpg",
