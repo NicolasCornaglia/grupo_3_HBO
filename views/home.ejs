@@ -63,9 +63,8 @@
                             <button class="agregar_carrito" data-id="<%- products[i].id %>">
                                 <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
                             </button>
-                            <h4 class="product-name"><%= products[i].name %></h4>
-                            <h3 class="product-price"> $ <%= products[i].price.toFixed(2)  %></h3>
-                            <!-- <p class="description"> descripcion </p> -->
+                            <p class="product-name"><%= products[i].name %></p>
+                            <p class="product-price"> $ <%= products[i].price.toFixed(2)  %></p>
                         </div>
                     </div>
                 <% } %>  
@@ -79,9 +78,8 @@
                             <button class="agregar_carrito" data-id="<%- products[i].id %>">
                                 <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
                             </button>
-                            <h4 class="product-name"><%= products[i].name %></h4>
-                            <h3 class="product-price"> $ <%= products[i].price.toFixed(2) %></h3>
-                            <!-- <p class="description"> descripcion </p> -->
+                            <p class="product-name"><%= products[i].name %></p>
+                            <p class="product-price"> $ <%= products[i].price.toFixed(2)  %></p>
                         </div>
                     </div>
                 <% } %>  
@@ -100,9 +98,12 @@
                                 <button class="agregar_carrito" data-id="<%- products[i].id %>">
                                     <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
                                 </button>
-                                <h4 class="product-name"><%= products[i].name %></h4>
-                                <h3 class="product-price"> $ <%= products[i].price.toFixed(2) %></h3>
-                                <!-- <p class="description"> descripcion </p> -->
+                                <p class="product-name"><%= products[i].name %></p>
+                                <div>
+                                    <span class="discount-percentage">10% off: </span>
+                                    <span class="discount-price"> $ <%= (products[i].price*1.10).toFixed(2) %></span>  
+                                </div> 
+                                <p class="product-price"> $ <%= products[i].price.toFixed(2)  %></p>
                             </div>
                         </div>
                     <% } %>  
@@ -116,9 +117,12 @@
                                 <button class="agregar_carrito" data-id="<%- products[i].id %>">
                                     <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
                                 </button>
-                                <h4 class="product-name"><%= products[i].name %></h4>
-                                <h3 class="product-price"> $ <%= products[i].price.toFixed(2) %></h3>
-                                <!-- <p class="description"> descripcion </p> -->
+                                <p class="product-name"><%= products[i].name %></p>
+                                <div>
+                                    <span class="discount-percentage">10% off: </span>
+                                    <span class="discount-price"> $ <%= (products[i].price*1.10).toFixed(2) %></span>  
+                                </div> 
+                                <p class="product-price"> $ <%= products[i].price.toFixed(2)  %></p>
                             </div>
                         </div>
                     <% } %>  
@@ -138,9 +142,8 @@
                                 <button class="agregar_carrito" data-id="<%- products[i].id %>">
                                     <i class="fas fa-cart-plus cart-icon" data-id="<%- products[i].id %>"></i>
                                 </button>
-                                <h4 class="product-name"><%= products[i].name %></h4>
-                                <h3 class="product-price"> $ <%= products[i].price.toFixed(2) %></h3>
-                                <!-- <p class="description"> descripcion </p> -->
+                                <p class="product-name"><%= products[i].name %></p>
+                                <p class="product-price"> $ <%= products[i].price.toFixed(2)  %></p>
                             </div>
                         </div>
                     <% } %>  

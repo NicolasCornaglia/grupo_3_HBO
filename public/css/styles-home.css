@@ -6,164 +6,6 @@ body {
     background-size: 200px;
 }
 
-/* 
-.contenedor1{
-    text-align: center;
-    width: 90%;
-    box-sizing: border-box;
-    padding: 1em;
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.contenedor2 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 95vw; 
-    box-sizing: border-box; 
-}
-
-.contenedor2 #presentacion{
-width: 95vw;
-box-shadow: 0px 0px 9px rgb(100, 100, 100); 
-cursor: pointer;
-
-}
-
-.contenedor3{
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.contenedor3 .product {
-    box-shadow: 0px 0px 9px rgb(100, 100, 100);
-    margin: 0px 3px 0px 3px;
-    background-color: white;
-    width: 41vw;
-}
-
-#presentacion{
-    text-align: center;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    box-sizing: border-box;
-    cursor: pointer;
-    background-color: #f5f5f5;
-}
-
-.caja{
-    position: relative;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.texto{
-    font-family: 'Helvetica';
-    text-decoration: dashed, underline;
-    position: absolute; 
-    -webkit-text-stroke: 4% black;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    font-size: 28px;
-    font-weight: bold;
-    color:black;
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-    box-sizing: border-box;
-    cursor: pointer;
-
-}
-#carrusel {
-    float:left;
-    width:95vw;
-    overflow:hidden;
-    height:203px;
-    position:relative;
-    margin-top:20px;
-    margin-bottom:20px;
-    border: solid 5px #f5f5f5;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 9px rgb(100, 100, 100);
-    border-radius: 5px;
-    max-width: 1000px;
-}
-
-#carrusel .left-arrow {
-    position:absolute;
-    left:10px;
-    z-index:1;
-    top:50%;
-    margin-top:-9px;
-    box-sizing: border-box;
-}
-
-#carrusel .right-arrow {
-    position:absolute;
-    right:10px;
-    z-index:1;
-    top:50%;
-    margin-top:-9px;
-    box-sizing: border-box;
-}
-
-.carrusel {
-    width: 4000px; 
-    left:4px; 
-    right:4px;
-    position: absolute; 
-    top:4px;
-    z-index:0;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-}
-
-.carrusel>div {
-    float: left;
-    font-family: Helvetica;
-    height: 185px;
-    width: 170px;
-    text-align:center;  
-    box-sizing: border-box;
-}
-
-.carrusel img {
-    cursor:pointer;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.product {
-    border:#cccccc79 1px solid; 
-    box-sizing: border-box;
-}
-
-.productText {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    gap: 12px;
-} */
-
-
-/*  @media (min-width: 360px) {
-.contenedor3 .product {
-    width: 140px;
-}
-}
-
-/* comienzo del editar */
-
-
-
-/*  home 2 */
-
 .carrusel {
     text-align: center;
 }
@@ -207,6 +49,8 @@ cursor: pointer;
 .products-container img {
     width: 100%;
     padding: 3%;
+    border-radius: 5%;
+    height: 250px;
 }
 
 .product-image {
@@ -231,33 +75,45 @@ cursor: pointer;
     transition: all 450ms;
 }
 
-/* .product-card .main-card i {
-    position: absolute;
-    left: 83%;
-    top: 4%;
-    background-color: white;
-    border-radius: 50%;
-    padding: 2%;
-    z-index: 1;
-} */
 
 .product-card .main-card i:hover {
     transform: rotate(360deg);
     transition: all 1000ms;
+    cursor: pointer;
 }
 
 .main-card {
-    padding: 5%;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-name {
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     color: rgb(62, 60, 60);
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .product-price {
     color: rgb(0, 0, 0);
+    font-size: 17px;
+}
+
+.discount-price {
+    text-decoration:line-through;
+    color: rgb(121, 170, 121);
+    font-size: 13px;
+}
+
+.discount-percentage {
+    color: rgb(121, 170, 121);
+    font-size: 13px;
 }
 
 a:visited {
@@ -272,7 +128,7 @@ a:visited {
 .agregar_carrito {
    position: absolute;
    left: 83%;
-   top: 3%;
+   top: 89%;
    background-color: white;
    border-radius: 50%;
    padding: 2%;
