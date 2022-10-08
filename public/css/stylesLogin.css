@@ -61,6 +61,7 @@ main {
     outline: 1px dashed transparent;
     outline-offset: 2px;
     display: inline;
+    margin-top:2%
   }
   
   form a:hover {
@@ -481,6 +482,13 @@ main {
     width: 60vw
   }
 
+  a {
+    color: black
+  }
+
+  a:visited {
+    color: hsl(var(--fgColorH), var(--fgColorS), var(--fgColorL));
+  }
 
   @media (min-width: 768px) {
     figure {
@@ -538,6 +546,6 @@ main {
   #login-button {
     width: 35vw
   }
-
+  
 
   }
