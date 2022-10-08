@@ -5,11 +5,17 @@ import { getAllUsers } from '../services/user-service'
 
 function Users() {
     const [lastUser, setLastUser] = useState({})
+    const [AllUsers, setAllUsers] = useState([])
 
     useEffect(() => {
-        // LAST User
+        // LAST USER
         getAllUsers().then(res => {
             setLastUser(res.data.users[res.data.users.length - 1])
+        })
+
+        // ALL USERS
+        getAllUsers().then(res => {
+            setAllUsers(res.data.users)
         })
 
     }, [])
@@ -22,9 +28,12 @@ function Users() {
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nombre</th>
+                            <th>Nombre completo</th>
                             <th>Email</th>
-                            <th>Detalle</th>
+                            <th>Número de telefono</th>
+                            <th>Ciudad</th>
+                            <th>Genero</th>
+                            <th>Avatar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,10 +48,66 @@ function Users() {
                                 {lastUser.email}
                             </td>
                             <td className="content">
-                                {lastUser.detail}
-                                aca va la url a lo q devuelve la api del detalle o deberia ir la vista de detalle del rod
+                                {lastUser.phonenumber}
+                            </td>
+                            <td className="content">
+                                {lastUser.city}
+                            </td>
+                            <td className="content">
+                                {lastUser.gender}
+                            </td>
+                            <td className="content">
+                                <a href={lastUser.avatar}>NO funciona la imagen si es sacada de /images/..</a>
                             </td>
                         </tr>
+                    </tbody>
+                </table>
+
+                <div className="title"> Listado de usuarios </div>
+                <table className="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre completo</th>
+                            <th>Email</th>
+                            <th>Número de telefono</th>
+                            <th>Ciudad</th>
+                            <th>Genero</th>
+                            <th>Rol</th>
+                            <th>Avatar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {AllUsers.map(user => {
+                            return (
+                                <tr>
+                                    <th className="content" scope="row">
+                                        {user.id}
+                                    </th>
+                                    <td className="content">
+                                        {user.name}
+                                    </td>
+                                    <td className="content">
+                                        {user.email}
+                                    </td>
+                                    <td className="content">
+                                        {user.phonenumber}
+                                    </td>
+                                    <td className="content">
+                                        {user.city}
+                                    </td>
+                                    <td className="content">
+                                        {user.gender}
+                                    </td>
+                                    <td className="content">
+                                        {user.role}
+                                    </td>
+                                    <td className="content">
+                                        <a href={user.avatar}>NO funciona la imagen si es sacada de /images/..</a>
+                                    </td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>

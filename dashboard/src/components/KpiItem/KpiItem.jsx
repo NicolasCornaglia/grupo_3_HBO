@@ -3,11 +3,15 @@ import './KpiItem.css'
 
 function KpiItem({titulo, valor}) {
 
+    if (valor == null) {
+        valor = 0;
+    }
+
     return (
     <>
         <div className="kpi-container">
-            <h1>{titulo}</h1>
-            <span>{valor}</span>
+            <p className="titulo">{titulo}</p>
+            <p className="valor">{valor}</p>
         </div>
     </>
     )

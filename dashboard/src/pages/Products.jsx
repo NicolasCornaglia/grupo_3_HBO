@@ -16,9 +16,7 @@ function Products() {
          setAllProducts(res.data.products)
       })
       
-
    }, [])
-
 
 
 
@@ -45,15 +43,12 @@ function Products() {
                   <td className="content">
                      {lastProduct.description}
                   </td>
-                  <td className="content">
-                     {lastProduct.detail}
-                     aca va la url a lo q devuelve la api del detalle o deberia ir la vista de detalle del rod
+                  <td className="content detail">
+                     <a href={lastProduct.detail}> Detalle del producto </a>
                   </td>
                </tr>
             </tbody>
          </table>   
-
-         <span></span>
 
          <div className="title"> Listado de productos </div>
          <table className="styled-table">
@@ -66,14 +61,26 @@ function Products() {
                </tr>
             </thead>
             <tbody>
-               <>Aca irian las filas como en lo de arriba</>
+               {AllProducts.map(product => {
+                  return (
+                     <tr>
+                     <th className="content" scope="row">
+                        {product.id}
+                     </th>
+                     <td className="content">
+                        {product.name}
+                     </td>
+                     <td className="content">
+                        {product.description}
+                     </td>
+                     <td className="content detail">
+                        <a href={product.detail}> Detalle del producto </a>
+                     </td>
+                  </tr>
+                  )
+               })}
             </tbody>
          </table>   
-
-
-
-
-
       </div>
    )
 }

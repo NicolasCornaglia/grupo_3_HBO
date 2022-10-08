@@ -1,12 +1,21 @@
 .kpi-container{
-    height: 33vh;
+    height: 23vh;
     width: 40vw;
     border-radius: 15px;
     padding: 20px;
     background-color: lightblue;
     display: flex;
     flex-direction: column;
-    align-items: space-evenly;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.titulo {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.valor {
+    font-size: 30px
 }

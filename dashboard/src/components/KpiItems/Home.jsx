@@ -5,10 +5,7 @@ import { getAllProducts, getAllProductsSold } from "../../services/product-servi
 import { getAllUsers } from "../../services/user-service"
 import { getAllCategories } from "../../services/category-service"
 
-
-
 function Home() {
-
   const [kpiTotalProducts, setkpiTotalProducts] = useState(0)
   const [kpiTotalUsers, setkpiTotalUser] = useState(0)
   const [kpiTotalCategories, setkpiTotalCategories] = useState(0)
@@ -36,6 +33,8 @@ function Home() {
     })
 
   }, [])
+
+  console.log(kpiTotalProductsSold)
 
   return (<>
     <div className='grid-col'>
