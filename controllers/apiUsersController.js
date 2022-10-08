@@ -11,6 +11,11 @@ const controller = {
                id: user.id,
                name: `${user.firstname} ${user.lastname}`,
                email: user.email,
+               phonenumber: user.phone_number,
+               city: user.city,
+               gender: user.gender,
+               avatar: user.avatar,
+               role: user.role,
                detail: `http://localhost:3001/api/users/${user.id}`
             }
          })
@@ -23,8 +28,8 @@ const controller = {
    },
    show: async (req,res) => {
       try {
-         const {id, firstname, lastname, email, phone_number, city, gender, avatar} = await User.findByPk(req.params.id)
-         const userShow = {id, firstname, lastname, email, phone_number, city, gender, avatar}
+         const {id, firstname, lastname, email, phone_number, city, role, gender, avatar} = await User.findByPk(req.params.id)
+         const userShow = {id, firstname, lastname, email, phone_number, city, role, gender, avatar}
          res.send(userShow)
       }
       catch (error) {

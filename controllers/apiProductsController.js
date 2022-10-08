@@ -19,7 +19,7 @@ const controller = {
                   colorId: product.color_id,
                   materialId: product.material_id
                },
-               detail: `http://localhost:3001/api/products/${product.id}`
+               detail: `http://localhost:3001/p/productDetail/${product.id}`
             }
          })
          res.send({ count, products })

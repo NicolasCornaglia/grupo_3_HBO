@@ -33,7 +33,7 @@ VALUES (
       "Rafaela",
       "Hombre",
       "admin",
-      "/images/1662154109639.jpg",
+      "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
       now(),
       now()
    ),
@@ -51,6 +51,45 @@ VALUES (
       now()
    ),
    (
+      "Joako",
+      "Ruiz",
+      "joakoruiz1@gmail.com",
+      "$2y$10$TKjoxDwKchsy289K3ftfDuQ/qhNI2SPansx1q1ggZedV3CHNHy1WG",
+      "3411231512",
+      "Buenos Aires",
+      "Hombre",
+      "admin",
+      "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
+      now(),
+      now()
+   ),
+   (
+      "Jero",
+      "Alduar",
+      "jeronimoalduar@gmail.com",
+      "$2y$10$TKjoxDwKchsy289K3ftfDuQ/qhNI2SPansx1q1ggZedV3CHNHy1WG",
+      "34141231512",
+      "Buenos Aires",
+      "Hombre",
+      "admin",
+      "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
+      now(),
+      now()
+   ),
+   (
+      "Nicolas",
+      "Cornaglia",
+      "nicolascornaglia2@hotmail.com",
+      "$2y$10$r5ZGdQR9F0TAeDqC/yIdu.Mg4twYCM6LmK03wkjxf4zJvtbHsk3t2",
+      "3492587649",
+      "Rafaela",
+      "Hombre",
+      "admin",
+      "/images/1662154109639.jpg",
+      now(),
+      now()
+   ),
+   (
       "User",
       "Test",
       "Test1@gmail.com",
@@ -59,7 +98,7 @@ VALUES (
       "Buenos Aires",
       "Hombre",
       "admin",
-      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg",
+      "https://i.blogs.es/66b2a4/photo-1511367461989-f85a21fda167/1366_2000.jpeg",
       now(),
       now()
    );
