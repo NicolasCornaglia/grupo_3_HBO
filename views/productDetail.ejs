@@ -107,12 +107,20 @@
                     <% if(locals.isLogged) { %>
                         <% if (locals.loggedUser.role=="admin" ) { %>
                             <a href='/p/edit/<%- data.product.id %>'>
-                            <div class="buy-buttons">
-                                <button class="button agregar_carrito">
-                                    Editar producto
-                                </button>
-                            </div>
+                                <div class="buy-buttons">
+                                    <button class="button agregar_carrito">
+                                        Editar producto
+                                    </button>
+                                </div>
                             </a>
+                            <form action="/p/api/products/<%- data.product.id %>?_method=DELETE" method="POST">
+                                <div class="buy-buttons">
+                                    <button type="submit" class="button agregar_carrito">
+                                        Eliminar producto
+                                    </button>
+                                </div>
+                            </form>
+                            
                             <% } %>
                                 <% } %>
                 </div>

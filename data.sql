@@ -406,7 +406,7 @@ VALUES (
    ),
    (  "Mesa de comedor extensible",
       "Mesa de comedor cuadrada extensible de estética vintage, está fabricada en madera de cerezo de gran calidad",
-      240000,
+      24000,
       "https://www.betty-co.com/server/Portal_0006346/img/products/mesa-de-comedor-extensible-cuadrada-cerezo-monaco_3233467.png",
       "180 x 130 x 77",
       1,

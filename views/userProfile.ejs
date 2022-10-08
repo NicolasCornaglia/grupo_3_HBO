@@ -37,7 +37,9 @@
                                     Email: <%= user.email %> 
                                     <div>
                                        <% if (user.role == "admin") { %>
-                                          Permisos: <%= user.role %>                                   
+                                          Rol: <%= user.role %>                                   
+                                       <% } else { %>
+                                          Rol: Cliente
                                        <% } %>
                                     </div>
                                  </h4>
