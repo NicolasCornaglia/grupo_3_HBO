@@ -87,7 +87,7 @@ const validationsEditProduct = [
       let acceptedExtensions = [".jpg", ".png", ".gif", ".jpeg"];
 
       if (!file) {
-         /* req.file.filename = ''; */
+         // fue validada la extension del archivo al crear el producto
       } else {
          let fileExtension = path.extname(file.originalname);
          if (!acceptedExtensions.includes(fileExtension)) {

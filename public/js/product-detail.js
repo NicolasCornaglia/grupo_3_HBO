@@ -26,7 +26,7 @@ window.onload = function () {
             console.log("cantidad en carrito, index, cantidad:", carrito[index].quantity, index, cantidad.value)
    
             if (index !== -1) {
-               carrito[index].quantity = cantidad.value
+               carrito[index].quantity = Number(cantidad.value)
                localStorage.setItem('carrito', JSON.stringify(carrito))
             } else {
                carrito.push({ id: e.target.dataset.id, quantity: 1 })

@@ -21,7 +21,6 @@ router.get('/api/products', productController.renderSearchView);
 router.post('/api/products', uploadFile.single('image'), validate(validationsCreateProduct), productController.createProduct);
 router.put('/api/products/:id', uploadFile.single('image'), validate(validationsEditProduct), productController.editProducts);
 router.delete('/api/products/:id', productController.destroy);
-/* router.get('/api/products/:id', productController.destroy); */
 
 // api for product cart
 router.get('/api/productCartItem/:id', productCartController.productById);

@@ -98,11 +98,10 @@ const controller = {
     },
 
     editProducts: async (req, res) => {
-        const { name, description, price, category, image, dimensions, colors, materials } = req.body;
+        const { name, description, price, category, dimensions, colors, materials } = req.body;
         const [categoriesDB, colorsDB, materialsDB, foundProduct] = await Promise.all([Category.findAll(), Color.findAll(), Material.findAll(), Product.findByPk(req.params.id)]);
         const errors = validationResult(req);
         
-        console.log("body en controller editProducts", req.body)
         if (errors.isEmpty()) {
             if (!req.file) {
                 await Product.update({
@@ -162,9 +161,6 @@ const controller = {
             where: { id: req.params.id }
         });
         res.redirect('/');
-    },
-    search: async (req, res) => {
-
     }
 }
 

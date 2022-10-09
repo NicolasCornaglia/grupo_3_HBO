@@ -4,6 +4,7 @@
 <head>
    <%- include('./partials/head') %>
       <link rel="stylesheet" href="\css\styles-userProfile.css">
+      <script src="/js/profile.js" ></script>
 </head>
 
 <body>
@@ -44,11 +45,11 @@
                                     </div>
                                  </h4>
                                  <% if (user.role == "admin") { %>
-                                    <a href="/p/create"><button class="button-profile">Crear un producto</button></a>
+                                    <a href="/p/create"><button class="button-profile button">Crear un producto</button></a>
                                  <% } %>
                                  
-                                 <a href="/u/editUser"><button class="button-profile">Cambiar contraseña</button></a>
-                                 <a href="/u/api/users/logout"><button class="button-profile">Salir de mi
+                                 <a href="/u/editUser"><button class="button-profile button">Cambiar contraseña</button></a>
+                                 <a href="/u/api/users/logout" ><button class="button-profile" id="logOut">Salir de mi
                                        cuenta</button><a>
                                        <% } %>
          </div>

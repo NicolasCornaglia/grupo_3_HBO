@@ -16,18 +16,18 @@
     location.reload();
   }
 
-  function plusQuantity(index) {
+  function plusQuantity(i) {
     carrito = JSON.parse(localStorage.carrito);
-    carrito[index].quantity += 1
+    carrito[i].quantity += 1
     localStorage.setItem("carrito", JSON.stringify(carrito))
     location.reload();
   };
 
-  function minusQuantity(index) {
+  function minusQuantity(i) {
     carrito = JSON.parse(localStorage.carrito);
-    carrito[index].quantity -= 1
-    if (carrito[index].quantity == 0) {
-      removeItem(index)
+    carrito[i].quantity -= 1
+    if (carrito[i].quantity == 0) {
+      removeItem(i)
     }
     localStorage.setItem("carrito", JSON.stringify(carrito))
     location.reload();
