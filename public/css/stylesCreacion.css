@@ -43,7 +43,8 @@ h1 {
 }
 
 #form .formInput:hover {
-   background-color: lightcyan
+   background-color: lightcyan;
+   transition: 0.5s;
 }
 
 .select {
@@ -56,7 +57,7 @@ h1 {
 
 .create-button {
    margin-top: 40px;
-   font-size: 25px;
+   font-size: 20px;
    background-color: white;
    border: 1px solid black;
    height: 30px;
@@ -65,11 +66,12 @@ h1 {
 }
 
 .create-button:hover {
-   background-color: lightgreen;
+   background-color: rgb(151, 219, 151);
+   transition: 0.5s;
 }
 
 .reset-button {
-   font-size: 25px;
+   font-size: 20px;
    margin-top: 20px;
    background-color: white;
    border: 1px solid black;
@@ -80,7 +82,8 @@ h1 {
 }
 
 .reset-button:hover {
-   background-color: lightcoral;
+   background-color: rgb(244, 113, 113);
+   transition: 0.5s;
 }
 
 
