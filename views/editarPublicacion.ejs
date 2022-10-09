@@ -38,7 +38,7 @@
                     <% } %>
                 <% } %> 
                 <label class="label">Imagen:</label>
-                <input type="file" name="image" id="image" class="formInput" > 
+                <input type="file" name="image" id="image"> 
                 <div class="image-error"></div>
                 <div style="color: grey"> Si desea mantener la imagen original, no seleccione ningun archivo.</div>
                 <% for (let error of errors) { %> 
@@ -67,9 +67,9 @@
                     <% } %>  
                 </select>    
                 <label class="label">Precio:</label>
-                <input type="text" name="price" placeholder="Precio" value="<%= data.productToEdit.price %>" required class="formInput">
+                <input type="text" name="price" placeholder="Precio" id="price" value="<%= data.productToEdit.price %>" required class="formInput">
                 <label class="label">Dimensiones en formato Alto x Ancho x Profundidad:</label>
-                <input type="text" name="dimensions" placeholder="Dimensiones" value="<%= data.productToEdit.dimensions %>" required class="formInput">
+                <input type="text" name="dimensions" placeholder="Dimensiones" id="dimensions" value="<%= data.productToEdit.dimensions %>" required class="formInput">
                 <label class="label">Materiales:</label>
                 <select name="materials" value="<%= data.productToEdit.material_id %>" required class="select">
                     <% for (let material of data.materials) { %>

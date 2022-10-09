@@ -4,6 +4,8 @@ window.onload = function () {
    let name = document.querySelector('#name');
    let description = document.querySelector('#description');
    let image = document.querySelector('#image');
+   let price = document.querySelector('#price');
+   let dimensions = document.querySelector('#dimensions')
 
    let nameError = document.querySelector('.name-error');
    let descriptionError = document.querySelector('.description-error');
@@ -57,6 +59,24 @@ window.onload = function () {
       }
    });
 
+   price.addEventListener("input", () => {
+      if (price.value.length < 3) {
+         price.classList.add("is-invalid");
+      } else {
+         price.classList.remove("is-invalid");
+         price.classList.add("is-valid");
+      }
+   })
+
+   dimensions.addEventListener("input", () => {
+      if (dimensions.value.length < 3) {
+         dimensions.classList.add("is-invalid");
+      } else {
+         dimensions.classList.remove("is-invalid");
+         dimensions.classList.add("is-valid");
+      }
+   })
+
    image.addEventListener("input", () => {
       var _validFileExtensions = [".jpg", ".jpeg", ".gif", ".png"]
       function ValidateSingleInput(oInput) {
@@ -95,11 +115,11 @@ window.onload = function () {
       }
    });
 
-/*    image.addEventListener("click", () => {
+   image.addEventListener("change", () => {
       if (image.value.length == 0) {
          imageError.innerHTML = ""
          image.classList.add("is-invalid");
-         errors.image = "Debes ingresar una imagen del producto"
+         errors.image = "Debes ingresar un archivo con alguna de las siguientes extensiones permitidas: .jpg .jpeg .gif .png "
          imageError.innerHTML += errors.image;
          imageError.style.display = "block";
       } else {
@@ -108,6 +128,6 @@ window.onload = function () {
          imageError.style.display = "none";
          imageError.innerHTML = "";
       }
-   }); */
+   });
 
 }

@@ -33,7 +33,7 @@
                         <% } %>
                     <% } %> 
                     <label class="label">Imagen: </label>
-                    <input type="file" name="image" id="image" class="formInput"> 
+                    <input type="file" name="image" id="image" > 
                     <div class="image-error"></div>
                     <% for (let error of errors) { %> 
                         <% if (error.param == "image") { %> 
@@ -46,23 +46,23 @@
                             <option value="<%= category.id %>"><%= category.name %></option>
                         <% } %>  
                     </select>
-                    <label class="label">Color: </label>
-                    <select name="colors" class="select">
+                    <label class="label" >Color: </label>
+                    <select name="colors" class="select" >
                         <% for (let color of data.colors) { %>
                             <option value="<%= color.id %>"><%= color.name %></option>
                         <% } %> 
                     </select>    
                     <label class="label">Precio: </label>
-                    <input type="text" name="price" class="formInput">
+                    <input type="text" name="price" id="price" class="formInput">
                     <label class="label">Dimensiones en formato Alto x Ancho x Profundidad:</label>
-                    <input type="text" name="dimensions" class="formInput">
+                    <input type="text" name="dimensions" class="formInput" id="dimensions">
                     <label class="label">Material: </label>
                     <select name="materials" class="select">
                         <% for (let material of data.materials) { %>
                             <option value="<%= material.id %>"><%= material.name %></option>
                         <% } %>
                     </select> 
-                    <button class="create-button" id="formButton" type="submit">Crear</button>
+                    <button class="create-button" id="formButton" type="submit">Crear producto</button>
                     <button class="reset-button" id="formButton" type="reset">Descartar</button>
                 </form>
         </div>    
