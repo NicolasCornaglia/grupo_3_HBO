@@ -74,5 +74,5 @@ CREATE TABLE deco_hogar.orderitems(
    updatedAt DATETIME,
    deletedAt DATETIME
 );
-SET FOREIGN_KEY_CHECKS=0;
+
 

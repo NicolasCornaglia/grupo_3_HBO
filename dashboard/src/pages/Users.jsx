@@ -33,6 +33,7 @@ function Users() {
                             <th>Número de telefono</th>
                             <th>Ciudad</th>
                             <th>Genero</th>
+                            <th>Rol</th>
                             <th>Avatar</th>
                         </tr>
                     </thead>
@@ -57,7 +58,10 @@ function Users() {
                                 {lastUser.gender}
                             </td>
                             <td className="content">
-                                <a href={lastUser.avatar}>NO funciona la imagen si es sacada de /images/..</a>
+                                {lastUser.role}
+                            </td>
+                            <td className="content">
+                                <a href={lastUser.avatar}>Imagen de perfil</a>
                             </td>
                         </tr>
                     </tbody>
@@ -103,7 +107,7 @@ function Users() {
                                         {user.role}
                                     </td>
                                     <td className="content">
-                                        <a href={user.avatar}>NO funciona la imagen si es sacada de /images/..</a>
+                                        <a href={user.avatar}>Imagen de perfil</a>
                                     </td>
                                 </tr>
                             )
