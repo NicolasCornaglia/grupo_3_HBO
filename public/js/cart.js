@@ -40,17 +40,11 @@
     );
   }
 
-  function sortedCart() {
-    return ()
-  }
 
-window.onload = function () {
   let cartRows = document.querySelector('.cartRows')
   let products = [];
-
   if (localStorage.carrito) {
     carrito = JSON.parse(localStorage.carrito);
-    /* console.log(carrito) */
     carrito.forEach((item, index) => {
       fetch(`/p/api/productCartItem/${item.id}`)
         .then(res => res.json())
@@ -109,6 +103,6 @@ window.onload = function () {
       });
 
     console.log(formData)
-
   }
-}
+ 
+
