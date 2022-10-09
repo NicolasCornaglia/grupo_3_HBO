@@ -8,7 +8,21 @@ const OrderItem = db.OrderItem
 const controller = {
    index: async (req, res) => {
       try {
-         let [products, count] = await Promise.all([Product.findAll(), Product.count()]);
+         let [products, categories, count] = await Promise.all([Product.findAll(), Category.findAll(), Product.count()]);
+         countByCategory = categories.map((category) => {
+            let amountOfProducts = 0;
+            products.forEach((product)=>{
+               if (product.category_id == category.id) {
+                  amountOfProducts += 1                  
+               }
+            })
+            return {
+               id: category.id,
+               name: category.name,
+               productsInThisCategory: amountOfProducts
+            }
+         })
+
          products = products.map((product) => {
             return {
                id: product.id,
@@ -22,7 +36,7 @@ const controller = {
                detail: `http://localhost:3001/p/productDetail/${product.id}`
             }
          })
-         res.send({ count, products })
+         res.send({ count, countByCategory, products })
       } catch (error) {
          console.error("ERROR: ", error)
          res.status(404).send(error)
