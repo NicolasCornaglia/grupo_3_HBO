@@ -136,17 +136,6 @@ const controller = {
                         id: req.params.id
                     }
                 });
-                console.log("Producto editado modificando imagen",{
-                    name: name,
-                    description:description,
-                    price: price,
-                    category_id: category,
-                    image: newImage,
-                    dimensions: dimensions,
-                    color_id: colors,
-                    material_id: materials,
-                    updated_at: new Date()
-                })
             }
             return res.redirect('/')
         }
