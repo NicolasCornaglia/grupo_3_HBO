@@ -125,7 +125,8 @@ VALUES ("Negro", now(), now()),
    ("Caoba", now(), now()),
    ("Turquesa", now(), now()),
    ("Rosa", now(), now()),
-   ("Amarillo", now(), now());
+   ("Amarillo", now(), now()),
+   ("Madera", now(), now());
 
 INSERT INTO deco_hogar.materials(name, created_at, updated_at)
 VALUES("Madera", now(), now()),
@@ -183,7 +184,7 @@ VALUES (
    ),
    (  "Silla de comedor estilo Colonial",
       "Silla de madera realizada con laminas verticales de alta calidad de acabado caoba",
-      33420,
+      13420,
       "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/517-0LPf39L._AC_SY879_.jpg",
       "84 x 41 x 43",
       2,
@@ -335,7 +336,7 @@ VALUES (
    ),
    (  "Cama king size",
       "Cama de pino tamaño familiar con amplia superficie de comfort. Alto respaldo y base baja frontal",
-      257800,
+      40780,
       "https://www.decoracoesmoveis.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/a/cama_casal_turim_-_imbuia_01_1.jpg",
       "190 x 135 x 36",
       3,
@@ -395,7 +396,7 @@ VALUES (
    (
       "Mesa de roble para 12 personas",
       "Trabajada en roble claro, altura media. Comedores amplios, caterings",
-      120000,
+      80000,
       "https://catalogus.planatoffice.nl/imager/main/23971/big-table-74-oak-master-pro-b-arcit18_64f6e35d19495ba333a10492f92f617a.jpg",
       "95 x 250 x 150",
       1,

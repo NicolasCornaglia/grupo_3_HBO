@@ -40,6 +40,11 @@
     );
   }
 
+  function sortedCart() {
+    return ()
+  }
+
+window.onload = function () {
   let cartRows = document.querySelector('.cartRows')
   let products = [];
 
@@ -75,6 +80,7 @@
           document.querySelector('.totalAmount').innerText = `$ ${calcularTotal(products).toFixed(2)}`;
         })
     })
+    
   }
 
   let checkoutCart = document.querySelector("#checkoutCart");
@@ -105,3 +111,4 @@
     console.log(formData)
 
   }
+}

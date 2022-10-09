@@ -100,9 +100,10 @@
 
                     <a href="#"> Ver medios de pago </a>
 
-                    <div class="buy-buttons">
-                        <button class="button agregar_carrito" data-id="<%- data.product.id %>">Añadir al
-                            carrito</button>
+                    <div class="buy-buttons" data-id="<%- data.product.id %>">
+                        <button class="button agregar_carrito" id="agregar_carrito" data-id="<%- data.product.id %>">
+                            Añadir al carrito
+                        </button>
                     </div>
                     <% if(locals.isLogged) { %>
                         <% if (locals.loggedUser.role=="admin" ) { %>
