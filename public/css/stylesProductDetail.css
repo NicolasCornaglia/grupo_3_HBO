@@ -152,6 +152,7 @@ main div img {
     border: none;
     box-shadow: 1px 1px gray;
     height: 25px;
+    cursor: pointer;
 }
 
 .cuantity {
