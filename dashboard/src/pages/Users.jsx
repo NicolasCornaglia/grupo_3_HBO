@@ -23,7 +23,7 @@ function Users() {
     return (
         <div>
             <div className="container">
-                <div className="title"> Último producto creado </div>
+                <div className="title"> Último usuario creado </div>
                 <table className="styled-table">
                     <thead>
                         <tr>
